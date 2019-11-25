@@ -28,28 +28,19 @@
                             <div class="card-body">
                                 <div>
                                     <label for="tagName">Team Name</label>
-                                    <input id="name" type="text"
-                                           class="form-control @error('name') is-invalid @enderror" name="name"
-                                           placeholder="enter team name">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="enter team name">
 
                                     @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                        </span>
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                     @enderror
                                 </div>
                                 <div>
                                     <label for="tagName">Department Name</label>
-                                    <input id="id" type="text" hidden
-                                           class="form-control @error('department_id') is-invalid @enderror" name="department_id"
-                                           value="{{ $department->id }}" >
-                                    <input id="name" type="text" readonly
-                                           class="form-control @error('department_name') is-invalid @enderror" value="{{ $department->name }}" >
+                                    <input id="id" type="text" hidden class="form-control @error('department_id') is-invalid @enderror" name="department_id" value="{{ $department->id }}" >
+                                    <input id="name" type="text" readonly class="form-control @error('department_name') is-invalid @enderror" value="{{ $department->name }}" >
 
                                     @error('department_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                        </span>
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                     @enderror
                                 </div>
 

@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="217b230f-1077-4111-a8c7-237c59c6b989" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_20_160004_create_teams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_160004_create_teams_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project_manager/assign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project_manager/assign.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project_manager/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project_manager/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +199,7 @@
       <workItem from="1574659282739" duration="2361000" />
       <workItem from="1574676680340" duration="5546000" />
       <workItem from="1574682838554" duration="107000" />
-      <workItem from="1574683115155" duration="440000" />
+      <workItem from="1574683115155" duration="3444000" />
     </task>
     <servers />
   </component>

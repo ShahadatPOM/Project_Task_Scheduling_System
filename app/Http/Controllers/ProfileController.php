@@ -27,7 +27,7 @@ class ProfileController extends Controller
             'email' => 'required|email',
             'specialist_in' => 'required',
         ]);
-        $profile = new Profile();
+//        $profile = new Profile();
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;

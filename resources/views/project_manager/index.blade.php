@@ -88,9 +88,7 @@
                                 @if($assignProject->status == 1)
                                     <span class="badge badge-success">Success</span>
 
-                                @elseif(DB::table('project_assigns')->where('project_id', $assignProject->id )->first())
-                                    <span class="badge badge-info">On Progress</span>
-                                @else
+                                @elseif(DB::table('project_assigns')->where('project_id', $assignProject->id )->first() && Auth::user()->role_id == 2 )
                                     <span class="badge badge-danger">Pending</span>
                                 @endif
                             </td>

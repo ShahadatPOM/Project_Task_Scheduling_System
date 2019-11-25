@@ -30,9 +30,9 @@ class ProjectController extends Controller
             $assign = "";
             foreach ($assigns as $assign)
                 $assignTime = $assign->created_at;
-                $assignProjects = Project::where('id', $assign->project_id)->get();
-                $teams = Team::all();
-                $users = collect();
+            $assignProjects = Project::where('id', $assign->project_id)->get();
+            $teams = Team::all();
+            $users = collect();
             foreach ($teams as $team) {
                 $users = User::whereIn('id', $team->members)->get();
             }
@@ -86,8 +86,8 @@ class ProjectController extends Controller
         }*/
         $project->save();
         $requirements = $request->requirements;
-        if($requirements){
-            foreach($requirements as $requirement){
+        if ($requirements) {
+            foreach ($requirements as $requirement) {
                 $require = new Requirement();
                 $require->name = $requirement;
                 $project->requirements()->save($require);
