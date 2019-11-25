@@ -2,64 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="217b230f-1077-4111-a8c7-237c59c6b989" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ModuleController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Module.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_123127_create_modules_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/daterangepicker/example/amd/require.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/daterangepicker/example/amd/require.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fastclick/fastclick.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fastclick/fastclick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-bootstrap/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-bootstrap/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-daygrid/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-daygrid/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-interaction/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-interaction/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-timegrid/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar-timegrid/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar/main.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar/main.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/fullcalendar/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/jquery.mapael.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/jquery.mapael.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/france_departments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/france_departments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/usa_states.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/usa_states.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/world_countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/world_countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/world_countries_mercator.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/world_countries_mercator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/world_countries_miller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mapael/maps/world_countries_miller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mousewheel/jquery.mousewheel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-mousewheel/jquery.mousewheel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-ui/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-ui/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery-ui/jquery-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jquery/jquery.slim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jszip/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jszip/jszip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/jszip/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/jszip/jszip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/pdfmake/pdfmake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/popper/esm/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/popper/esm/popper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/popper/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/popper/popper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/popper/umd/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/popper/umd/popper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/raphael/dev/raphael.svg.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/raphael/dev/raphael.svg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/raphael/raphael.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/raphael/raphael.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/raphael/raphael.no-deps.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/raphael/raphael.no-deps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.full.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.full.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/select2/js/select2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/sparklines/sparkline.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/sparklines/sparkline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/summernote/summernote-bs4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/summernote/summernote-bs4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/summernote/summernote-lite.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/summernote/summernote-lite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/summernote/summernote.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/summernote/summernote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/sweetalert2/sweetalert2.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/sweetalert2/sweetalert2.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/backend/plugins/sweetalert2/sweetalert2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/backend/plugins/sweetalert2/sweetalert2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/module/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/requirement/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/module/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/requirement/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/module/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/requirement/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +188,7 @@
       <workItem from="1574572093216" duration="2557000" />
       <workItem from="1574578159254" duration="2138000" />
       <workItem from="1574580429155" duration="15780000" />
-      <workItem from="1574610030295" duration="18890000" />
+      <workItem from="1574610030295" duration="19175000" />
     </task>
     <servers />
   </component>
