@@ -4563,7 +4563,7 @@ function refinePluginDefs(pluginInputs) {
                 console.warn('Plugin file not loaded for ' + pluginInput);
             }
             else {
-                plugins.push(window[globalName].default); // is an ES6 module
+                plugins.push(window[globalName].default); // is an ES6 requirement
             }
         }
         else {

@@ -1,6 +1,6 @@
 /* global Symbol */
 // Defining this global in .eslintrc.json would create a danger of using the global
-// unguarded in another place, it seems safer to define global only for this module
+// unguarded in another place, it seems safer to define global only for this requirement
 
 define( [
 	"./var/arr",
@@ -199,7 +199,7 @@ jQuery.extend( {
 	// Unique for each copy of jQuery on the page
 	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
 
-	// Assume jQuery is ready without the ready module
+	// Assume jQuery is ready without the ready requirement
 	isReady: true,
 
 	error: function( msg ) {

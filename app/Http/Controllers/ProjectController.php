@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\ProjectAssign;
+use App\Requirement;
 use App\Team;
 use App\User;
 use Illuminate\Http\Request;
@@ -16,25 +17,26 @@ class ProjectController extends Controller
 {
     public function index()
     {
-
         if (Auth::user()->role->id == 1) {
             $projects = Project::all();
             $teams = Team::all();
+            $users = collect();
             foreach ($teams as $team) {
                 $users = User::whereIn('id', $team->members)->get();
             }
             return view('project.index', compact('projects', 'users'));
-        }
-        elseif (Auth::user()->role->id == 2) {
+        } elseif (Auth::user()->role->id == 2) {
             $assigns = ProjectAssign::all();
+            $assign = "";
             foreach ($assigns as $assign)
                 $assignTime = $assign->created_at;
-            $assignProjects = Project::where('id', $assign->project_id)->get();
-            $teams = Team::all();
+                $assignProjects = Project::where('id', $assign->project_id)->get();
+                $teams = Team::all();
+                $users = collect();
             foreach ($teams as $team) {
                 $users = User::whereIn('id', $team->members)->get();
             }
-            return view('project.index', compact('assignProjects', 'assignTime', 'users'));
+            return view('project_manager.index', compact('assignProjects', 'assignTime', 'users'));
         }
     }
 
@@ -80,6 +82,14 @@ class ProjectController extends Controller
             }
         }*/
         $project->save();
+        $requirements = $request->requirements;
+        if($requirements){
+            foreach($requirements as $requirement){
+                $require = new Requirement();
+                $require->name = $requirement;
+                $project->requirements()->save($require);
+            }
+        }
         $photos = $request->photos;
         if ($photos) {
             foreach ($photos as $u_file) {

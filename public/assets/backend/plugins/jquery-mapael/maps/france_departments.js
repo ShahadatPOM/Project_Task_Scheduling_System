@@ -17,7 +17,7 @@
         // CommonJS
         module.exports = factory(require('jquery'), require('jquery-mapael'));
     } else if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
+        // AMD. Register as an anonymous requirement.
         define(['jquery', 'mapael'], factory);
     } else {
         // Browser globals

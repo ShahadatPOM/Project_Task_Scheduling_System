@@ -828,7 +828,7 @@
 
 	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
 
-		// AMD. Register as an anonymous module.
+		// AMD. Register as an anonymous requirement.
 		define(function() {
 			return FastClick;
 		});

@@ -13,23 +13,9 @@
             {{ session()->get('message') }}
         </div>
     @endif
-
-
-
-
     <div class="card">
         <div class="card-header">
-
-            {{--  <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
-                          title="Collapse">
-                      <i class="fas fa-minus"></i></button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
-                          title="Remove">
-                      <i class="fas fa-times"></i></button>
-              </div>--}}
         </div>
-
         <div class="card-body p-0">
             <table class="table table-striped projects">
                 <thead>
@@ -118,71 +104,6 @@
                 </tr>
                     @endforeach
                     @endif
-
-                @if(Auth::user()->role->id == 2)
-
-                    @foreach($assignProjects as $assignProject)
-                        <tr>
-                            <td>
-                                {{ $assignProject->id }}
-                            </td>
-                            <td>
-                                <a>
-                                    {{ $assignProject->title }}
-                                </a>
-                                <br/>
-                            </td>
-                            <td>
-                                <ul class="list-inline">
-                                    @foreach($users as $user)
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="{{url('files/'.$user->image )}}">
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                            <td>
-                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $assignTime)->diffForHumans() }}
-                                <br/>
-                            </td>
-
-                            <td class="project_progress">
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0"
-                                         aria-volumemax="100" style="width: 77%">
-                                    </div>
-                                </div>
-                                <small>
-                                    77% Complete
-                                </small>
-                            </td>
-
-                            <td class="project-state">
-
-                                @if($assignProject->status == 1)
-                                    <span class="badge badge-success">Success</span>
-
-                                @elseif(DB::table('project_assigns')->where('project_id', $assignProject->id )->first())
-                                    <span class="badge badge-info">On Progress</span>
-                                @else
-                                    <span class="badge badge-danger">Pending</span>
-                                @endif
-                            </td>
-                            <td class="project-actions text-right">
-                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $assignProject->id) }}"><i class="fa fa-pencil"></i></a>
-                                @if(Auth::user()->role_id == 1)
-                                    <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $assignProject->id) }}"><i class="fa fa-trash"></i></a>
-                                @endif
-                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $assignProject->id) }}"><i class="fa fa-eye"></i></a>
-                                <a title="assign" class="btn btn-sm btn-warning" href="{{ route('project.assignForm', $assignProject->id) }}"><i class="fa fa-plus"></i></a>
-                                <a title="Create Module" class="btn btn-sm btn-warning" href="{{ route('module.create', $assignProject->id) }}"><i class="fa fa-star"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                @endif
-
-
-
                 </tbody>
             </table>
         </div>

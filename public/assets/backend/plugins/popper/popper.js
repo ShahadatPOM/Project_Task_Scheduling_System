@@ -2422,7 +2422,7 @@ class Popper {
    * include `popper-utils.js` before `popper.js`.
    *
    * **DEPRECATION**: This way to access PopperUtils is deprecated
-   * and will be removed in v2! Use the PopperUtils module directly instead.
+   * and will be removed in v2! Use the PopperUtils requirement directly instead.
    * Due to the high instability of the methods contained in Utils, we can't
    * guarantee them to follow semver. Use them at your own risk!
    * @static

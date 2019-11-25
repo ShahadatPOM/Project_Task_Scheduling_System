@@ -10,30 +10,30 @@
 	}
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
+/******/ 	// The requirement cache
 /******/ 	var installedModules = {};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
-/******/ 		// Check if module is in cache
+/******/ 		// Check if requirement is in cache
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
 /******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
+/******/ 		// Create a new requirement (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/
-/******/ 		// Execute the module function
+/******/ 		// Execute the requirement function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/
-/******/ 		// Flag the module as loaded
+/******/ 		// Flag the requirement as loaded
 /******/ 		module.l = true;
 /******/
-/******/ 		// Return the exports of the module
+/******/ 		// Return the exports of the requirement
 /******/ 		return module.exports;
 /******/ 	}
 /******/
@@ -41,7 +41,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
 /******/
-/******/ 	// expose the module cache
+/******/ 	// expose the requirement cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// define getter function for harmony exports
@@ -60,7 +60,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	};
 /******/
 /******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 1: value is a requirement id, require it
 /******/ 	// mode & 2: merge all properties of value into the ns
 /******/ 	// mode & 4: return value when already ns object
 /******/ 	// mode & 8|1: behave like require
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/
-/******/ 	// Load entry module and return exports
+/******/ 	// Load entry requirement and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 212);
 /******/ })
 /************************************************************************/
@@ -1004,7 +1004,7 @@ $exports.store = store;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/*!
- * The buffer module from node.js, for the browser.
+ * The buffer requirement from node.js, for the browser.
  *
  * @project_manager   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
@@ -4825,7 +4825,7 @@ module.exports = {};
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
+  // implementation from standard node.js 'util' requirement
   module.exports = function inherits(ctor, superCtor) {
     if (superCtor) {
       ctor.super_ = superCtor
@@ -9297,7 +9297,7 @@ function formatValue(ctx, value, recurseTimes) {
   if (ctx.customInspect &&
       value &&
       isFunction(value.inspect) &&
-      // Filter out the util module, it's inspect function is special
+      // Filter out the util requirement, it's inspect function is special
       value.inspect !== exports.inspect &&
       // Also filter out any prototype objects using the circular check.
       !(value.constructor && value.constructor.prototype === value)) {
@@ -11763,7 +11763,7 @@ if (__webpack_require__(9)) {
       TypedArray = wrapper(function (that, data, $offset, $length) {
         anInstance(that, TypedArray, NAME);
         var klass;
-        // `ws` module bug, temporarily remove validation length for Uint8Array
+        // `ws` requirement bug, temporarily remove validation length for Uint8Array
         // https://github.com/websockets/ws/pull/645
         if (!isObject(data)) return new Base(toIndex(data));
         if (data instanceof $ArrayBuffer || (klass = classof(data)) == ARRAY_BUFFER || klass == SHARED_BUFFER) {
@@ -14772,7 +14772,7 @@ var objectAssign = __webpack_require__(266);
 // original notice:
 
 /*!
- * The buffer module from node.js, for the browser.
+ * The buffer requirement from node.js, for the browser.
  *
  * @project_manager   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
@@ -14866,9 +14866,9 @@ function isView(arrbuf) {
   }
   return false;
 }
-// 1. The assert module provides functions that throw
+// 1. The assert requirement provides functions that throw
 // AssertionError's when particular conditions are not met. The
-// assert module must conform to the following interface.
+// assert requirement must conform to the following interface.
 
 var assert = module.exports = ok;
 
@@ -15244,7 +15244,7 @@ assert.throws = function(block, /*optional*/error, /*optional*/message) {
   _throws(true, block, error, message);
 };
 
-// EXTENSION! This is annoying to write outside this module.
+// EXTENSION! This is annoying to write outside this requirement.
 assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
   _throws(false, block, error, message);
 };
@@ -27682,7 +27682,7 @@ module.exports = function isBuffer(arg) {
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
+  // implementation from standard node.js 'util' requirement
   module.exports = function inherits(ctor, superCtor) {
     ctor.super_ = superCtor
     ctor.prototype = Object.create(superCtor.prototype, {
@@ -51705,7 +51705,7 @@ StripBOMWrapper.prototype.end = function() {
 
 
 // Update this array if you add/rename/remove files in this directory.
-// We support Browserify by skipping automatic module discovery and requiring modules directly.
+// We support Browserify by skipping automatic requirement discovery and requiring modules directly.
 var modules = [
     __webpack_require__(306),
     __webpack_require__(307),
@@ -57446,7 +57446,7 @@ module.exports = StateMachine;
   var runtime = global.regeneratorRuntime;
   if (runtime) {
     if (inModule) {
-      // If regeneratorRuntime is defined globally and we're in a module,
+      // If regeneratorRuntime is defined globally and we're in a requirement,
       // make the exports object identical to regeneratorRuntime.
       module.exports = runtime;
     }
@@ -57456,7 +57456,7 @@ module.exports = StateMachine;
   }
 
   // Define the runtime globally (as expected by generated code) as either
-  // module.exports (if we're in a module) or a new, empty object.
+  // requirement.exports (if we're in a requirement) or a new, empty object.
   runtime = global.regeneratorRuntime = inModule ? module.exports : {};
 
   function wrap(innerFn, outerFn, self, tryLocsList) {
@@ -68708,7 +68708,7 @@ module.exports = function(module) {
 	if (!module.webpackPolyfill) {
 		module.deprecate = function() {};
 		module.paths = [];
-		// module.parent = undefined by default
+		// requirement.parent = undefined by default
 		if (!module.children) module.children = [];
 		Object.defineProperty(module, "loaded", {
 			enumerable: true,

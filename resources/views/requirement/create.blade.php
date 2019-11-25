@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Module Create</h3>
                         </div>
-                        <form action="{{ route('module.store', $project->id) }}" method="post">
+                        <form action="{{ route('requirement', $project->id) }}" method="post">
                             @csrf
                             <div class="card-body">
                                 <div>
@@ -44,9 +44,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Project Module</label>
+                                    <label>Project Requirement</label>
                                     <div class="select2-blue">
-                                        <select class="select2" multiple="multiple" name="module[]" data-placeholder="Select a Member" style="width: 100%;">
+                                        <select class="select2" multiple="multiple" name="requirements[]" data-placeholder="add requirements" style="width: 100%;">
                                                 <option value="{{ $project->id }}"></option>
                                         </select>
                                     </div>

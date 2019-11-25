@@ -16,7 +16,7 @@
         // CommonJS
         module.exports = factory(require('jquery'), require('raphael'), require('jquery-mousewheel'));
     } else if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
+        // AMD. Register as an anonymous requirement.
         define(['jquery', 'raphael', 'mousewheel'], factory);
     } else {
         // Browser globals

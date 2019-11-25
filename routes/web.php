@@ -84,8 +84,8 @@ Route::group(['as' => 'profile.', 'prefix' => 'profile', 'middleware' => ['auth'
     Route::get('delete/{id}', 'ProfileController@delete')->name('delete');
 });
 
-//Module
-Route::group(['as' => 'module.', 'prefix' => 'module', 'middleware' => ['auth']], function () {
+//Requirement
+Route::group(['as' => 'requirement.', 'prefix' => 'requirement', 'middleware' => ['auth']], function () {
     Route::get('index', 'ModuleController@index')->name('index');
     Route::get('create/{id}', 'ModuleController@create')->name('create');
     Route::post('store/{id}', 'ModuleController@store')->name('store');

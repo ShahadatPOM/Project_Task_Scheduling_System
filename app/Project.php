@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $fillable= [
-        'title', 'description', 'client', 'estimated_budget', 'estimated_project_duration','status'
+    protected $fillable = [
+        'title', 'description', 'client', 'estimated_budget', 'estimated_project_duration', 'status'
     ];
+
     public function team()
     {
         return $this->belongsTo('App\Team');
@@ -18,7 +19,13 @@ class Project extends Model
     {
         return $this->hasMany('App\File');
     }
-    public function assigns(){
+
+    public function requirements(){
+        return $this->hasMany('App\Requirement');
+    }
+
+    public function assigns()
+    {
         return $this->hasMany('App\ProjectAssign');
     }
 

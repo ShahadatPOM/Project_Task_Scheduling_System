@@ -2520,7 +2520,7 @@
           if (!module.shouldInitialize()) {
               return;
           }
-          // initialize module
+          // initialize requirement
           if (module.initialize) {
               module.initialize();
           }
@@ -7376,7 +7376,7 @@
   }());
 
   /**
-   * Image popover module
+   * Image popover requirement
    *  mouse events that show/hide popover will be handled by Handle.js.
    *  Handle.js will receive the events and invoke 'imagePopover.update'.
    */

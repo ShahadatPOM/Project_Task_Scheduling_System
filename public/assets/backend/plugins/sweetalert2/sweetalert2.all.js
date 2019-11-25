@@ -803,12 +803,12 @@ var renderContainer = function renderContainer(instance, params) {
 };
 
 /**
- * This module containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
+ * This requirement containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
  * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
  * This is the approach that Babel will probably take to implement private methods/fields
  *   https://github.com/tc39/proposal-private-methods
  *   https://github.com/babel/babel/pull/7555
- * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
+ * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one requirement*
  *   then we can use that language feature.
  */
 var privateProps = {
@@ -1820,12 +1820,12 @@ var unsetAriaHidden = function unsetAriaHidden() {
 };
 
 /**
- * This module containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
+ * This requirement containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
  * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
  * This is the approach that Babel will probably take to implement private methods/fields
  *   https://github.com/tc39/proposal-private-methods
  *   https://github.com/babel/babel/pull/7555
- * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
+ * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one requirement*
  *   then we can use that language feature.
  */
 var privateMethods = {
@@ -2873,7 +2873,7 @@ function SweetAlert() {
   var promise = this._main(this.params);
 
   privateProps.promise.set(this, promise);
-} // `catch` cannot be the name of a module export, so we define our thenable methods here instead
+} // `catch` cannot be the name of a requirement export, so we define our thenable methods here instead
 
 
 SweetAlert.prototype.then = function (onFulfilled) {
