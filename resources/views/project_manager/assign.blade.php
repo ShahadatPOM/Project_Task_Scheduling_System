@@ -21,7 +21,7 @@
                 <div class="col-md-8 offset-sm-2">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Team Create</h3>
+                            <h3 class="card-title">Assign Project</h3>
                         </div>
                         <form action="{{ route('team.store') }}" method="post">
                             @csrf
@@ -38,29 +38,29 @@
                                         </span>
                                     @enderror
                                 </div>
-                                    <div>
-                                        <label for="tagName">Department Name</label>
-                                        <input id="id" type="text" hidden
-                                               class="form-control @error('department_id') is-invalid @enderror" name="department_id"
-                                               value="{{ $department->id }}" >
-                                        <input id="name" type="text" readonly
-                                               class="form-control @error('department_name') is-invalid @enderror" value="{{ $department->name }}" >
+                                <div>
+                                    <label for="tagName">Department Name</label>
+                                    <input id="id" type="text" hidden
+                                           class="form-control @error('department_id') is-invalid @enderror" name="department_id"
+                                           value="{{ $department->id }}" >
+                                    <input id="name" type="text" readonly
+                                           class="form-control @error('department_name') is-invalid @enderror" value="{{ $department->name }}" >
 
-                                        @error('department_id')
-                                        <span class="invalid-feedback" role="alert">
+                                    @error('department_id')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                         </span>
-                                        @enderror
-                                    </div>
+                                    @enderror
+                                </div>
 
                                 <div class="form-group">
                                     <label>Team Members</label>
                                     <div class="select2-blue">
-                                    <select class="select2" multiple="multiple" name="members[]" data-placeholder="Select a Member" style="width: 100%;">
-                                       @foreach($users as  $user)
-                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                        @endforeach
-                                    </select>
+                                        <select class="select2" multiple="multiple" name="members[]" data-placeholder="Select a Member" style="width: 100%;">
+                                            @foreach($users as  $user)
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
 
@@ -84,8 +84,8 @@
                                     <select class="form-control @error('project_id') is-invalid @enderror"  name="project_id" id="">
                                         <option disabled selected>Select Project</option>
                                         @foreach($projects as $project)
-                                        <option class="form-control"  value="{{ $project->id }}">{{ $project->title }}</option>
-                                            @endforeach
+                                            <option class="form-control"  value="{{ $project->id }}">{{ $project->title }}</option>
+                                        @endforeach
                                     </select>
 
                                     @error('project_id')
@@ -94,23 +94,23 @@
                                         </span>
                                     @enderror
                                 </div>
-                                    <div>
-                                        <label for="tagName">Status</label>
-                                        <select class="form-control" name="status">
-                                            <option disabled selected>Select Status</option>
-                                                <option value="1">Active</option>
-                                                <option value="0">Inactive</option>
-                                        </select>
-                                        @error('status')
-                                        <span class="invalid-feedback" role="alert">
+                                <div>
+                                    <label for="tagName">Status</label>
+                                    <select class="form-control" name="status">
+                                        <option disabled selected>Select Status</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+                                    @error('status')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                        @enderror
-                                    </div>
+                                    @enderror
                                 </div>
+                            </div>
 
                             <div class="card-footer">
-                                <a href="{{ route('team.index') }}" class="btn btn-sm btn-danger">BACK</a>
+                                <a href="{{ route('project.index') }}" class="btn btn-sm btn-danger">BACK</a>
                                 <button type="submit" class="btn btn-primary btn-sm">Done</button>
                             </div>
                         </form>
@@ -128,5 +128,5 @@
             //Initialize Select2 Elements
             $('.select2').select2();
         })
-   </script>
-    @endpush
+    </script>
+@endpush

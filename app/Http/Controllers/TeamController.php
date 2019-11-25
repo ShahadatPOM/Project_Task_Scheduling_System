@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Project;
+use App\ProjectAssign;
 use App\Team;
 use App\User;
 use Illuminate\Http\Request;
@@ -44,6 +45,7 @@ class TeamController extends Controller
 
     }
 
+
     public function edit($id)
     {
 
@@ -58,4 +60,26 @@ class TeamController extends Controller
     {
 
     }
+
+    //Project Manager assign project to team
+    public function assignForm($id)
+    {
+        $members = User::where('role_id', 4)->get();
+        $project = Project::findOrfail($id);
+        return view('project_manager.assign', compact('project', 'members'));
+    }
+
+    public function assign(Request $request, $id)
+    {
+        $this->validate($request, [
+
+        ]);
+        $assign = new ProjectAssign();
+        $assign->project_id = $id;
+        $assign->manager_id = $request->project_manager;
+        $assign->status = 0;
+        $assign->save();
+        return back();
+    }
+
 }

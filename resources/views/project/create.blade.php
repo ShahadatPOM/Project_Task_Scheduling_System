@@ -37,6 +37,16 @@
                                 <input type="text" name="title" id="inputName" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label>Departments</label>
+                                <div class="select2-blue">
+                                    <select class="select2" multiple="multiple" name="departments[]" data-placeholder="Select department" style="width: 100%;">
+                                        @foreach($departments as  $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label>Requirements</label>
                                 <div class="select2-blue">
                                     <select class="select2" multiple="multiple" name="requirements[]"

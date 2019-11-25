@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="217b230f-1077-4111-a8c7-237c59c6b989" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_20_160004_create_teams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_160004_create_teams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project_manager/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project_manager/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,15 +147,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\intern\final\ptss\app\Http\Controllers\admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project_Task_Scheduling_System\resources\views\project_manager" />
       <recent name="F:\intern\final\Project_Task_Scheduling_System\resources\views\project_manager" />
       <recent name="D:\ptss\resources\views" />
       <recent name="F:\intern\ptss\resources\views" />
       <recent name="F:\intern\final\ptss\resources\views\project" />
-      <recent name="F:\intern\final\ptss\resources\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\intern\final\ptss\app\Http\Controllers\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -189,6 +198,11 @@
       <workItem from="1574578159254" duration="2138000" />
       <workItem from="1574580429155" duration="15780000" />
       <workItem from="1574610030295" duration="19175000" />
+      <workItem from="1574657156655" duration="1253000" />
+      <workItem from="1574659282739" duration="2361000" />
+      <workItem from="1574676680340" duration="5546000" />
+      <workItem from="1574682838554" duration="107000" />
+      <workItem from="1574683115155" duration="440000" />
     </task>
     <servers />
   </component>
@@ -200,7 +214,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

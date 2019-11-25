@@ -71,6 +71,8 @@ Route::group(['as' => 'team.', 'prefix' => 'team', 'middleware' => ['auth']], fu
     Route::get('edit/{id}', 'TeamController@edit')->name('edit');
     Route::post('update/{id}', 'TeamController@update')->name('update');
     Route::get('delete/{id}', 'TeamController@delete')->name('delete');
+    Route::get('assign/form/{id}', 'TeamController@assignForm')->name('assignForm');
+    Route::post('assign/{id}', 'TeamController@assign')->name('assign');
 });
 
 //Profile
@@ -86,11 +88,11 @@ Route::group(['as' => 'profile.', 'prefix' => 'profile', 'middleware' => ['auth'
 
 //Requirement
 Route::group(['as' => 'requirement.', 'prefix' => 'requirement', 'middleware' => ['auth']], function () {
-    Route::get('index', 'ModuleController@index')->name('index');
-    Route::get('create/{id}', 'ModuleController@create')->name('create');
-    Route::post('store/{id}', 'ModuleController@store')->name('store');
-    Route::get('show/{id}', 'ModuleController@show')->name('show');
-    Route::get('edit/{id}', 'ModuleController@edit')->name('edit');
-    Route::post('update/{id}', 'ModuleController@update')->name('update');
-    Route::get('delete/{id}', 'ModuleController@delete')->name('delete');
+    Route::get('index', 'RequirementController@index')->name('index');
+    Route::get('create/{id}', 'RequirementController@create')->name('create');
+    Route::post('store/{id}', 'RequirementController@store')->name('store');
+    Route::get('show/{id}', 'RequirementController@show')->name('show');
+    Route::get('edit/{id}', 'RequirementController@edit')->name('edit');
+    Route::post('update/{id}', 'RequirementController@update')->name('update');
+    Route::get('delete/{id}', 'RequirementController@delete')->name('delete');
 });

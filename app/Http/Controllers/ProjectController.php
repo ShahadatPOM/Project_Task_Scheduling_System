@@ -42,13 +42,15 @@ class ProjectController extends Controller
 
     public function create()
     {
-        return view('project.create');
+        $departments = Department::all();
+        return view('project.create', compact('departments'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
             'title' => 'required|unique:projects,title',
+            'departments' => 'required',
             'description' => 'required_without:photos',
             'photos' => 'required_without:description|unique:files,filename',
             'client' => 'required',
@@ -61,6 +63,7 @@ class ProjectController extends Controller
         $project->client = $request->client;
         $project->estimated_budget = $request->estimated_budget;
         $project->estimated_project_duration = $request->estimated_project_duration;
+        $project->departments = $request->departments;
         $project->status = 0;
         /*if ($request->hasFile('photos')) {
             $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx', 'txt', 'html'];
