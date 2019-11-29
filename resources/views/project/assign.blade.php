@@ -38,9 +38,21 @@
                             <div class="form-group">
                                 <label for="inputDescription">Project Manager</label>
                                 <select class="form-control" name="project_manager" id="">
-                                    @foreach($managers as $manager)
+                                    <option selected>Select Project Manager</option>
+
+                                @foreach($managers as $manager)
                                     <option class="form-control" value="{{ $manager->id }}">{{ $manager->username }}</option>
                                         @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputDescription">Team</label>
+                                <select class="form-control" name="team" id="">
+                                    <option selected>Select team</option>
+                                    @foreach($teamsHasNoProject as $team)
+                                        <option class="form-control" value="{{ $team->id }}">{{ $team->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

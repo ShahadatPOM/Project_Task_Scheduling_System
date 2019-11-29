@@ -41,6 +41,7 @@ class UserController extends Controller
         $user->designation = $request->designation;
         $user->specialist_in = $request->specialist_in;
         $user->role_id = $request->role_id;
+        $user->team_id = $request->team_id;
         $user->department_id = $request->department_id;
         $user->status = $request->status;
         $user->save();

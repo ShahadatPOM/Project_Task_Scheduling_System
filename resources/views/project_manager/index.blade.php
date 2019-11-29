@@ -98,7 +98,7 @@
                                     <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $assignProject->id) }}"><i class="fa fa-trash"></i></a>
                                 @endif
                                 <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $assignProject->id) }}"><i class="fa fa-eye"></i></a>
-                                <a title="assign" class="btn btn-sm btn-warning" href="{{ route('team.assignForm', $assignProject->id) }}"><i class="fa fa-plus"></i></a>
+                                <a title="assign" class="btn btn-sm btn-warning" href="{{ route('project.manager.assignForm', $assignProject->id) }}"><i class="fa fa-plus"></i></a>
                             </td>
                         </tr>
                     @endforeach

@@ -34,6 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-header">Developers</li>
+                    @if(Auth::user()->role->id == 1)
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"></i>
@@ -59,6 +60,7 @@
                 </li>
 
 
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-institution"></i>
@@ -82,7 +84,10 @@
                         </li>
                     </ul>
                 </li>
-
+                @endif
+{{--                admin specific end--}}
+{{--                admin and project manager--}}
+                @if(Auth::user()->role->id == 1 || Auth::user()->role->id == 2)
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-object-group"></i>
@@ -161,6 +166,22 @@
                         </li>
                     </ul>
                 </li>
+                    @endif
+{{--                team members began--}}
+                @if(Auth::user()->role->id == 4)
+                        <li class="nav-item">
+                            <a href="{{ route('user.index') }}" class="nav-link">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>All Users</p>
+                            </a>
+                        </li>
+                    <li class="nav-item">
+                        <a href="{{ route('project.index') }}" class="nav-link">
+                            <i class="fa fa-list nav-icon"></i>
+                            <p>Projects</p>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </nav>
     </div>

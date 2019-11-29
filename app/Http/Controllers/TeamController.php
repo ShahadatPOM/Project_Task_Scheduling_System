@@ -18,7 +18,8 @@ class TeamController extends Controller
 
     public function create($id)
     {
-        $users = User::where('role_id', 4)->get();
+
+        $users = User::where('department_id', $id)->where('role_id', 4)->get();
         $projects = Project::where('status', 0)->get();
         $department = Department::findOrfail($id);
         return view('team.create', compact('department', 'projects', 'users'));
@@ -26,9 +27,11 @@ class TeamController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required|unique:teams',
             'department_id' => 'required',
+
         ]);
         $team = new Team();
         $team->name = $request->name;
@@ -37,6 +40,13 @@ class TeamController extends Controller
         $team->members = $request->members;
         $team->status = $request->status;
         $team->save();
+
+        foreach ($request->members as $member){
+           $user = User::find($member);
+           $user->team_id = $team->id;
+           $user->save();
+        }
+
         return back();
     }
 

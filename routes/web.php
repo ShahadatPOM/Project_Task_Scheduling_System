@@ -14,9 +14,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "Auth\LoginController@showLoginForm")->name('root');
+
 
 Auth::routes();
 
@@ -30,13 +29,13 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 
 //users
 Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('index', 'UserController@index')->name('index');
     Route::get('create', 'UserController@create')->name('create');
     Route::post('store', 'UserController@store')->name('store');
     Route::get('edit/{id}', 'UserController@edit')->name('edit');
     Route::post('update/{id}', 'UserController@update')->name('update');
     Route::get('delete/{id}', 'UserController@delete')->name('delete');
 });
+Route::get('user/index', 'Admin\UserController@index')->name('user.index');
 
 //Departments
 Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth', 'admin']], function () {
@@ -71,7 +70,6 @@ Route::group(['as' => 'team.', 'prefix' => 'team', 'middleware' => ['auth']], fu
     Route::get('edit/{id}', 'TeamController@edit')->name('edit');
     Route::post('update/{id}', 'TeamController@update')->name('update');
     Route::get('delete/{id}', 'TeamController@delete')->name('delete');
-    Route::get('assign/form/{id}', 'TeamController@assignForm')->name('assignForm');
     Route::post('assign/{id}', 'TeamController@assign')->name('assign');
 });
 

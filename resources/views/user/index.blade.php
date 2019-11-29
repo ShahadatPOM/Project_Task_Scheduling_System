@@ -30,21 +30,20 @@
                     <th width="10%">Email</th>
                     <th width="15%">Department</th>
                     <th width="15%">Designation</th>
-                    <th width="15%">Specialist In</th>
                     <th width="10%">Role</th>
                     <th width="10%">Status</th>
                     <th width="15%">Action</th>
-                    <th width="15%">time</th>
+
                 </tr>
                 </thead>
                 <tbody>
+
                 @foreach($users as $user)
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->department->name }}</td>
+                        <td>{{ $user->department_id }}</td>
                         <td>{{ $user->designation}}</td>
-                        <td>{{ $user->specialist_in }}</td>
                         <td>{{ $user->role->name }}</td>
                         {{--  <td>{{ Carbon\Carbon::createFromFormat("Y-m-d H:i:s",$user->created_at)->diffForHumans() }}</td>--}}
                         {{--<td>{{ Carbon\Carbon::createFromFormat("Y-m-d H:i:s",$user->created_at)->diff(Carbon\Carbon::now())->format('%y years') }}</td>--}}
@@ -70,7 +69,6 @@
                     <th width="10%">Email</th>
                      <th width="15%">Department</th>
                     <th width="15%">Designation</th>
-                    <th width="15%">Specialist In</th>
                     <th width="10%">Role</th>
                     <th width="10%">Status</th>
                     <th width="15%">Action</th>

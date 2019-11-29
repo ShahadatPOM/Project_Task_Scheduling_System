@@ -12,6 +12,7 @@ use App\Project;
 use App\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Collection;
 
 class ProjectController extends Controller
 {
@@ -37,7 +38,14 @@ class ProjectController extends Controller
                 $users = User::whereIn('id', $team->members)->get();
             }
             return view('project_manager.index', compact('assignProjects', 'assignTime', 'users'));
+        } elseif (Auth::user()->role->id == 4) {
+            $findTeam = Auth::user()->team->id;
+            $teamProjects = ProjectAssign::where('team_id', $findTeam)->get();
+
+            return view('project.index', compact('teamProjects'));
         }
+
+
     }
 
     public function create()
@@ -117,7 +125,21 @@ class ProjectController extends Controller
     {
         $managers = User::where('role_id', 2)->get();
         $project = Project::findOrfail($id);
-        return view('project.assign', compact('project', 'managers'));
+        $incompleteProjects = ProjectAssign::where('status', 0)->get();
+
+        $teamsHasNoProject = collect();
+        if ($incompleteProjects->count() <= 0) {
+            $teamsHasNoProject = Team::all();
+        } elseif ($incompleteProjects->count() > 0) {
+            $aid = [];
+            foreach ($incompleteProjects as $incomplete) {
+                $aid[] = [
+                    $incomplete->team_id
+                ];
+                $teamsHasNoProject = Team::whereNotIn('id', $aid)->get();
+            }
+        }
+        return view('project.assign', compact('project', 'managers', 'teamsHasNoProject'));
     }
 
     public function assign(Request $request, $id)
@@ -129,6 +151,7 @@ class ProjectController extends Controller
         $assign = new ProjectAssign();
         $assign->project_id = $id;
         $assign->manager_id = $request->project_manager;
+        $assign->team_id = $request->team;
         $assign->status = 0;
         $assign->save();
         return back();

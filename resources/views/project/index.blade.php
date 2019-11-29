@@ -103,6 +103,59 @@
                     </td>
                 </tr>
                     @endforeach
+                @elseif(Auth::user()->role->id == 4)
+                    @foreach($teamProjects as $teamProject)
+                        <tr>
+                            <td>
+                                {{ $teamProject->project_id }}
+                            </td>
+                            <td>
+                                <a>
+                                    {{ $teamProject->project->title }}
+                                </a>
+                                <br/>
+                            </td>
+
+                            <td>
+                                {{ $teamProject->team->name }}
+                            </td>
+                            <td>
+                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $teamProject->created_at)->diffForHumans() }}
+                                <br/>
+                            </td>
+                            <td class="project_progress">
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0"
+                                         aria-volumemax="100" style="width: 0%">
+                                    </div>
+                                </div>
+                                <small>
+                                    0% Complete
+                                </small>
+                            </td>
+
+                            <td class="project-state">
+
+                                @if($teamProject->status == 1)
+                                    <span class="badge badge-success">Completed</span>
+
+                                @elseif(DB::table('project_assigns')->where('project_id', $teamProject->id )->first())
+                                    <span class="badge badge-info">On Progress</span>
+                                @else
+                                    <span class="badge badge-danger">Pending</span>
+                                @endif
+                            </td>
+                            <td class="project-actions text-right">
+                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $teamProject->id) }}"><i class="fa fa-pencil"></i></a>
+                                @if(Auth::user()->role_id == 1)
+                                    <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $teamProject->id) }}"><i class="fa fa-trash"></i></a>
+                                @endif
+                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $teamProject->id) }}"><i class="fa fa-eye"></i></a>
+                                <a title="assign" class="btn btn-sm btn-warning" href="{{ route('project.assignForm', $teamProject->id) }}"><i class="fa fa-plus"></i></a>
+
+                            </td>
+                        </tr>
+                    @endforeach
                     @endif
                 </tbody>
             </table>

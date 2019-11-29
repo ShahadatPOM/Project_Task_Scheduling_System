@@ -56,7 +56,7 @@
                                 <div class="form-group">
                                     <label>Team Members</label>
                                     <div class="select2-blue">
-                                    <select class="select2" multiple="multiple" name="members[]" data-placeholder="Select a Member" style="width: 100%;">
+                                        <select class="select2" multiple="multiple" name="members[]" data-placeholder="Select a Member" style="width: 100%;">
                                        @foreach($users as  $user)
                                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                                         @endforeach
@@ -82,7 +82,7 @@
                                 <div>
                                     <label for="tagName">Project Title</label>
                                     <select class="form-control @error('project_id') is-invalid @enderror"  name="project_id" id="">
-                                        <option disabled selected>Select Project</option>
+                                        <option selected>Select Project</option>
                                         @foreach($projects as $project)
                                         <option class="form-control"  value="{{ $project->id }}">{{ $project->title }}</option>
                                             @endforeach
