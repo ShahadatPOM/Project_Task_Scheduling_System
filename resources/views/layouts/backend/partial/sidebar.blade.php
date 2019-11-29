@@ -104,7 +104,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('team.index') }}" class="nav-link">
                                 <i class="fa fa-list nav-icon"></i>
                                 <p>All Teams</p>
                             </a>

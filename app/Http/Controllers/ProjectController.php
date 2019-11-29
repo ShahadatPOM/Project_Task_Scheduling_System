@@ -45,7 +45,6 @@ class ProjectController extends Controller
             return view('project.index', compact('teamProjects'));
         }
 
-
     }
 
     public function create()

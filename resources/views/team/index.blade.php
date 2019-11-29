@@ -17,7 +17,7 @@
     <div class="card">
         <div class="card-header">
             <a
-                class="btn" href="{{ route('department.create') }}">Add New Department</a>
+                class="btn" href="">Add New Team</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -25,34 +25,41 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th width="35%">Department Name</th>
-                    <th width="35%">Satus</th>
+                    <th width="20%">Team Name</th>
+                    <th width="20%">Department Name</th>
+                    <th width="20%">Leader</th>
+                    <th width="20%">Satus</th>
                     <th width="30%">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($departments as $department)
+                @foreach($teams as $team)
                     <tr>
-                        <td>{{ $department->name }}</td>
+                        <td>{{ $team->name }}</td>
+                        <td>{{ $team->department->name }}</td>
+                        <td>team leader</td>
+
                         <td>
-                            @if($department->status == 1)
-                                Active
+                            @if($team->status == 1)
+                                <span class="badge badge-success">Active</span>
                             @else
-                                 Inactive
+                                <span class="badge badge-warning">Inactive</span>
                             @endif
                         </td>
                         <td>
-                            <a title="edit" class="btn btn-sm btn-warning" href="{{ route('department.edit', $department->id) }}"><i class="fa fa-pencil"></i></a>
-                            <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('department.delete', $department->id) }}"><i class="fa fa-trash"></i></a>
-                            <a title="view" class="btn btn-sm btn-primary" href="{{ route('department.show', $department->id) }}"><i class="fa fa-eye"></i></a>
+                            <a title="edit" class="btn btn-sm btn-warning" href="{{ route('team.edit', $team->id) }}"><i class="fa fa-pencil"></i></a>
+                            <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
+                            <a title="view" class="btn btn-sm btn-primary" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th width="35%">Department Name</th>
-                    <th width="35%">Satus</th>
+                    <th width="20%">Team Name</th>
+                    <th width="20%">Department Name</th>
+                    <th width="20%">Leader</th>
+                    <th width="20%">Satus</th>
                     <th width="30%">Action</th>
                 </tr>
                 </tfoot>
