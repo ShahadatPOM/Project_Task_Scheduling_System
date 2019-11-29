@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="217b230f-1077-4111-a8c7-237c59c6b989" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +131,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/team" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -142,15 +142,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\intern\final\ptss\app\Http\Controllers\admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\intern\final\Project_Task_Scheduling_System\resources\views\team" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views\project_manager" />
       <recent name="F:\intern\final\Project_Task_Scheduling_System\resources\views\project_manager" />
       <recent name="D:\ptss\resources\views" />
       <recent name="F:\intern\ptss\resources\views" />
-      <recent name="F:\intern\final\ptss\resources\views\project" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\intern\final\ptss\app\Http\Controllers\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -202,7 +202,7 @@
       <workItem from="1574944779787" duration="25335000" />
       <workItem from="1574999789999" duration="10627000" />
       <workItem from="1575010720824" duration="23000" />
-      <workItem from="1575020525483" duration="2027000" />
+      <workItem from="1575020525483" duration="10158000" />
     </task>
     <servers />
   </component>

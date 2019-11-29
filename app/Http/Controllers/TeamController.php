@@ -51,6 +51,25 @@ class TeamController extends Controller
 
         return back();
     }
+    public function memberList($id){
+        $team = Team::find($id);
+
+        $mmomberOfTeam=[];
+        foreach($team->members as $member){
+            $memberOfTeam[]=[
+               $member
+            ];
+            $memberNames= User::whereIn('id', $memberOfTeam)->get();
+        }
+        return view('team.memberList', compact( 'team','memberNames'));
+    }
+
+    public function leader($id){
+        $leader = User::find($id);
+        $leader->role_id = 3;
+        $leader->save();
+        return back();
+    }
 
     public function show()
     {

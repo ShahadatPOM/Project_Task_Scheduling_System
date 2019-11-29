@@ -13,34 +13,31 @@
             {{ session()->get('message') }}
         </div>
     @endif
-
+    {{--member for each team--}}
     <div class="card">
         <div class="card-header">
             <a
-                class="btn" href="">Add New Team</a>
+                class="btn" href="">Members of {{ $team->name }}</a>
         </div>
-        <!-- /.card-header -->
         <div class="card-body">
 
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="example2" class="table table-bordered table-striped">
+
                 <thead>
                 <tr>
-                    <th width="20%">Team Name</th>
-                    <th width="20%">Department Name</th>
-                    <th width="20%">Leader</th>
+                    <th width="30%">Member Name</th>
                     <th width="20%">Satus</th>
                     <th width="30%">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($teams as $team)
+               @foreach($memberNames as $member)
+
                     <tr>
-                        <td>{{ $team->name }}</td>
-                        <td>{{ $team->department->name }}</td>
-                        <td>team leader</td>
+                        <td>{{ $member->name }}</td>
 
                         <td>
-                            @if($team->status == 1)
+                            @if($member->status == 1)
                                 <span class="badge badge-success">Active</span>
                             @else
                                 <span class="badge badge-warning">Inactive</span>
@@ -49,25 +46,27 @@
                         <td>
                             <a title="edit" class="btn btn-sm btn-warning" href="{{ route('team.edit', $team->id) }}"><i class="fa fa-pencil"></i></a>
                             <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
-                            <a title="view" class="btn btn-sm btn-primary" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-eye"></i></a>
+                            <a title="view" class="btn btn-sm btn-primary" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
+                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>
+                            <a class="btn btn-sm btn-light" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-user-plus"></i>Make Leader</a>
+
                         </td>
                     </tr>
-                @endforeach
+                    @endforeach
+
+
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th width="20%">Team Name</th>
-                    <th width="20%">Department Name</th>
-                    <th width="20%">Leader</th>
+                    <th width="30%">Member Name</th>
                     <th width="20%">Satus</th>
                     <th width="30%">Action</th>
                 </tr>
                 </tfoot>
             </table>
         </div>
-        <!-- /.card-body -->
     </div>
-
+    <!-- /.card -->
 @endsection
 
 @push('base.js')
