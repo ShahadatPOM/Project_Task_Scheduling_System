@@ -31,6 +31,7 @@
                 </tr>
                 </thead>
                 <tbody>
+
                @foreach($memberNames as $member)
 
                     <tr>
@@ -48,8 +49,11 @@
                             <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
                             <a title="view" class="btn btn-sm btn-primary" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
                             <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>
+                            @if(!$leader)
                             <a class="btn btn-sm btn-light" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-user-plus"></i>Make Leader</a>
-
+                                @elseif($member->role_id == 3)
+                                <a class="btn btn-sm btn-light" href="{{ route('team.leader.change', $member->id) }}"><i class="fa fa-edit"></i>Change Leader</a>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

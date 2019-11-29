@@ -73,6 +73,7 @@ Route::group(['as' => 'team.', 'prefix' => 'team', 'middleware' => ['auth']], fu
     Route::post('assign/{id}', 'TeamController@assign')->name('assign');
     Route::get  ('member/list/{id}', 'TeamController@memberList')->name('member.list');
     Route::get  ('leader/{id}', 'TeamController@leader')->name('leader');
+    Route::get  ('leader/change/{id}', 'TeamController@leaderChange')->name('leader.change');
 });
 
 //Profile

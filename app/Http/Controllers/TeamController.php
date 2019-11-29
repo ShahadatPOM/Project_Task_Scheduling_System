@@ -43,31 +43,43 @@ class TeamController extends Controller
         $team->status = $request->status;
         $team->save();
 
-        foreach ($request->members as $member){
-           $user = User::find($member);
-           $user->team_id = $team->id;
-           $user->save();
+        foreach ($request->members as $member) {
+            $user = User::find($member);
+            $user->team_id = $team->id;
+            $user->save();
         }
 
         return back();
     }
-    public function memberList($id){
+
+    public function memberList($id)
+    {
         $team = Team::find($id);
 
-        $mmomberOfTeam=[];
-        foreach($team->members as $member){
-            $memberOfTeam[]=[
-               $member
+        $mmomberOfTeam = [];
+        foreach ($team->members as $member) {
+            $memberOfTeam[] = [
+                $member
             ];
-            $memberNames= User::whereIn('id', $memberOfTeam)->get();
+            $memberNames = User::whereIn('id', $memberOfTeam)->get();
         }
-        return view('team.memberList', compact( 'team','memberNames'));
+
+        foreach($memberNames as $leader)
+       $leader = User::where('role_id', 3)->first();
+        return view('team.memberList', compact('team', 'memberNames', 'leader'));
     }
 
-    public function leader($id){
+    public function leader($id)
+    {
         $leader = User::find($id);
         $leader->role_id = 3;
         $leader->save();
+        return back();
+    }
+    public function leaderChange($id){
+        $changeLeader = User::find($id);
+        $changeLeader->role_id = 4;
+        $changeLeader->save();
         return back();
     }
 
