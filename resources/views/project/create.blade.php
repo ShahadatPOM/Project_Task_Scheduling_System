@@ -54,9 +54,24 @@
                                     </select>
                                 </div>
                             </div>
+                            {{--<div class="col-lg-12 input-group control-group increment">
+                                <input type="file" name="filenames[]" class="form-control @error('file') is-invalid @enderror"
+                                       multiple
+                                       accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add
+                                    </button>
+                                </div>
+                            </div>--}}
                             <div class="form-group">
-                                <label for="inputDescription">Required Files</label>
-                                <input type="file" class="form-control" name="photos[]" multiple/>
+                            <label for="">Require Files</label>
+
+                            <div class="col-lg-12 input-group control-group increment">
+                                <input type="file" class="form-control"  name="photos[]" multiple/>
+                                <div class="form-group input_fields_wrap input-group-btn">
+                                <button class="add_field_button btn btn-info" type="button"><i class="fa fa-plus"></i></button>
+                                </div>
+                             </div>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -129,5 +144,28 @@
                 'tags': true,
             });
         })
+
+
+    $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+    e.preventDefault();
+    if(x < max_fields){ //max input box allowed
+    x++; //text box increment
+    $(wrapper).append('<div class="form-group">'+'<br>'+ '<div class="col-lg-12 input-group control-group increment">' +
+        '<input type="file" name="photos[]" class="form-control"/>' +
+        ' <a href="#"><div class="form-group remove_field input-group-btn">' +
+        '<button class=" btn btn-info" type="button"><i class="fa fa-minus"></i></button></a></div></div></div>'); //add input box
+    }
+    });
+
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+    e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+    });
     </script>
 @endpush

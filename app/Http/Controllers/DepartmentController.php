@@ -24,7 +24,12 @@ class DepartmentController extends Controller
         $department->name = $request->name;
         $department->status = $request->status;
         $department->save();
-        return back();
+        $notification = array(
+            'message' => 'Department created successfully!',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification);
     }
 
     public function show(){

@@ -1,8 +1,9 @@
 @extends('layouts.backend.master')
 
 @section('base.title', 'Admin')
+@push('base.css')
 
-
+@endpush
 @section('master.content')
     <section class="content-header">
         <div class="container-fluid">
@@ -66,3 +67,6 @@
     </section>
     <!-- /.card -->
 @endsection
+@push('base.js')
+
+@endpush

@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', "Auth\LoginController@showLoginForm")->name('root');
 
+//toastr
+Route::get('notification', 'HomeController@notification');
 
 Auth::routes();
 

@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('assets/backend/plugins/select2/css/select2.min.css')}}">
+
+{{--    toastr--}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     @stack('base.css')
 
 </head>
@@ -75,6 +78,31 @@
 {{--select2--}}
 <script src="{{asset('assets/backend/plugins/select2/js/select2.full.min.js')}}"></script>
 
+{{--toastr--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+<script>
+        @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+    @endif
+</script>
 @stack('base.js')
 
 </body>
