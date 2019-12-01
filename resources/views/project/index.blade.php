@@ -71,14 +71,27 @@
                         <br/>
                     </td>
                     <td class="project_progress">
-                        <div class="progress progress-sm">
-                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0"
-                                 aria-volumemax="100" style="width: 77%">
+                        
+                        @if($project->assign->status == 0)
+                        <small>
+                            <div class="progress progress-sm">
+                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="0" aria-volumemin="0"
+                                 aria-volumemax="100" style="width: 5%">
                             </div>
                         </div>
-                        <small>
-                            77% Complete
+                            0% Complete
                         </small>
+                        @else
+                         <small>
+                            <div class="progress progress-sm">
+                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="100" aria-volumemin="0"
+                                 aria-volumemax="100" style="width: 100%">
+                            </div>
+                        </div>
+                            100% Complete
+                        </small>
+                        @endif
+
                     </td>
 
                     <td class="project-state">

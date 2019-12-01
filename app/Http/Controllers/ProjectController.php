@@ -20,6 +20,7 @@ class ProjectController extends Controller
     {
         if (Auth::user()->role->id == 1) {
             $projects = Project::all();
+        
             $teams = Team::all();
             $users = collect();
             foreach ($teams as $team) {

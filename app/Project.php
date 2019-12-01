@@ -24,9 +24,9 @@ class Project extends Model
         return $this->hasMany('App\Requirement');
     }
 
-    public function assigns()
+    public function assign()
     {
-        return $this->hasMany('App\ProjectAssign');
+        return $this->hasOne('App\ProjectAssign');
     }
     public function department(){
         return $this->belongsTo('App\Department');
