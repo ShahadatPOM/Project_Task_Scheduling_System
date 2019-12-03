@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Project;
-use App\ProjectAssign;
 use App\Team;
 use App\User;
 use Illuminate\Http\Request;
@@ -43,7 +42,6 @@ class TeamController extends Controller
 
         foreach ($request->members as $member) {
             $user = User::find($member);
-            $user->team_id = $team->id;
             $user->save();
             $notification = array(
                 'message' => 'User updated successfully!',

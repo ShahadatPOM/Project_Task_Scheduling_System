@@ -40,7 +40,7 @@
                                 </div>
                                     <div>
                                         <label for="tagName">Department Name</label>
-                                        <select class="form-control" name="department_name" id="">
+                                        <select class="form-control" name="department_id" id="">
                                             <option selected>Select Department</option>
                                             @foreach($departments as $department)
                                             <option value="{{ $department->id }}">{{ $department->name }}</option>
