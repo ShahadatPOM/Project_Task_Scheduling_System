@@ -40,11 +40,12 @@
                                 </div>
                                     <div>
                                         <label for="tagName">Department Name</label>
-                                        <input id="id" type="text" hidden
-                                               class="form-control @error('department_id') is-invalid @enderror" name="department_id"
-                                               value="{{ $department->id }}" >
-                                        <input id="name" type="text" readonly
-                                               class="form-control @error('department_name') is-invalid @enderror" value="{{ $department->name }}" >
+                                        <select class="form-control" name="department_name" id="">
+                                            <option selected>Select Department</option>
+                                            @foreach($departments as $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                                @endforeach
+                                        </select>
 
                                         @error('department_id')
                                         <span class="invalid-feedback" role="alert">
@@ -79,21 +80,7 @@
                                         </span>
                                     @enderror
                                 </div>--}}
-                                <div>
-                                    <label for="tagName">Project Title</label>
-                                    <select class="form-control @error('project_id') is-invalid @enderror"  name="project_id" id="">
-                                        <option selected>Select Project</option>
-                                        @foreach($projects as $project)
-                                        <option class="form-control"  value="{{ $project->id }}">{{ $project->title }}</option>
-                                            @endforeach
-                                    </select>
 
-                                    @error('project_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
                                     <div>
                                         <label for="tagName">Status</label>
                                         <select class="form-control" name="status">

@@ -29,8 +29,7 @@
                     <th width="10%">Name</th>
                     <th width="10%">Email</th>
                     <th width="15%">Department</th>
-                    <th width="15%">Designation</th>
-                    <th width="10%">Role</th>
+                    <th width="15%">Role</th>
                     <th width="10%">Status</th>
                     <th width="15%">Action</th>
 
@@ -43,7 +42,6 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->department_id }}</td>
-                        <td>{{ $user->designation}}</td>
                         <td>{{ $user->role->name }}</td>
                         {{--  <td>{{ Carbon\Carbon::createFromFormat("Y-m-d H:i:s",$user->created_at)->diffForHumans() }}</td>--}}
                         {{--<td>{{ Carbon\Carbon::createFromFormat("Y-m-d H:i:s",$user->created_at)->diff(Carbon\Carbon::now())->format('%y years') }}</td>--}}
@@ -68,7 +66,6 @@
                     <th width="10%">Name</th>
                     <th width="10%">Email</th>
                      <th width="15%">Department</th>
-                    <th width="15%">Designation</th>
                     <th width="10%">Role</th>
                     <th width="10%">Status</th>
                     <th width="15%">Action</th>

@@ -8,6 +8,7 @@ use App\ProjectAssign;
 use App\Team;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
@@ -18,13 +19,11 @@ class TeamController extends Controller
 
     }
 
-    public function create($id)
+    public function create()
     {
-
-        $users = User::where('department_id', $id)->where('role_id', 4)->get();
-        $projects = Project::where('status', 0)->get();
-        $department = Department::findOrfail($id);
-        return view('team.create', compact('department', 'projects', 'users'));
+        $users = User::where('role_id', 4)->get();
+        $departments = Department::all();
+        return view('team.create', compact('departments', 'users'));
     }
 
     public function store(Request $request)
@@ -38,7 +37,6 @@ class TeamController extends Controller
         $team = new Team();
         $team->name = $request->name;
         $team->department_id = $request->department_id;
-        $team->project_id = $request->project_id;
         $team->members = $request->members;
         $team->status = $request->status;
         $team->save();
@@ -47,9 +45,13 @@ class TeamController extends Controller
             $user = User::find($member);
             $user->team_id = $team->id;
             $user->save();
+            $notification = array(
+                'message' => 'User updated successfully!',
+                'alert-type' => 'success'
+            );
         }
 
-        return back();
+        return back()->with($notification);
     }
 
     public function memberList($id)

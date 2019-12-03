@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'status', 'password', 'role_id', 'team_id', 'mobile', 'address', 'designation', 'department_id', 'education', 'specialist_in', 'image',
+        'role_id','department_id','name', 'username', 'email', 'status', 'password',
     ];
 
     /**
@@ -45,6 +45,9 @@ class User extends Authenticatable
     }
     public function team(){
         return $this->belongsTo('App\Team');
+    }
+    public function profile(){
+        return $this->hasOne('App\Profile');
     }
 
 }

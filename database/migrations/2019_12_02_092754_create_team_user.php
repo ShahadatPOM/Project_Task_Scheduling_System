@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilesTable extends Migration
+class CreateTeamUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('team_user', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('team_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('mobile')->nullable();
-            $table->string('address')->nullable();
-            $table->string('designation');
-            $table->string('education')->nullable();
-            $table->string('specialist_in');
-            $table->string('image')->default('default.png');
             $table->timestamps();
+            $table->foreign('team_id')
+                ->references('id')->on('teams')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade')
@@ -37,6 +36,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('team_user');
     }
 }

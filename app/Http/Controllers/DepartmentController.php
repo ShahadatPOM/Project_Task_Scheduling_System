@@ -48,11 +48,19 @@ class DepartmentController extends Controller
         $department->name = $request->name;
         $department->status = $request->status;
         $department->save();
-        return back();
+        $notification = array(
+            'message' => 'Department updated successfully!',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
     }
     public function delete($id){
         $department = Department::findOrfail($id);
         $department->delete();
-        return back();
+        $notification = array(
+            'message' => 'Department deleted successfully!',
+            'alert-type' => 'warning'
+        );
+        return back()->with($notification);
     }
 }

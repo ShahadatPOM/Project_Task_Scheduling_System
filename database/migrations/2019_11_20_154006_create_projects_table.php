@@ -15,14 +15,19 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->json('departments')->nullable();
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->json('departments');
             $table->string('title');
             $table->string('description');
             $table->string('client');
             $table->bigInteger('estimated_budget');
             $table->string('estimated_project_duration');
-            $table->boolean('status');
+            $table->integer('status');
             $table->timestamps();
+            $table->foreign('team_id')
+                ->references('id')->on('teams')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

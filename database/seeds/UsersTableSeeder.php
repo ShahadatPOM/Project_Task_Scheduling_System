@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use App\User;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -12,16 +12,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        User::create([
             'role_id' => '1',
             'name' => 'admin',
             'username' => 'admin',
             'email' => 'admin@admin.com',
-            'mobile' => '01950734237',
-            'address' => 'uttara, Dhaka-1230',
-            'designation' => 'CEO',
-            'education' => 'Bsc in CSE',
-            'specialist_in' => 'PHP',
             'password' => bcrypt('000'),
         ]);
     }

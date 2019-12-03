@@ -28,8 +28,6 @@ class UserController extends Controller
            'name' => 'required',
            'username' => 'required|unique:users,username,'.$request->id,
            'email' => 'required|email',
-           'designation' => 'required',
-           'specialist_in' => 'required',
            'role_id' => 'required',
            'department_id' => 'required',
         ]);
@@ -38,19 +36,24 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->username = $request->username;
         $user->email = $request->email;
-        $user->designation = $request->designation;
-        $user->specialist_in = $request->specialist_in;
         $user->role_id = $request->role_id;
-        $user->team_id = $request->team_id;
         $user->department_id = $request->department_id;
         $user->status = $request->status;
         $user->save();
-        return back();
+        $notification = array(
+            'message' => 'User updated successfully!',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
     }
     public function delete($id){
         $user = User::findOrfail($id);
         $user->delete();
-        return back();
+        $notification = array(
+            'message' => 'User deleted successfully!',
+            'alert-type' => 'warning'
+        );
+        return back()->with($notification);
     }
 
 }

@@ -54,11 +54,26 @@
                                     <input id="email" type="email"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{ old('email') }}" required autocomplete="email">
+
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
+
+                                    <label for="tagName">Designation</label>
+                                    <input id="designation" type="text"
+                                           class="form-control @error('designation') is-invalid @enderror"
+                                           name="designation"
+                                           value="{{ old('designation') }}" required autocomplete="designation"
+                                           autofocus>
+
+                                    @error('designation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
 
                                     <label for="tagName">Password</label>
                                     <input id="password" type="password"

@@ -322,36 +322,36 @@
                                     <!-- /.tab-pane -->
 
                                     <div class="tab-pane" id="settings">
-                                        <form class="form-horizontal" action="{{ route('profile.store', $user->id) }}" method="post" enctype="multipart/form-data">
+                                        <form class="form-horizontal" action="{{ route('profile.store' }}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputName" name="name" value="{{ $user->name }}">
+                                                    <input type="text" class="form-control" id="inputName" name="name" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $user->email }}">
+                                                    <input type="email" class="form-control" id="inputEmail" name="email" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputEmail" class="col-sm-2 col-form-label">Mobile</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputEmail" name="mobile" placeholder="Mobile..." value="{{ $user->mobile }}">
+                                                    <input type="text" class="form-control" id="inputEmail" name="mobile" placeholder="Mobile..." value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputExperience" class="col-sm-2 col-form-label">Specialist</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputExperience" name="specialist_in" value="{{ $user->specialist_in }}">
+                                                    <input type="text" class="form-control" id="inputExperience" name="specialist_in" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputSkills" class="col-sm-2 col-form-label">Address</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputSkills" name="address" placeholder="address" value="{{ $user->address }}">
+                                                    <input type="text" class="form-control" id="inputSkills" name="address" placeholder="address" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">

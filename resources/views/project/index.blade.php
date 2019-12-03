@@ -70,13 +70,13 @@
                             {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $project->created_at)->diffForHumans() }}
                         <br/>
                     </td>
+                    @if($project->assign)
                     <td class="project_progress">
-                        
                         @if($project->assign->status == 0)
                         <small>
                             <div class="progress progress-sm">
                             <div class="progress-bar bg-green" role="progressbar" aria-volumenow="0" aria-volumemin="0"
-                                 aria-volumemax="100" style="width: 5%">
+                                 aria-volumemax="100" style="width: 0%">
                             </div>
                         </div>
                             0% Complete
@@ -93,7 +93,17 @@
                         @endif
 
                     </td>
-
+                        @else
+                        <td class="project_progress">
+                                <small>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0"
+                                             aria-volumemax="100" style="width: 100%">
+                                        </div>
+                                    </div>
+                                    not assigned yet
+                                </small>
+                    @endif
                     <td class="project-state">
 
                         @if($project->status == 1)
@@ -105,6 +115,7 @@
                             <span class="badge badge-danger">Pending</span>
                         @endif
                     </td>
+
                     <td class="project-actions text-right">
                         <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
                         @if(Auth::user()->role_id == 1)

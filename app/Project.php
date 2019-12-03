@@ -20,16 +20,12 @@ class Project extends Model
         return $this->hasMany('App\File');
     }
 
-    public function requirements(){
-        return $this->hasMany('App\Requirement');
+    public function tasks(){
+        return $this->hasMany('App\Task');
     }
 
-    public function assign()
-    {
-        return $this->hasOne('App\ProjectAssign');
-    }
-    public function department(){
-        return $this->belongsTo('App\Department');
+    public function departments(){
+        return $this->hasMany('App\Department');
     }
 
     protected $casts=['departments' => 'array'];

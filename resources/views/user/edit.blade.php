@@ -64,32 +64,7 @@
                                     </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="tagName">Designation</label>
-                                        <input id="designation" type="text"
-                                               class="form-control @error('designation') is-invalid @enderror"
-                                               name="designation"
-                                               value="{{ $user->designation }}">
 
-                                        @error('designation')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="tagName">Specialist_in</label>
-                                        <input id="designation" type="text"
-                                               class="form-control @error('specialist_in') is-invalid @enderror"
-                                               name="specialist_in"
-                                               value="{{ $user->specialist_in }}">
-
-                                        @error('specialist_in')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                        @enderror
-                                    </div>
                                     <div class="form-group col-md-6">
                                         <label for="tagName">Department</label>
                                         <select class="form-control" name="department_id">

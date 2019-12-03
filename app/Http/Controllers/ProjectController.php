@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\ProjectAssign;
-use App\Requirement;
+use App\Task;
 use App\Team;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class ProjectController extends Controller
     {
         if (Auth::user()->role->id == 1) {
             $projects = Project::all();
-        
+
             $teams = Team::all();
             $users = collect();
             foreach ($teams as $team) {
@@ -96,7 +96,7 @@ class ProjectController extends Controller
         $requirements = $request->requirements;
         if ($requirements) {
             foreach ($requirements as $requirement) {
-                $require = new Requirement();
+                $require = new Task();
                 $require->name = $requirement;
                 $project->requirements()->save($require);
             }

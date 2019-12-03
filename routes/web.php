@@ -66,7 +66,7 @@ Route::group(['as' => 'project.', 'prefix' => 'project', 'middleware' => ['auth'
 //Team
 Route::group(['as' => 'team.', 'prefix' => 'team', 'middleware' => ['auth']], function () {
     Route::get('index', 'TeamController@index')->name('index');
-    Route::get('create/{id}', 'TeamController@create')->name('create');
+    Route::get('create', 'TeamController@create')->name('create');
     Route::post('store', 'TeamController@store')->name('store');
     Route::get('show/{id}', 'TeamController@show')->name('show');
     Route::get('edit/{id}', 'TeamController@edit')->name('edit');
@@ -89,13 +89,13 @@ Route::group(['as' => 'profile.', 'prefix' => 'profile', 'middleware' => ['auth'
     Route::get('delete/{id}', 'ProfileController@delete')->name('delete');
 });
 
-//Requirement
+//Task
 Route::group(['as' => 'requirement.', 'prefix' => 'requirement', 'middleware' => ['auth']], function () {
-    Route::get('index', 'RequirementController@index')->name('index');
-    Route::get('create/{id}', 'RequirementController@create')->name('create');
-    Route::post('store/{id}', 'RequirementController@store')->name('store');
-    Route::get('show/{id}', 'RequirementController@show')->name('show');
-    Route::get('edit/{id}', 'RequirementController@edit')->name('edit');
-    Route::post('update/{id}', 'RequirementController@update')->name('update');
-    Route::get('delete/{id}', 'RequirementController@delete')->name('delete');
+    Route::get('index', 'TaskController@index')->name('index');
+    Route::get('create/{id}', 'TaskController@create')->name('create');
+    Route::post('store/{id}', 'TaskController@store')->name('store');
+    Route::get('show/{id}', 'TaskController@show')->name('show');
+    Route::get('edit/{id}', 'TaskController@edit')->name('edit');
+    Route::post('update/{id}', 'TaskController@update')->name('update');
+    Route::get('delete/{id}', 'TaskController@delete')->name('delete');
 });

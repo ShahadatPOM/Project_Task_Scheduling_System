@@ -98,7 +98,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('team.create') }}" class="nav-link">
                                 <i class="fa fa-plus nav-icon"></i>
                                 <p>Create New</p>
                             </a>
@@ -172,6 +172,27 @@
                     </ul>
                 </li>
                     @endif
+{{--                team leader began--}}
+                @if(Auth::user()->role->id == 3)
+                    <li class="nav-item">
+                        <a href="{{ route('user.index') }}" class="nav-link">
+                            <i class="fa fa-list nav-icon"></i>
+                            <p>All Users</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('project.index') }}" class="nav-link">
+                            <i class="fa fa-list nav-icon"></i>
+                            <p>Projects</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('team.index') }}" class="nav-link">
+                            <i class="fa fa-list nav-icon"></i>
+                            <p>Teams</p>
+                        </a>
+                    </li>
+                @endif
 {{--                team members began--}}
                 @if(Auth::user()->role->id == 4)
                         <li class="nav-item">
