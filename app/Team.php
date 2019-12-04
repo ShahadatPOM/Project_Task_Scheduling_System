@@ -12,7 +12,7 @@ class Team extends Model
     protected $casts =['members'=>'array'];
 
     public function users(){
-        return $this->hasMany('App\User');
+        return $this->belongsToMany('App\User');
     }
     public function projects(){
         return $this->hasMany('App\Project');

@@ -16,8 +16,7 @@
     {{--member for each team--}}
     <div class="card">
         <div class="card-header">
-            <a
-                class="btn" href="">Members of {{ $team->name }}</a>
+            <h2 style="text-align: center">Team Members of <a href="">{{ $team->name }}</a></h2>
         </div>
         <div class="card-body">
 
@@ -33,9 +32,8 @@
                 <tbody>
 
                @foreach($memberNames as $member)
-
                     <tr>
-                        <td>{{ $member->name }}</td>
+                        <td>{{ $member->name }} @if($member->role_id == 3) (Leader) @endif</td>
 
                         <td>
                             @if($member->status == 1)
@@ -45,14 +43,14 @@
                             @endif
                         </td>
                         <td>
-                            <a title="edit" class="btn btn-sm btn-warning" href="{{ route('team.edit', $team->id) }}"><i class="fa fa-pencil"></i></a>
                             <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
-                            <a title="view" class="btn btn-sm btn-primary" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
-                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>
-                            @if(!$leader)
-                            <a class="btn btn-sm btn-light" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-user-plus"></i>Make Leader</a>
-                                @elseif($member->role_id == 3)
-                                <a class="btn btn-sm btn-light" href="{{ route('team.leader.change', $member->id) }}"><i class="fa fa-edit"></i>Change Leader</a>
+                            <a title="view" class="btn btn-sm btn-info" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
+{{--                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>--}}
+
+                            @if($member->role->id == 3)
+                                <a class="btn btn-sm btn-warning pull-right" href="{{ route('team.leader.change', $member->id) }}"><i class="fa fa-edit"></i>Change Leader</a>
+                            @else
+                                <a class="btn btn-sm btn-primary pull-right" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-plus"></i>Make Leader</a>
                             @endif
                         </td>
                     </tr>

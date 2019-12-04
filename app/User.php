@@ -43,8 +43,8 @@ class User extends Authenticatable
     public function department(){
         return $this->belongsTo('App\Department');
     }
-    public function team(){
-        return $this->belongsTo('App\Team');
+    public function teams(){
+        return $this->belongsToMany('App\Team');
     }
     public function profile(){
         return $this->hasOne('App\Profile');

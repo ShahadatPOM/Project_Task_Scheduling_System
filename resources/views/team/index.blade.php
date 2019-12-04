@@ -25,11 +25,10 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th width="20%">Team Name</th>
-                    <th width="20%">Department Name</th>
-                    <th width="20%">Leader</th>
-                    <th width="20%">Satus</th>
-                    <th width="30%">Action</th>
+                    <th width="25%">Team Name</th>
+                    <th width="25%">Department Name</th>
+                    <th width="25%">Satus</th>
+                    <th width="35%">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,7 +36,6 @@
                     <tr>
                         <td>{{ $team->name }}</td>
                         <td>{{ $team->department->name }}</td>
-                        <td>team leader</td>
 
                         <td>
                             @if($team->status == 1)
@@ -56,11 +54,10 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th width="20%">Team Name</th>
-                    <th width="20%">Department Name</th>
-                    <th width="20%">Leader</th>
-                    <th width="20%">Satus</th>
-                    <th width="30%">Action</th>
+                    <th width="25%">Team Name</th>
+                    <th width="25%">Department Name</th>
+                    <th width="25%">Satus</th>
+                    <th width="35%">Action</th>
                 </tr>
                 </tfoot>
             </table>

@@ -42,9 +42,9 @@
                             @endif
                         </td>
                         <td>
-                            <a title="edit" class="btn btn-sm btn-outline-secondary" href="{{ route('department.edit', $department->id) }}"><i class="fa fa-pencil"></i></a>
-                            <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-outline-danger" href="{{ route('department.delete', $department->id) }}"><i class="fa fa-trash"></i></a>
-                            <a title="create team" class="btn btn-sm btn-outline-info" href="{{ route('team.create', $department->id) }}"><i class="fa fa-plus"></i></a>
+                            <a title="edit" class="btn btn-sm btn-info" href="{{ route('department.edit', $department->id) }}"><i class="fa fa-pencil"></i></a>
+                            <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('department.delete', $department->id) }}"><i class="fa fa-trash"></i></a>
+                            <a title="create team" class="btn btn-sm btn-primary" href="{{ route('team.create', $department->id) }}"><i class="fa fa-plus"></i></a>
                         </td>
                     </tr>
                 @endforeach

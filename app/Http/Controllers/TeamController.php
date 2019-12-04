@@ -13,8 +13,14 @@ class TeamController extends Controller
 {
     public function index()
     {
-        $teams = Team::all();
-        return view('team.index', compact('teams'));
+        if(Auth::user()->role->id == 1 || Auth::user()->role->id == 2) {
+            $teams = Team::all();
+            return view('team.index', compact('teams'));
+        }
+        if(Auth::user()->role->id == 3 || Auth::user()->role->id == 4){
+            $teams = Team::all();
+            return view('team.index', compact('teams'));
+        }
 
     }
 
@@ -44,7 +50,7 @@ class TeamController extends Controller
             $user = User::find($member);
             $user->save();
             $notification = array(
-                'message' => 'User updated successfully!',
+                'message' => 'Team created successfully!',
                 'alert-type' => 'success'
             );
         }
@@ -55,18 +61,16 @@ class TeamController extends Controller
     public function memberList($id)
     {
         $team = Team::find($id);
-
-        $mmomberOfTeam = [];
+        $memberOfTeam = [];
         foreach ($team->members as $member) {
             $memberOfTeam[] = [
                 $member
             ];
             $memberNames = User::whereIn('id', $memberOfTeam)->get();
+
         }
 
-        foreach($memberNames as $leader)
-       $leader = User::where('role_id', 3)->first();
-        return view('team.memberList', compact('team', 'memberNames', 'leader'));
+        return view('team.memberList', compact('team', 'memberNames'));
     }
 
     public function leader($id)
