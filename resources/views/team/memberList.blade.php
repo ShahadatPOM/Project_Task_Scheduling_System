@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
 
-               @foreach($memberNames as $member)
+               @foreach($team->users as $member)
                     <tr>
                         <td>{{ $member->name }} @if($member->role_id == 3) (Leader) @endif</td>
 
@@ -42,15 +42,19 @@
                                 <span class="badge badge-warning">Inactive</span>
                             @endif
                         </td>
+
                         <td>
                             <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
                             <a title="view" class="btn btn-sm btn-info" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
 {{--                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>--}}
 
-                            @if($member->role->id == 3)
+                            @if ( $member->role_id == 3)
                                 <a class="btn btn-sm btn-warning pull-right" href="{{ route('team.leader.change', $member->id) }}"><i class="fa fa-edit"></i>Change Leader</a>
-                            @else
-                                <a class="btn btn-sm btn-primary pull-right" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-plus"></i>Make Leader</a>
+                                @endif
+
+                            @if ( !(in_array(3,$roles)))
+                                <a class="btn btn-sm btn-success pull-right" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-edit"></i>Make Leader</a>
+
                             @endif
                         </td>
                     </tr>

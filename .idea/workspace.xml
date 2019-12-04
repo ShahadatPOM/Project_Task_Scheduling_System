@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -169,6 +164,7 @@
       <workItem from="1575330697147" duration="5777000" />
       <workItem from="1575389369295" duration="591000" />
       <workItem from="1575408930588" duration="10688000" />
+      <workItem from="1575447468435" duration="2381000" />
     </task>
     <servers />
   </component>

@@ -45,32 +45,16 @@ class TeamController extends Controller
         $team->members = $request->members;
         $team->status = $request->status;
         $team->save();
-
-        foreach ($request->members as $member) {
-            $user = User::find($member);
-            $user->save();
-            $notification = array(
-                'message' => 'Team created successfully!',
-                'alert-type' => 'success'
-            );
-        }
-
-        return back()->with($notification);
+        $team->users()->attach($request->members);
+        return back();
     }
 
     public function memberList($id)
     {
         $team = Team::find($id);
-        $memberOfTeam = [];
-        foreach ($team->members as $member) {
-            $memberOfTeam[] = [
-                $member
-            ];
-            $memberNames = User::whereIn('id', $memberOfTeam)->get();
-
-        }
-
-        return view('team.memberList', compact('team', 'memberNames'));
+        foreach ($team->users as $user)
+            $roles[]=$user->role_id;
+        return view('team.memberList', compact('team','roles'));
     }
 
     public function leader($id)
