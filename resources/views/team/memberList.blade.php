@@ -19,7 +19,6 @@
             <h2 style="text-align: center">Team Members of <a href="">{{ $team->name }}</a></h2>
         </div>
         <div class="card-body">
-
             <table id="example2" class="table table-bordered table-striped">
 
                 <thead>

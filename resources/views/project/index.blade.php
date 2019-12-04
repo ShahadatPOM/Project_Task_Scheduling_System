@@ -108,21 +108,13 @@
 
                         @if($project->status == 1)
                         <span class="badge badge-success">Success</span>
-
-                            @elseif(DB::table('project_assigns')->where('project_id', $project->id )->first())
-                            <span class="badge badge-info">On Progress</span>
-                            @else
-                            <span class="badge badge-danger">Pending</span>
-                        @endif
+                            @endif
                     </td>
 
                     <td class="project-actions text-right">
                         <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
-                        @if(Auth::user()->role_id == 1)
                         <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i class="fa fa-trash"></i></a>
-                        @endif
-                        <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
-                        <a title="assign" class="btn btn-sm btn-warning" href="{{ route('project.assignForm', $project->id) }}"><i class="fa fa-plus"></i></a>
+
 
                     </td>
                 </tr>
@@ -171,11 +163,8 @@
                             </td>
                             <td class="project-actions text-right">
                                 <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $teamProject->id) }}"><i class="fa fa-pencil"></i></a>
-                                @if(Auth::user()->role_id == 1)
                                     <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $teamProject->id) }}"><i class="fa fa-trash"></i></a>
-                                @endif
                                 <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $teamProject->id) }}"><i class="fa fa-eye"></i></a>
-                                <a title="assign" class="btn btn-sm btn-warning" href="{{ route('project.assignForm', $teamProject->id) }}"><i class="fa fa-plus"></i></a>
 
                             </td>
                         </tr>

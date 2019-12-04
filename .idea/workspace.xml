@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_21_132752_create_files_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_21_132752_create_files_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/1575106377_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/files/1575106377_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -164,8 +169,17 @@
       <workItem from="1575330697147" duration="5777000" />
       <workItem from="1575389369295" duration="591000" />
       <workItem from="1575408930588" duration="10688000" />
-      <workItem from="1575447468435" duration="2381000" />
+      <workItem from="1575447468435" duration="2696000" />
+      <workItem from="1575460744055" duration="3544000" />
     </task>
+    <task id="LOCAL-00001" summary="make leader works fine">
+      <created>1575450114059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575450114059</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,5 +197,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="make leader works fine" />
+    <option name="LAST_COMMIT_MESSAGE" value="make leader works fine" />
   </component>
 </project>

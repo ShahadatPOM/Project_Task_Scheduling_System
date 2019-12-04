@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Department;
-use App\ProjectAssign;
 use App\Task;
 use App\Team;
 use App\User;
@@ -20,30 +19,12 @@ class ProjectController extends Controller
     {
         if (Auth::user()->role->id == 1) {
             $projects = Project::all();
-
             $teams = Team::all();
             $users = collect();
             foreach ($teams as $team) {
                 $users = User::whereIn('id', $team->members)->get();
             }
             return view('project.index', compact('projects', 'users'));
-        } elseif (Auth::user()->role->id == 2) {
-            $assigns = ProjectAssign::all();
-            $assign = "";
-            foreach ($assigns as $assign)
-                $assignTime = $assign->created_at;
-            $assignProjects = Project::where('id', $assign->project_id)->get();
-            $teams = Team::all();
-            $users = collect();
-            foreach ($teams as $team) {
-                $users = User::whereIn('id', $team->members)->get();
-            }
-            return view('project_manager.index', compact('assignProjects', 'assignTime', 'users'));
-        } elseif (Auth::user()->role->id == 4) {
-            $findTeam = Auth::user()->team->id;
-            $teamProjects = ProjectAssign::where('team_id', $findTeam)->get();
-
-            return view('project.index', compact('teamProjects'));
         }
 
     }
@@ -51,7 +32,8 @@ class ProjectController extends Controller
     public function create()
     {
         $departments = Department::all();
-        return view('project.create', compact('departments'));
+        $teams = Team::all();
+        return view('project.create', compact('departments', 'teams'));
     }
 
     public function store(Request $request)
@@ -73,32 +55,13 @@ class ProjectController extends Controller
         $project->estimated_project_duration = $request->estimated_project_duration;
         $project->departments = $request->departments;
         $project->status = 0;
-        /*if ($request->hasFile('photos')) {
-            $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx', 'txt', 'html'];
-            $files = $request->file('photos');
-            foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-                $extension = $file->getClientOriginalExtension();
-                $check = in_array($extension, $allowedfileExtension);
-
-                if ($check) {
-                    foreach ($request->photos as $photo) {
-                        $filename = $photo->store('photos');
-
-                        File::create([
-                            'filename' => $filename
-                        ]);
-                    }
-                }
-            }
-        }*/
         $project->save();
         $requirements = $request->requirements;
         if ($requirements) {
             foreach ($requirements as $requirement) {
-                $require = new Task();
-                $require->name = $requirement;
-                $project->requirements()->save($require);
+                $task = new Task();
+                $task->name = $requirement;
+                $project->tasks()->save($task);
             }
         }
         $photos = $request->photos;

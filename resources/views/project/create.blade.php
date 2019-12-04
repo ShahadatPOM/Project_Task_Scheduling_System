@@ -54,15 +54,6 @@
                                     </select>
                                 </div>
                             </div>
-                            {{--<div class="col-lg-12 input-group control-group increment">
-                                <input type="file" name="filenames[]" class="form-control @error('file') is-invalid @enderror"
-                                       multiple
-                                       accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
-                                <div class="input-group-btn">
-                                    <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add
-                                    </button>
-                                </div>
-                            </div>--}}
                             <div class="form-group">
                             <label for="">Require Files</label>
 
