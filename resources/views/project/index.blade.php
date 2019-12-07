@@ -70,52 +70,45 @@
                             {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $project->created_at)->diffForHumans() }}
                         <br/>
                     </td>
-                    @if($project->assign)
                     <td class="project_progress">
-                        @if($project->assign->status == 0)
+                        @if($project->status == 0)
                         <small>
                             <div class="progress progress-sm">
-                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="0" aria-volumemin="0"
-                                 aria-volumemax="100" style="width: 0%">
+                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0"
+                                 aria-volumemax="100" style="width: 100%">
                             </div>
-                        </div>
-                            0% Complete
+                            </div>
+                            Not assigned yet
                         </small>
-                        @else
+                        @elseif($project->status == 1)
                          <small>
                             <div class="progress progress-sm">
-                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="100" aria-volumemin="0"
+                            <div class="progress-bar bg-orange" role="progressbar" aria-volumenow="100" aria-volumemin="0"
                                  aria-volumemax="100" style="width: 100%">
                             </div>
                         </div>
-                            100% Complete
+                            Not started yet
                         </small>
                         @endif
-
                     </td>
-                        @else
-                        <td class="project_progress">
-                                <small>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0"
-                                             aria-volumemax="100" style="width: 100%">
-                                        </div>
-                                    </div>
-                                    not assigned yet
-                                </small>
-                    @endif
+
                     <td class="project-state">
 
-                        @if($project->status == 1)
-                        <span class="badge badge-success">Success</span>
-                            @endif
+                        @if($project->status == 0 && $project->team_id == null)
+                        <span class="badge badge-danger">Pending</span>
+                            @else
+                            <span class="badge badge-warning">Assigned</span>
+
+                        @endif
                     </td>
 
-                    <td class="project-actions text-right">
+                    <td class="project-actions text-center">
+                        <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
                         <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
                         <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i class="fa fa-trash"></i></a>
-
-
+                        @if($project->status == 0 && $project->team_id == null)
+                        <a href="{{ route('project.assignForm', $project->id) }}"><button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Assign</button></a>
+                            @endif
                     </td>
                 </tr>
                     @endforeach

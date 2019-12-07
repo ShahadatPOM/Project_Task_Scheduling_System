@@ -28,29 +28,19 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Choose Project Manager</h3>
+                            <h3 class="card-title">Assign Project</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputDescription">Project Title</label>
                                 <input readonly type="text" name="title" value="{{ $project->title }}" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label for="inputDescription">Project Manager</label>
-                                <select class="form-control" name="project_manager" id="">
-                                    <option selected>Select Project Manager</option>
-
-                                @foreach($managers as $manager)
-                                    <option class="form-control" value="{{ $manager->id }}">{{ $manager->username }}</option>
-                                        @endforeach
-                                </select>
-                            </div>
 
                             <div class="form-group">
                                 <label for="inputDescription">Team</label>
                                 <select class="form-control" name="team" id="">
                                     <option selected>Select team</option>
-                                    @foreach($teamsHasNoProject as $team)
+                                    @foreach($teams as $team)
                                         <option class="form-control" value="{{ $team->id }}">{{ $team->name }}</option>
                                     @endforeach
                                 </select>

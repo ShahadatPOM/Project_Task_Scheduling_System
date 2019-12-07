@@ -86,23 +86,10 @@ class ProjectController extends Controller
 
     public function assignForm($id)
     {
-        $managers = User::where('role_id', 2)->get();
+        $teams = Team::where('status', 1)->get();
         $project = Project::findOrfail($id);
-        $incompleteProjects = ProjectAssign::where('status', 0)->get();
 
-        $teamsHasNoProject = collect();
-        if ($incompleteProjects->count() <= 0) {
-            $teamsHasNoProject = Team::all();
-        } elseif ($incompleteProjects->count() > 0) {
-            $aid = [];
-            foreach ($incompleteProjects as $incomplete) {
-                $aid[] = [
-                    $incomplete->team_id
-                ];
-                $teamsHasNoProject = Team::whereNotIn('id', $aid)->get();
-            }
-        }
-        return view('project.assign', compact('project', 'managers', 'teamsHasNoProject'));
+        return view('project.assign', compact('project', 'teams'));
     }
 
     public function assign(Request $request, $id)
@@ -111,12 +98,10 @@ class ProjectController extends Controller
         $this->validate($request, [
 
         ]);
-        $assign = new ProjectAssign();
-        $assign->project_id = $id;
-        $assign->manager_id = $request->project_manager;
-        $assign->team_id = $request->team;
-        $assign->status = 0;
-        $assign->save();
+        $project = Project::find($id);
+        $project->team_id = $request->team;
+        $project->status = 1;
+        $project->save();
         return back();
     }
 
