@@ -90,7 +90,7 @@ Route::group(['as' => 'profile.', 'prefix' => 'profile', 'middleware' => ['auth'
 });
 
 //Task
-Route::group(['as' => 'requirement.', 'prefix' => 'requirement', 'middleware' => ['auth']], function () {
+Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], function () {
     Route::get('index', 'TaskController@index')->name('index');
     Route::get('create/{id}', 'TaskController@create')->name('create');
     Route::post('store/{id}', 'TaskController@store')->name('store');
@@ -98,4 +98,6 @@ Route::group(['as' => 'requirement.', 'prefix' => 'requirement', 'middleware' =>
     Route::get('edit/{id}', 'TaskController@edit')->name('edit');
     Route::post('update/{id}', 'TaskController@update')->name('update');
     Route::get('delete/{id}', 'TaskController@delete')->name('delete');
+    Route::get('assign/form/{id}', 'TaskController@assignForm')->name('assignForm');
+    Route::post('assign/{id}', 'TaskController@assign')->name('assign');
 });

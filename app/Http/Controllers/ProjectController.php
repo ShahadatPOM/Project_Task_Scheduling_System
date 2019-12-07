@@ -27,6 +27,14 @@ class ProjectController extends Controller
             return view('project.index', compact('projects', 'users'));
         }
 
+        if(Auth::user()->role->id == 3){
+            $teams = Team::where('leader_id', Auth::id())->get();
+            foreach ($teams as $team){
+                $leaderprojects = $team->projects()->get();
+            }
+            return view('project.index', compact('leaderprojects'));
+        }
+
     }
 
     public function create()
@@ -80,6 +88,7 @@ class ProjectController extends Controller
 
     public function show($id)
     {
+
         $project = Project::findOrfail($id);
         return view('project.detail', compact('project'));
     }

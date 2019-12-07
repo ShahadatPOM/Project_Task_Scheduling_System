@@ -4,13 +4,17 @@
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_20_160004_create_teams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_21_160004_create_teams_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_20_154006_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_11_154006_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_21_132752_create_files_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_21_132752_create_files_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/assign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/assign.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_21_160004_create_teams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_13_160004_create_teams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_11_154006_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_154006_create_projects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/files/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,9 +139,15 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/task" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project_Task_Scheduling_System\resources\views\task" />
+      <recent name="D:\Project_Task_Scheduling_System\resources\views" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -173,7 +183,7 @@
       <workItem from="1575447468435" duration="2696000" />
       <workItem from="1575460744055" duration="3618000" />
       <workItem from="1575694231531" duration="14000" />
-      <workItem from="1575694248866" duration="5394000" />
+      <workItem from="1575694248866" duration="27882000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -189,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575464336843</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="From admin panel, project assign done">
+      <created>1575699720855</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575699720855</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +230,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="make leader works fine" />
     <MESSAGE value="project create complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="project create complete" />
+    <MESSAGE value="From admin panel, project assign done" />
+    <option name="LAST_COMMIT_MESSAGE" value="From admin panel, project assign done" />
   </component>
 </project>

@@ -13,11 +13,11 @@ class TeamController extends Controller
 {
     public function index()
     {
-        if(Auth::user()->role->id == 1 || Auth::user()->role->id == 2) {
+        if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2) {
             $teams = Team::all();
             return view('team.index', compact('teams'));
         }
-        if(Auth::user()->role->id == 3 || Auth::user()->role->id == 4){
+        if (Auth::user()->role->id == 3 || Auth::user()->role->id == 4) {
             $teams = Team::all();
             return view('team.index', compact('teams'));
         }
@@ -47,14 +47,15 @@ class TeamController extends Controller
         $team->save();
         $team->users()->attach($request->members);
         return back();
+
     }
 
     public function memberList($id)
     {
         $team = Team::find($id);
         foreach ($team->users as $user)
-            $roles[]=$user->role_id;
-        return view('team.memberList', compact('team','roles'));
+            $roles[] = $user->role_id;
+        return view('team.memberList', compact('team', 'roles'));
     }
 
     public function leader($id)
@@ -62,12 +63,25 @@ class TeamController extends Controller
         $leader = User::find($id);
         $leader->role_id = 3;
         $leader->save();
+
+        $teams = $leader->teams()->get();
+            foreach ($teams as $team) {
+                $team->leader_id = $id;
+            }
+        $team->save();
         return back();
     }
-    public function leaderChange($id){
+
+    public function leaderChange($id)
+    {
         $changeLeader = User::find($id);
         $changeLeader->role_id = 4;
         $changeLeader->save();
+        $teams = $changeLeader->teams()->get();
+        foreach ($teams as $team) {
+            $team->leader_id = null;
+        }
+        $team->save();
         return back();
     }
 

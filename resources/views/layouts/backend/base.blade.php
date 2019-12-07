@@ -30,8 +30,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('assets/backend/plugins/select2/css/select2.min.css')}}">
-
+{{--    panel--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/backend/dist/css/bootstrap.min.css') }}">--}}
 {{--    toastr--}}
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     @stack('base.css')
 

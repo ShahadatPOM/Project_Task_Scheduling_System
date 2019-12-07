@@ -38,144 +38,169 @@
                     <th style="width: 8%" class="text-center">
                         Status
                     </th>
-                    <th class="text-center" style="width: 20%" >
+                    <th class="text-center" style="width: 20%">
                         Action
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 @if(Auth::user()->role->id == 1)
-                @foreach($projects as $project)
-                <tr>
-                    <td>
-                        {{ $project->id }}
-                    </td>
-                    <td>
-                        <a>
-                           {{ $project->title }}
-                        </a>
-                        <br/>
-                    </td>
-
-                    <td>
-                        <ul class="list-inline">
-                            @foreach($users as $user)
-                            <li class="list-inline-item">
-                                <img alt="Avatar" class="table-avatar" src="{{url('files/'.$user->image )}}">
-                            </li>
-                            @endforeach
-                        </ul>
-                    </td>
-                    <td>
-                            {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $project->created_at)->diffForHumans() }}
-                        <br/>
-                    </td>
-                    <td class="project_progress">
-                        @if($project->status == 0)
-                        <small>
-                            <div class="progress progress-sm">
-                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0"
-                                 aria-volumemax="100" style="width: 100%">
-                            </div>
-                            </div>
-                            Not assigned yet
-                        </small>
-                        @elseif($project->status == 1)
-                         <small>
-                            <div class="progress progress-sm">
-                            <div class="progress-bar bg-orange" role="progressbar" aria-volumenow="100" aria-volumemin="0"
-                                 aria-volumemax="100" style="width: 100%">
-                            </div>
-                        </div>
-                            Not started yet
-                        </small>
-                        @endif
-                    </td>
-
-                    <td class="project-state">
-
-                        @if($project->status == 0 && $project->team_id == null)
-                        <span class="badge badge-danger">Pending</span>
-                            @else
-                            <span class="badge badge-warning">Assigned</span>
-
-                        @endif
-                    </td>
-
-                    <td class="project-actions text-center">
-                        <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
-                        <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
-                        <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i class="fa fa-trash"></i></a>
-                        @if($project->status == 0 && $project->team_id == null)
-                        <a href="{{ route('project.assignForm', $project->id) }}"><button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Assign</button></a>
-                            @endif
-                    </td>
-                </tr>
-                    @endforeach
-                @elseif(Auth::user()->role->id == 4)
-                    @foreach($teamProjects as $teamProject)
+                    @foreach($projects as $project)
                         <tr>
                             <td>
-                                {{ $teamProject->project_id }}
+                                {{ $project->id }}
                             </td>
                             <td>
                                 <a>
-                                    {{ $teamProject->project->title }}
+                                    {{ $project->title }}
                                 </a>
                                 <br/>
                             </td>
 
                             <td>
-                                {{ $teamProject->team->name }}
+                                <ul class="list-inline">
+                                    @foreach($users as $user)
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar"
+                                                 src="{{url('files/'.$user->image )}}">
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </td>
                             <td>
-                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $teamProject->created_at)->diffForHumans() }}
+                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $project->created_at)->diffForHumans() }}
                                 <br/>
                             </td>
                             <td class="project_progress">
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0"
-                                         aria-volumemax="100" style="width: 0%">
-                                    </div>
-                                </div>
-                                <small>
-                                    0% Complete
-                                </small>
+                                @if($project->status == 0)
+                                    <small>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
+                                            </div>
+                                        </div>
+                                        Not assigned yet
+                                    </small>
+                                @elseif($project->status == 1)
+                                    <small>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-orange" role="progressbar" aria-volumenow="100"
+                                                 aria-volumemin="0"
+                                                 aria-volumemax="100" style="width: 100%">
+                                            </div>
+                                        </div>
+                                        Not started yet
+                                    </small>
+                                @endif
                             </td>
 
                             <td class="project-state">
 
-                                @if($teamProject->status == 1)
-                                    <span class="badge badge-success">Completed</span>
-
-                                @elseif(DB::table('project_assigns')->where('project_id', $teamProject->id )->first())
-                                    <span class="badge badge-info">On Progress</span>
-                                @else
+                                @if($project->status == 0 && $project->team_id == null)
                                     <span class="badge badge-danger">Pending</span>
+                                @else
+                                    <span class="badge badge-warning">Assigned</span>
+
                                 @endif
                             </td>
-                            <td class="project-actions text-right">
-                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $teamProject->id) }}"><i class="fa fa-pencil"></i></a>
-                                    <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $teamProject->id) }}"><i class="fa fa-trash"></i></a>
-                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $teamProject->id) }}"><i class="fa fa-eye"></i></a>
 
+                            <td class="project-actions text-center">
+                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
+                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
+                                <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i class="fa fa-trash"></i></a>
+                                @if($project->status == 0 && $project->team_id == null)
+                                    <a href="{{ route('project.assignForm', $project->id) }}">
+                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i>Assign</button>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
-                    @endif
+                @elseif(Auth::user()->role->id == 3)
+                    @foreach($leaderprojects as $leaderproject)
+                        <tr>
+                            <td>
+                                {{ $leaderproject->id }}
+                            </td>
+                            <td>
+                                <a>
+                                    {{ $leaderproject->title }}
+                                </a>
+                                <br/>
+                            </td>
+
+                            <td>
+                                <ul class="list-inline">
+                                    @foreach($leaderproject->team->users as $user)
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar"
+                                                 src="{{url('files/'.$user->image )}}">
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </td>
+                            <td>
+                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $leaderproject->created_at)->diffForHumans() }}
+                                <br/>
+                            </td>
+                            <td class="project_progress">
+                                @if($leaderproject->status == 1)
+                                    <small>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
+                                            </div>
+                                        </div>
+                                        Pending
+                                    </small>
+                                @elseif($leaderproject->status == 2)
+                                    <small>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-yellow" role="progressbar" aria-volumenow="100"
+                                                 aria-volumemin="0"
+                                                 aria-volumemax="100" style="width: 100%">
+                                            </div>
+                                        </div>
+                                        On Going
+                                    </small>
+                                @elseif($leaderproject->status == 3)
+                                    <small>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="100"
+                                                 aria-volumemin="0"
+                                                 aria-volumemax="100" style="width: 100%">
+                                            </div>
+                                        </div>
+                                        Completed
+                                    </small>
+                                @endif
+                            </td>
+
+                            <td class="project-state">
+
+                                @if($leaderproject->status == 1 )
+                                    <span class="badge badge-danger">Pending</span>
+                                @else
+                                    <span class="badge badge-warning">Assigned</span>
+
+                                @endif
+                            </td>
+                            <td class="project-actions text-center">
+                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $leaderproject->id) }}"><i class="fa fa-pencil"></i></a>
+                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $leaderproject->id) }}"><i class="fa fa-eye"></i></a>
+                                @if($leaderproject->status == 1)
+                                    <a href="{{ route('task.assignForm', $leaderproject->id) }}">
+                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Assign</button>
+                                    </a>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
                 </tbody>
             </table>
         </div>
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
-
-
-
-
-
-
-
 
 @endsection
 
