@@ -2,6 +2,7 @@
 
 @section('base.title', 'Project|Detail')
 
+
 @push('base.css')
 
 @endpush
@@ -56,6 +57,10 @@
                         </div>
                     <div class="col-6 col-md-6 col-lg-4 order-1 order-md-2">
                         <h3><i class="fas fa-file-text"></i> Description</h3>
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+
                         <p class="text-muted">{{ $project->description }}</p>
                         <br>
                         <div class="text-muted">
@@ -65,6 +70,8 @@
                             <p class="text-sm">Project Leader
                                 <b class="d-block">Tony Chicken</b>
                             </p>
+                        </div>
+                            </div>
                         </div>
                     </div>
                         <div class="col-md-6 offset-sm-2">
