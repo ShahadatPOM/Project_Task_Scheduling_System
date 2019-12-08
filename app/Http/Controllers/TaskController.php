@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Project;
 use App\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
 
     public function index(){
         if(Auth::user()->role_id == 4){
-            
-            return view('task.index');
+            $task = Task::where('member_id', Auth::id())->first();
+            return view('task.index', compact('task'));
         }
     }
 
@@ -44,10 +45,16 @@ class TaskController extends Controller
                 $task->filename = $ext;
             }
         }
-
         $task->save();
         $task->requirements()->attach($request->tasks);
         return back();
 
+    }
+
+    public function taskProgress($id){
+        $task = Task::findOrfail($id);
+        $task->status = 1;
+        $task->save();
+        return back();
     }
 }

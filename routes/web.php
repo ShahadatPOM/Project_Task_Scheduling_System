@@ -100,4 +100,5 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
     Route::get('delete/{id}', 'TaskController@delete')->name('delete');
     Route::get('assign/form/{id}', 'TaskController@assignForm')->name('assignForm');
     Route::post('assign/{id}', 'TaskController@assign')->name('assign');
+    Route::get('progress/{id}', 'TaskController@taskProgress')->name('progress');
 });

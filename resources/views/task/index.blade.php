@@ -1,11 +1,6 @@
 @extends('layouts.backend.master')
 
 @section('base.title', 'Admin')
-@push('base.css')
-    <link rel="stylesheet" href="{{asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-@endpush
-
 
 @section('master.content')
     @if(session()->has('message'))
@@ -32,9 +27,9 @@
                     <th style="width: 15%">
                         Arrived
                     </th>
-                    <th style="width: 15%">
-                        Task Progress
-                    </th>
+                    {{-- <th style="width: 15%">
+                         Task Progress
+                     </th>--}}
                     <th style="width: 8%" class="text-center">
                         Status
                     </th>
@@ -43,95 +38,82 @@
                     </th>
                 </tr>
                 </thead>
+                @php
+                    $projects=[];
+                    $statuses = [];
+                @endphp
                 <tbody>
                 @if(Auth::user()->role->id == 4)
-                    @foreach($projects as $project)
+                    @foreach($task->requirements as $key => $req)
                         <tr>
+                            <td>{{ $key++ }}</td>
+                            @if(!in_array($req->project->title,$projects))
+                                @php
+                                    $projects[] = $req->project->title;
+                                @endphp
+                                <td rowspan="{{ count($task->requirements) }}">{{ $req->project->title }}</td>
+                            @endif
                             <td>
-                                {{ $project->id }}
-                            </td>
-                            <td>
-                                <a>
-                                    {{ $project->title }}
-                                </a>
-                                <br/>
-                            </td>
-
-                            <td>
-                                <ul class="list-inline">
-                                    @foreach($users as $user)
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar"
-                                                 src="{{url('files/'.$user->image )}}">
-                                        </li>
-                                    @endforeach
-                                </ul>
+                                {{ $req->name }}
                             </td>
                             <td>
-                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $project->created_at)->diffForHumans() }}
-                                <br/>
+                                {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->diffForHumans() }}
                             </td>
-                            <td class="project_progress">
-                                @if($project->status == 0)
-                                    <small>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
-                                            </div>
-                                        </div>
-                                        Not assigned yet
-                                    </small>
-                                @elseif($project->status == 1)
-                                    <small>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-orange" role="progressbar" aria-volumenow="100"
-                                                 aria-volumemin="0"
-                                                 aria-volumemax="100" style="width: 100%">
-                                            </div>
-                                        </div>
-                                        Not started yet
-                                    </small>
-                                @endif
-                            </td>
+                            {{--  <td rowspan="{{ count($task->requirements) }}" class="project_progress">
+                                  @if($task->status == 1)
+                                      <small>
+                                          <div class="progress progress-sm">
+                                              <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
+                                              </div>
+                                          </div>
+                                          Pending
+                                      </small>
+                                  @elseif($task->status == 2)
+                                      <small>
+                                          <div class="progress progress-sm">
+                                              <div class="progress-bar bg-yellow" role="progressbar" aria-volumenow="100"
+                                                   aria-volumemin="0"
+                                                   aria-volumemax="100" style="width: 100%">
+                                              </div>
+                                          </div>
+                                          On Going
+                                      </small>
+                                  @elseif($task->status == 3)
+                                      <small>
+                                          <div class="progress progress-sm">
+                                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="100"
+                                                   aria-volumemin="0"
+                                                   aria-volumemax="100" style="width: 100%">
+                                              </div>
+                                          </div>
+                                          Completed
+                                      </small>
+                                  @endif
+                              </td>--}}
+                            @if(!in_array($task->status, $statuses))
+                                @php
+                                    $statuses[] = $task->status;
+                                @endphp
+                                <td rowspan="{{ count($task->requirements) }}" class="project-state">
 
-                            <td class="project-state">
+                                    @if($task->status == 1 )
+                                        <span class="badge badge-danger">Pending</span>
+                                    @else
+                                        <span class="badge badge-warning">Assigned</span>
 
-                                @if($project->status == 0 && $project->team_id == null)
-                                    <span class="badge badge-danger">Pending</span>
-                                @else
-                                    <span class="badge badge-warning">Assigned</span>
+                                    @endif
 
-                                @endif
-                            </td>
+                                </td>
+                            @endif
 
-                            <td class="project-actions text-center">
-                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
-                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
-                                <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i class="fa fa-trash"></i></a>
-                                @if($project->status == 0 && $project->team_id == null)
-                                    <a href="{{ route('project.assignForm', $project->id) }}">
-                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i>Assign</button>
-                                    </a>
-                                @endif
-                            </td>
+                            <td></td>
                         </tr>
                     @endforeach
-                    @endif
+                @endif
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection
 
-@push('base.js')
-    <script src="{{asset('assets/backend/plugins/datatables/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
-    <script>
-        $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-            });
-        });
-    </script>
-@endpush
+
