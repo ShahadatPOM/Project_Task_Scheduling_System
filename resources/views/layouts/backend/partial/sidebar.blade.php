@@ -207,6 +207,13 @@
                             <p>Projects</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('task.index') }}" class="nav-link">
+                            <i class="fa fa-list nav-icon"></i>
+                            <p>Tasks</p>
+                        </a>
+                    </li>
+
                 @endif
             </ul>
         </nav>

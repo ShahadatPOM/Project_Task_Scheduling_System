@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     protected $fillable=[
-      'project_id', 'name', 'user_id', 'status'
+      'project_id', 'member_id', 'description', 'filename', 'status'
     ];
+    protected $casts = ['filename','array'];
     public function project(){
         return $this->belongsTo('App\Project');
     }

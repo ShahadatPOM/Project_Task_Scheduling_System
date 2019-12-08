@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('team_id')->nullable();
             $table->json('departments');
             $table->string('title');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('client');
             $table->bigInteger('estimated_budget');
             $table->string('estimated_project_duration');

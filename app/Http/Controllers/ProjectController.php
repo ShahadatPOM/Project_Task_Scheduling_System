@@ -28,9 +28,9 @@ class ProjectController extends Controller
             return view('project.index', compact('projects', 'users'));
         }
 
-        if(Auth::user()->role->id == 3){
+        if (Auth::user()->role->id == 3) {
             $teams = Team::where('leader_id', Auth::id())->get();
-            foreach ($teams as $team){
+            foreach ($teams as $team) {
                 $leaderprojects = $team->projects()->get();
             }
             return view('project.index', compact('leaderprojects'));
@@ -70,9 +70,11 @@ class ProjectController extends Controller
             foreach ($requirements as $requirement) {
                 $req = new Requirement();
                 $req->name = $requirement;
+                $req->percentage = 100/count($requirements);
                 $project->requirements()->save($req);
             }
         }
+
         $photos = $request->photos;
         if ($photos) {
             foreach ($photos as $u_file) {
