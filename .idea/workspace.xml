@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +174,7 @@
       <workItem from="1575694231531" duration="14000" />
       <workItem from="1575694248866" duration="29204000" />
       <workItem from="1575725323674" duration="703000" />
-      <workItem from="1575781157758" duration="1330000" />
+      <workItem from="1575781157758" duration="2249000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -204,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575724069793</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Requirement model created">
+      <created>1575782518549</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575782518549</updated>
+    </task>
+    <task id="LOCAL-00006" summary="make migration for requirement">
+      <created>1575782681643</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575782681643</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +244,8 @@
     <MESSAGE value="project create complete" />
     <MESSAGE value="From admin panel, project assign done" />
     <MESSAGE value="From leader panel, task assign done to teamMember" />
-    <option name="LAST_COMMIT_MESSAGE" value="From leader panel, task assign done to teamMember" />
+    <MESSAGE value="Requirement model created" />
+    <MESSAGE value="make migration for requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="make migration for requirement" />
   </component>
 </project>
