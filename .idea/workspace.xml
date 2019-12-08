@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_223828_create_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_02_092754_create_team_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_092754_create_team_user_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +173,7 @@
       <workItem from="1575694231531" duration="14000" />
       <workItem from="1575694248866" duration="29204000" />
       <workItem from="1575725323674" duration="703000" />
-      <workItem from="1575781157758" duration="2249000" />
+      <workItem from="1575781157758" duration="2716000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -218,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575782681643</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="make migration for requirement_task pivot table">
+      <created>1575783444864</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575783444864</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +252,7 @@
     <MESSAGE value="From leader panel, task assign done to teamMember" />
     <MESSAGE value="Requirement model created" />
     <MESSAGE value="make migration for requirement" />
-    <option name="LAST_COMMIT_MESSAGE" value="make migration for requirement" />
+    <MESSAGE value="make migration for requirement_task pivot table" />
+    <option name="LAST_COMMIT_MESSAGE" value="make migration for requirement_task pivot table" />
   </component>
 </project>
