@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_02_092754_create_team_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_092754_create_team_user_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_02_092754_create_team_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_092754_create_team_user_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +176,7 @@
       <workItem from="1575694231531" duration="14000" />
       <workItem from="1575694248866" duration="29204000" />
       <workItem from="1575725323674" duration="703000" />
-      <workItem from="1575781157758" duration="2716000" />
+      <workItem from="1575781157758" duration="3703000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -224,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575783444864</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Requirement_Task table are ready, for migrate">
+      <created>1575784107810</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575784107810</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +263,7 @@
     <MESSAGE value="Requirement model created" />
     <MESSAGE value="make migration for requirement" />
     <MESSAGE value="make migration for requirement_task pivot table" />
-    <option name="LAST_COMMIT_MESSAGE" value="make migration for requirement_task pivot table" />
+    <MESSAGE value="Requirement_Task table are ready, for migrate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Requirement_Task table are ready, for migrate" />
   </component>
 </project>

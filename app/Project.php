@@ -23,6 +23,9 @@ class Project extends Model
     public function tasks(){
         return $this->hasMany('App\Task');
     }
+    public function requirements(){
+        return $this->hasMany('App\Requirement');
+    }
 
     public function departments(){
         return $this->hasMany('App\Department');

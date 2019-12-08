@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use App\Requirement;
 use App\Task;
 use App\Team;
 use App\User;
@@ -67,9 +68,9 @@ class ProjectController extends Controller
         $requirements = $request->requirements;
         if ($requirements) {
             foreach ($requirements as $requirement) {
-                $task = new Task();
-                $task->name = $requirement;
-                $project->tasks()->save($task);
+                $req = new Requirement();
+                $req->name = $requirement;
+                $project->requirements()->save($req);
             }
         }
         $photos = $request->photos;
