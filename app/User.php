@@ -44,7 +44,7 @@ class User extends Authenticatable
         return $this->belongsTo('App\Department');
     }
     public function teams(){
-        return $this->belongsToMany('App\Team');
+        return $this->belongsToMany('App\Team')->withTimestamps();
     }
     public function profile(){
         return $this->hasOne('App\Profile');

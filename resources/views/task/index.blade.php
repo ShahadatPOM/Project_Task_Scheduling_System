@@ -66,49 +66,39 @@
 
 
                              <td class="project_progress">
-                                  @if($task->status == 1)
-                                      <small>
-                                          <div class="progress progress-sm">
-                                              <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
-                                              </div>
-                                          </div>
-                                          Pending
-                                      </small>
-                                  @elseif($task->status == 2)
-                                      <small>
-                                          <div class="progress progress-sm">
-                                              <div class="progress-bar bg-yellow" role="progressbar" aria-volumenow="100"
-                                                   aria-volumemin="0"
-                                                   aria-volumemax="100" style="width: 100%">
-                                              </div>
-                                          </div>
-                                          On Going
-                                      </small>
-                                  @elseif($task->status == 3)
-                                      <small>
-                                          <div class="progress progress-sm">
-                                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="100"
-                                                   aria-volumemin="0"
-                                                   aria-volumemax="100" style="width: 100%">
-                                              </div>
-                                          </div>
-                                          Completed
-                                      </small>
-                                  @endif
+
+                                         <small>
+                                             <div class="progress progress-sm">
+                                                 <div @if($req->status == 0) class="progress-bar bg-red" @endif role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100"
+                                                      style="width: {{ $req->status == 0 ? 100 : $req->progress }}%">
+                                                 </div>
+                                             </div>
+                                             {{ $req->status == 1 ? $req->progress : '' }}% Completed
+                                         </small>
+
                               </td>
 
 
                                 <td class="project-state">
-                                    @if($task->status == 1 )
+                                    @if($req->status == 0 )
                                         <span class="badge badge-danger">Pending</span>
-                                    @else
-                                        <span class="badge badge-warning">Assigned</span>
+                                    @elseif($req->status == 1)
+                                        <span class="badge badge-warning">On progress</span>
+                                    @elseif($req->status == 2)
+                                        <span class="badge badge-warning">Done</span>
+                                    @elseif($req->status == 3)
+                                        <span class="badge badge-warning">Rejected</span>
                                     @endif
                                 </td>
 
                             <td class="project-actions text-center">
 
                                 <a title="view" class="btn btn-sm btn-primary" href="{{ route('task.detail', $req->id) }}"><i class="fa fa-eye"></i></a>
+                                @if($req->status == 0)
+                                <a title="startProgress" class="btn btn-sm btn-info" href="{{ route('task.progress', $req->id) }}"><i class="fa fa-toggle-on"> start</i></a>
+                                @else
+                                <a title="updateProgress" class="btn btn-sm btn-info" href="{{ route('task.progressUpdate', $req->id) }}"><i class="fa fa-toggle-on"> update</i></a>
+                                    @endif
                             </td>
                         </tr>
                     @endforeach

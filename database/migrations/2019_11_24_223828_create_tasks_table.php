@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->string('description')->nullable();
             $table->string('filename')->nullable();
             $table->integer('status')->default(0);
+            $table->integer('progress')->default(0);
             $table->timestamps();
             $table->foreign('project_id')
                 ->references('id')->on('projects')

@@ -36,7 +36,7 @@
                                 <label for="inputDescription">Members</label>
                                 <select class="form-control" name="member_id" id="">
                                     <option selected>Select member</option>
-                                    @foreach($project->team->users as $member){
+                                    @foreach($project->team->users->where('role_id','!=',3) as $member){
                                     <option class="form-control" value="{{ $member->id }}">{{ $member->name }}</option>
                                     }
                                     @endforeach

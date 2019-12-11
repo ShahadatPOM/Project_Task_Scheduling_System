@@ -139,12 +139,6 @@
                                 <p>All Project</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('project.index') }}" class="nav-link">
-                                <i class="fa fa-shekel nav-icon"></i>
-                                <p>Assign Project</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
 

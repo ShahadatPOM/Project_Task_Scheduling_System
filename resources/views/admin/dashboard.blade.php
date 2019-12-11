@@ -252,5 +252,49 @@
             @endif
 {{--            team member end--}}
         </div>
+        {{--live date-time
+        <ul class="nav navbar-nav navbar-left hidden-xs">
+            <li id="dt-DateTime">
+
+                    <span style="margin-right: 5px;">@{{ day }}, @{{ date }}</span>
+                    <span>@{{ time }}</span>
+
+            </li>
+        </ul>--}}
     </section>
 @endsection
+@push('base.js')
+    {{--<script>
+        // Live DateTime
+        var _dtDateTime = new Vue({
+            el : '#dt-DateTime',
+            data : {
+                time : '',
+                date : '',
+                day : '',
+                now : ''
+            },
+            methods : {
+                updateTime : function(){
+                    var self = this;
+
+                    var weekDays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+                    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                    var now = new Date();
+                    var hours = now.getHours();
+                    var ampm = (hours >= 12) ? 'PM' : 'AM';
+                    if(hours > 12) { hours -= 12; }
+
+                    this.time = zeroPadding(hours, 2) + ':' + zeroPadding(now.getMinutes(), 2) + ':' + zeroPadding(now.getSeconds(), 2) + ' ' + ampm;
+                    this.date = zeroPadding(now.getDate(), 2) +' '+ months[now.getMonth()] +', '+ zeroPadding(now.getFullYear(), 4);
+                    this.day = weekDays[now.getDay()];
+
+                    setTimeout(self.updateTime, 1000);
+                }
+            },
+            created: function(){
+                this.updateTime();
+            }
+        });
+    </script>--}}
+    @endpush

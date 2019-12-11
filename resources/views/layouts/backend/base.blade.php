@@ -105,6 +105,7 @@
     }
     @endif
 </script>
+
 @stack('base.js')
 
 </body>

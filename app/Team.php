@@ -12,7 +12,7 @@ class Team extends Model
     protected $casts =['members'=>'array'];
 
     public function users(){
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
     public function projects(){
         return $this->hasMany('App\Project');

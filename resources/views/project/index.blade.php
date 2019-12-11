@@ -17,6 +17,7 @@
         <div class="card-header">
         </div>
         <div class="card-body p-0">
+
             <table class="table table-striped projects">
                 <thead>
                 <tr>
@@ -75,7 +76,8 @@
                                 @if($project->status == 0)
                                     <small>
                                         <div class="progress progress-sm">
-                                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
+                                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0"
+                                                 aria-volumemin="0" aria-volumemax="100" style="width: 100%">
                                             </div>
                                         </div>
                                         Not assigned yet
@@ -104,18 +106,24 @@
                             </td>
 
                             <td class="project-actions text-center">
-                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
-                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
-                                <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i class="fa fa-trash"></i></a>
+                                <a title="view" class="btn btn-sm btn-primary"
+                                   href="{{ route('project.show', $project->id) }}"><i class="fa fa-eye"></i></a>
+                                <a title="edit" class="btn btn-sm btn-warning"
+                                   href="{{ route('project.edit', $project->id) }}"><i class="fa fa-pencil"></i></a>
+                                <a title="delete" onclick="return confirm('Are you sure to delete this')"
+                                   class="btn btn-sm btn-danger" href="{{ route('project.delete', $project->id) }}"><i
+                                        class="fa fa-trash"></i></a>
                                 @if($project->status == 0 && $project->team_id == null)
                                     <a href="{{ route('project.assignForm', $project->id) }}">
-                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i>Assign</button>
+                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i>Assign
+                                        </button>
                                     </a>
                                 @endif
                             </td>
                         </tr>
                     @endforeach
                 @elseif(Auth::user()->role->id == 3)
+
                     @foreach($leaderprojects as $leaderproject)
                         <tr>
                             <td>
@@ -143,34 +151,30 @@
                                 <br/>
                             </td>
                             <td class="project_progress">
-                                @if($leaderproject->status == 1)
-                                    <small>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-red" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 100%">
-                                            </div>
-                                        </div>
-                                        Pending
-                                    </small>
-                                @elseif($leaderproject->status == 2)
-                                    <small>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-yellow" role="progressbar" aria-volumenow="100"
-                                                 aria-volumemin="0"
-                                                 aria-volumemax="100" style="width: 100%">
-                                            </div>
-                                        </div>
-                                        On Going
-                                    </small>
-                                @elseif($leaderproject->status == 3)
-                                    <small>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="100"
-                                                 aria-volumemin="0"
-                                                 aria-volumemax="100" style="width: 100%">
-                                            </div>
-                                        </div>
-                                        Completed
-                                    </small>
+
+                                @if($leaderproject->requirements)
+                                    @php
+                                        $all_requirements = [];
+                                    @endphp
+                                @php
+                                    $all_req[] = $leaderproject->requirements;
+                                @endphp
+
+                                    @foreach($leaderproject->requirements as $requirement)
+                                        @if(in_array($requirement->status == 1, $all_req))
+                                            @foreach($requirement->tasks as $task)
+                                            <small>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar bg-red" role="progressbar"
+                                                         aria-volumenow="0" aria-volumemin="0" aria-volumemax="100"
+                                                         style="width:{{ $task->progress }}%">
+                                                    </div>
+                                                </div>
+                                                {{ $task->progress }}% Completed
+                                            </small>
+                                            @endforeach
+                                        @endif
+                                    @endforeach
                                 @endif
                             </td>
 
@@ -184,11 +188,16 @@
                                 @endif
                             </td>
                             <td class="project-actions text-center">
-                                <a title="edit" class="btn btn-sm btn-warning" href="{{ route('project.edit', $leaderproject->id) }}"><i class="fa fa-pencil"></i></a>
-                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('project.show', $leaderproject->id) }}"><i class="fa fa-eye"></i></a>
+                                <a title="edit" class="btn btn-sm btn-warning"
+                                   href="{{ route('project.edit', $leaderproject->id) }}"><i
+                                        class="fa fa-pencil"></i></a>
+                                <a title="view" class="btn btn-sm btn-primary"
+                                   href="{{ route('project.show', $leaderproject->id) }}"><i class="fa fa-eye"></i></a>
                                 @if($leaderproject->status == 1)
                                     <a href="{{ route('task.assignForm', $leaderproject->id) }}">
-                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Assign</button>
+                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i>
+                                            Assign
+                                        </button>
                                     </a>
                                 @endif
                             </td>
