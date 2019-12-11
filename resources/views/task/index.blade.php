@@ -95,17 +95,13 @@
                                     $statuses[] = $task->status;
                                 @endphp
                                 <td rowspan="{{ count($task->requirements) }}" class="project-state">
-
                                     @if($task->status == 1 )
                                         <span class="badge badge-danger">Pending</span>
                                     @else
                                         <span class="badge badge-warning">Assigned</span>
-
                                     @endif
-
                                 </td>
                             @endif
-
                             <td></td>
                         </tr>
                     @endforeach
