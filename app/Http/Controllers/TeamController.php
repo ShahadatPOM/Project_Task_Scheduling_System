@@ -8,6 +8,7 @@ use App\Team;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class TeamController extends Controller
 {
@@ -33,9 +34,14 @@ class TeamController extends Controller
 
     public function store(Request $request)
     {
+        $dept = Team::where('name',$request->name)->where('department_id',$request->department_id)->pluck('department_id');
 
         $this->validate($request, [
-            'name' => 'required|unique:teams',
+            'name' => ['required',
+            Rule::unique('teams','name')->where(function($q) use($dept){
+              return $q->whereIn('department_id', $dept);
+            })
+            ],
             'department_id' => 'required',
 
         ]);

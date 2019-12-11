@@ -94,7 +94,7 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
     Route::get('index', 'TaskController@index')->name('index');
     Route::get('create/{id}', 'TaskController@create')->name('create');
     Route::post('store/{id}', 'TaskController@store')->name('store');
-    Route::get('show/{id}', 'TaskController@show')->name('show');
+    Route::get('detail/{id}', 'TaskController@detail')->name('detail');
     Route::get('edit/{id}', 'TaskController@edit')->name('edit');
     Route::post('update/{id}', 'TaskController@update')->name('update');
     Route::get('delete/{id}', 'TaskController@delete')->name('delete');

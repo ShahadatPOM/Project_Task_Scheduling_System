@@ -10,9 +10,10 @@
     @endif
     <div class="card">
         <div class="card-header">
+            Assigned Task List
         </div>
-        <div class="card-body p-0">
-            <table class="table table-striped projects">
+        <div class="card-body">
+            <table class="table table-borderless projects text-center">
                 <thead>
                 <tr>
                     <th style="width: 1%">
@@ -27,20 +28,22 @@
                     <th style="width: 15%">
                         Arrived
                     </th>
-                    {{-- <th style="width: 15%">
+                     <th style="width: 15%">
                          Task Progress
-                     </th>--}}
-                    <th style="width: 8%" class="text-center">
+                     </th>
+                    <th style="width: 8%" >
                         Status
                     </th>
-                    <th class="text-center" style="width: 20%">
+                    <th style="width: 20%">
                         Action
                     </th>
                 </tr>
                 </thead>
+
                 @php
                     $projects=[];
                     $statuses = [];
+                    $tasks = [];
                 @endphp
                 <tbody>
                 @if(Auth::user()->role->id == 4)
@@ -56,10 +59,13 @@
                             <td>
                                 {{ $req->name }}
                             </td>
+
                             <td>
                                 {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->diffForHumans() }}
                             </td>
-                            {{--  <td rowspan="{{ count($task->requirements) }}" class="project_progress">
+
+
+                             <td class="project_progress">
                                   @if($task->status == 1)
                                       <small>
                                           <div class="progress progress-sm">
@@ -89,20 +95,21 @@
                                           Completed
                                       </small>
                                   @endif
-                              </td>--}}
-                            @if(!in_array($task->status, $statuses))
-                                @php
-                                    $statuses[] = $task->status;
-                                @endphp
-                                <td rowspan="{{ count($task->requirements) }}" class="project-state">
+                              </td>
+
+
+                                <td class="project-state">
                                     @if($task->status == 1 )
                                         <span class="badge badge-danger">Pending</span>
                                     @else
                                         <span class="badge badge-warning">Assigned</span>
                                     @endif
                                 </td>
-                            @endif
-                            <td></td>
+
+                            <td class="project-actions text-center">
+
+                                <a title="view" class="btn btn-sm btn-primary" href="{{ route('task.detail', $req->id) }}"><i class="fa fa-eye"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                 @endif
