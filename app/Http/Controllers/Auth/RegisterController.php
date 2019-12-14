@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Profile;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -66,7 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'role_id' => $data['role_id'],
             'department_id' => $data['department_id'],
             'name' => $data['name'],
@@ -75,5 +76,9 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'status' => $data['status'],
         ]);
+       $profile = Profile::create([
+          'user_id' => $user->id,
+       ]);
+
     }
 }
