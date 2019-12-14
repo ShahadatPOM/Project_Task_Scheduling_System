@@ -109,3 +109,17 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
 Route::get('pdf/view/users', 'PdfController@viewUsers')->name('viewUsers');
 Route::get('pdf/download/users', 'PdfController@downloadUsers')->name('downloadUsers');
 
+Route::get('pdf/view/departments', 'PdfController@viewDepartments')->name('viewDepartment');
+Route::get('pdf/download/departments', 'PdfController@downloadDepartments')->name('downloadDepartment');
+
+Route::get('pdf/view/teams', 'PdfController@viewTeams')->name('viewTeams');
+Route::get('pdf/download/teams', 'PdfController@downloadTeams')->name('downloadTeams');
+
+Route::get('pdf/view/projects', 'PdfController@viewProjects')->name('viewProjects');
+Route::get('pdf/download/projects', 'PdfController@downloadProjects')->name('downloadProjects');
+
+Route::get('pdf/view/tasks', 'PdfController@viewTasks')->name('viewTasks');
+Route::get('pdf/download/tasks', 'PdfController@downloadTasks')->name('downloadTasks');
+
+Route::get('pdf/view/project/details', 'PdfController@viewProjectDetails')->name('viewProjectDetails');
+Route::get('pdf/download/project/details', 'PdfController@downloadProjectDetails')->name('downloadProjectDetails');

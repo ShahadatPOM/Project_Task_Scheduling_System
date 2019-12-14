@@ -28,7 +28,7 @@ class Project extends Model
     }
 
     public function departments(){
-        return $this->hasMany('App\Department');
+        return $this->belongsToMany('App\Department');
     }
 
     protected $casts=['departments' => 'array'];

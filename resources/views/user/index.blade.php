@@ -16,7 +16,7 @@
     @endif
 
     <div style=" margin-left: 50%; margin-top: 10px;">
-        <a href="{{ route('viewUsers') }}" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
+        <a target="_blank" href="{{ route('viewUsers') }}" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
         <a href="{{ route('downloadUsers') }}" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
     </div>
 

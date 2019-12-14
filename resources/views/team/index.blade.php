@@ -14,8 +14,8 @@
         </div>
     @endif
     <div style=" margin-left: 50%; margin-top: 10px;">
-        <a href="" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
-        <a href="" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
+        <a href="{{ route('viewTeams') }}" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
+        <a href="{{ route('downloadTeams') }}" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
     </div>
     <div class="card">
         <div class="card-header">

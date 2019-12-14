@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use App\Http\Controllers\Controller;
+use App\Project;
+use App\Team;
 use Illuminate\Http\Request;
 use App\User;
 use PDF;
@@ -19,103 +22,83 @@ class PdfController extends Controller
     }
     public function downloadUsers()
     {
-        //$customPaper = array(0, 0, 792.00, 1300.00);
+        /*$customPaper = array(0, 0, 792.00, 1300.00);*/
         $users = User::all()->except(1);
         $date = date('Y-M-d');
         $pdf = PDF::loadView('pdf.users',compact('users'));/*->setPaper($customPaper, 'landscape');*/
         return $pdf->download("users-{$date}.pdf");
     }
-    public function viewBlockedStudents()
+    public function viewDepartments()
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $students = Student::onlyTrashed()->get();
-        $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.students',compact('students'))->setPaper($customPaper, 'landscape');
-        return $pdf->stream("students-{$date}.pdf");
-    }
-    public function downloadBlockedStudents()
-    {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $students = Student::onlyTrashed()->get();
-        $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.students',compact('students'))->setPaper($customPaper, 'landscape');
-        return $pdf->download("students-{$date}.pdf");
-    }
-    public function viewdepartment()
-    {
+        //$customPaper = array(0, 0, 792.00, 1300.00);
         $departments = Department::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.department',compact('departments'));
+        $pdf = PDF::loadView('pdf.departments',compact('departments'))/*->setPaper($customPaper, 'landscape')*/;
         return $pdf->stream("departments-{$date}.pdf");
     }
-    public function downloaddepartment()
+    public function downloadDepartments()
     {
+        //$customPaper = array(0, 0, 792.00, 1300.00);
         $departments = Department::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.department',compact('departments'));
+        $pdf = PDF::loadView('pdf.departments',compact('departments'))/*->setPaper($customPaper, 'landscape')*/;
         return $pdf->download("departments-{$date}.pdf");
     }
-    public function viewSubject()
+    public function viewTeams()
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $subjects = Subject::all();
+        $teams = Team::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.subject',compact('subjects'));
-        return $pdf->stream("subjects-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.teams',compact('teams'));
+        return $pdf->stream("teams-{$date}.pdf");
     }
-    public function downloadSubject()
+    public function downloadTeams()
     {
-        $subjects = Subject::all();
+        $teams = Team::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.subject',compact('subjects'));
-        return $pdf->download("subjects-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.teams',compact('teams'));
+        return $pdf->download("teams-{$date}.pdf");
     }
-    public function viewQuestion($id)
+    public function viewProjects()
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $subject = Subject::find($id);
+        $projects= Project::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.question',compact('subject'))->setPaper($customPaper, 'landscape');
-        return $pdf->stream("{$subject->name}-questions-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.projects',compact('projects'));
+        return $pdf->stream("projects-{$date}.pdf");
     }
-    public function downloadQuestion($id)
+    public function downloadProjects ()
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $subject = Subject::find($id);
+        $projects = Project::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.question',compact('subject'))->setPaper($customPaper, 'landscape');
-        return $pdf->download("{$subject->name}-questions-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.projects',compact('projects'));
+        return $pdf->download("projects-{$date}.pdf");
     }
-    public function viewTest()
+    public function viewTasks($id)
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $tests = Test::all();
+        $tasks = Task::find($id);
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.tests',compact('tests'));
-        return $pdf->stream("tests-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.question',compact('tasks'));
+        return $pdf->stream("tasks-{$date}.pdf");
     }
-    public function downloadTest()
+    public function downloadTasks($id)
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $tests = Test::all();
+        $tasks = Task::find($id);
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.tests',compact('tests'));
-        return $pdf->download("tests-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.tasks',compact('tasks'));
+        return $pdf->download("tasks-{$date}.pdf");
     }
-    public function viewRank()
+
+    public function viewProjectDetails()
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $tests = Test::all();
+        $projectDetails = Project::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.tests',compact('tests'));
-        return $pdf->stream("tests-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.projectDetails',compact('projectDetails'));
+        return $pdf->stream("projectDetails-{$date}.pdf");
     }
-    public function downloadRank()
+    public function downloadProjectDetails()
     {
-        $customPaper = array(0, 0, 792.00, 1300.00);
-        $tests = Test::all();
+        $projectDetails = Project::all();
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.tests',compact('tests'));
-        return $pdf->download("tests-{$date}.pdf");
+        $pdf = PDF::loadView('pdf.projectDetails',compact('projectDetails'));
+        return $pdf->download("projectDetails-{$date}.pdf");
     }
 }
