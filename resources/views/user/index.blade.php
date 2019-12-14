@@ -15,11 +15,18 @@
         </div>
     @endif
 
+    <div style=" margin-left: 50%; margin-top: 10px;">
+        <a href="{{ route('viewUsers') }}" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
+        <a href="{{ route('downloadUsers') }}" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
+    </div>
+
     <div class="card">
         <div class="card-header">
             <a
                 class="btn btn-outline-info" href="{{ route('register') }}"><i class="fa fa-plus"></i> User</a>
         </div>
+
+
         <!-- /.card-header -->
         <div class="card-body">
 

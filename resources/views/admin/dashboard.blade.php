@@ -22,7 +22,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>Project</h3>
-                            <p>Total Project</p>
+                            <p>{{count($projects)}}</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -72,6 +72,37 @@
                     </div>
                 </div>
             </div>
+
+{{--                activity--}}
+                <table class="table table-striped projects">
+                    <thead>
+                    <tr>
+                        <th style="width: 20%">
+                            User name
+                        </th>
+                        <th style="width: 20%">
+                            Login Time
+                        </th>
+                        <th style="width: 20%">
+                            Logout Time
+                        </th>
+                    </tr>
+                    <tbody>
+                @foreach($activities as $activity)
+                    <tr>
+                        <td>
+                            {{ $activity->user->name }}
+                        </td>
+                        <td>
+                            {{ $activity->login_time }}
+                        </td>
+                        <td>
+                                {{ $activity->logout_time ? $activity->logout_time : 'active'  }}
+                        </td>
+                    </tr>
+                @endforeach
+                    </tbody>
+                </table>
             @endif
 {{--            admin end--}}
 {{--            project manager began--}}

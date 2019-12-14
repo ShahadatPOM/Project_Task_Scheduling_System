@@ -19,6 +19,7 @@ class ProjectController extends Controller
     public function index()
     {
         if (Auth::user()->role->id == 1) {
+
             $projects = Project::all();
             $teams = Team::all();
             $users = collect();

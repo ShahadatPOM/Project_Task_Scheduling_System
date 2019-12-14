@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use App\Activity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -68,6 +69,7 @@ trait AuthenticatesUsers
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
+
     }
 
     /**
@@ -155,6 +157,9 @@ trait AuthenticatesUsers
      */
     public function logout(Request $request)
     {
+        $activity = Activity::where('user_id', Auth::id())->latest()->first();
+        $activity->logout_time = now('asia/dhaka');
+        $activity->save();
         $this->guard()->logout();
 
         $request->session()->invalidate();

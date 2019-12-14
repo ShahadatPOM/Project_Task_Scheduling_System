@@ -2,23 +2,375 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PdfController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_14_092343_create_activities_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pdf/users.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/config/dompdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/src/Facade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/src/PDF.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/src/ServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/LICENSE.LGPL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/VERSION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/Cpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Courier-Bold.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Courier-BoldOblique.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Courier-Oblique.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Courier.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans-Bold.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans-BoldOblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans-BoldOblique.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans-Oblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans-Oblique.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSans.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono-Bold.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono-BoldOblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono-BoldOblique.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono-Oblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono-Oblique.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSansMono.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif-Bold.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif-BoldItalic.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif-Italic.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/DejaVuSerif.ufm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Helvetica-Bold.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Helvetica-BoldOblique.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Helvetica-Oblique.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Helvetica.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Symbol.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Times-Bold.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Times-BoldItalic.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Times-Italic.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Times-Roman.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/ZapfDingbats.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/dompdf_font_family_cache.dist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/mustRead.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/html5lib/Data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/html5lib/InputStream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/html5lib/Parser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/html5lib/Tokenizer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/html5lib/TreeBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/html5lib/named-character-references.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/res/broken_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/res/broken_image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/res/html.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/phpcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/CPDF.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/GD.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/PDFLib.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Autoloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Canvas.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/CanvasFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Cellmap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/AttributeTranslator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Style.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Stylesheet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Dompdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Exception/ImageException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FontMetrics.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame/Factory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame/FrameList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame/FrameListIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame/FrameTree.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame/FrameTreeIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Frame/FrameTreeList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/AbstractFrameDecorator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Inline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/ListBullet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/ListBulletImage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/NullFrameDecorator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/TableCell.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/TableRow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/TableRowGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/AbstractFrameReflower.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Inline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/ListBullet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/NullFrameReflower.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/TableCell.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/TableRow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/TableRowGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Helpers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Image/Cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/JavascriptEmbedder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/LineBox.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Options.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/PhpEvaluator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/Absolute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/AbstractPositioner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/Block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/Fixed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/Inline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/ListBullet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/NullPositioner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/TableCell.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Positioner/TableRow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/AbstractRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Inline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/ListBullet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/TableCell.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/TableRowGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/adobe-standard-encoding.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1250.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1251.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1252.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1253.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1254.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1255.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1257.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp1258.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/cp874.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-1.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-11.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-15.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-16.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-2.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-4.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-5.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-7.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/iso-8859-9.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/koi8-r.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/maps/koi8-u.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/sample-fonts/IntelClear-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/sample-fonts/NotoSansShavian-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/AdobeFontMetrics.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Autoloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/BinaryStream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/EOT/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/EOT/Header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/EncodingMap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Exception/FontNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Font.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Glyph/Outline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Glyph/OutlineComponent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Glyph/OutlineComposite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Glyph/OutlineSimple.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/OpenType/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/OpenType/TableDirectoryEntry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/DirectoryEntry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/cmap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/glyf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/head.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/hhea.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/hmtx.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/kern.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/loca.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/maxp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/name.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/nameRecord.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/os2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/Table/Type/post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/TrueType/Collection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/TrueType/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/TrueType/Header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/TrueType/TableDirectoryEntry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/WOFF/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/WOFF/Header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/src/FontLib/WOFF/TableDirectoryEntry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-font-lib/tests/FontLib/FontTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/COPYING" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/COPYING.GPL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/DefaultStyle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Document.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Gradient/Stop.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Style.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Surface/CPdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Surface/SurfaceCpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Surface/SurfaceGmagick.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Surface/SurfaceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Surface/SurfacePDFLib.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/AbstractTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Anchor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Circle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/ClipPath.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Ellipse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Group.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Line.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/LinearGradient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Path.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Polygon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Polyline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/RadialGradient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Rect.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Shape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Stop.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/StyleTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/Text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/Svg/Tag/UseTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/src/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/phenx/php-svg-lib/tests/Svg/StyleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/Doxyfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/AtRuleBlockList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSBlockList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/CSSList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/Document.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/KeyFrame.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Comment/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Comment/Commentable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/OutputFormat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Parser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Parsing/OutputException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Parsing/ParserState.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Parsing/SourceException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Parsing/UnexpectedTokenException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Property/AtRule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Property/CSSNamespace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Property/Charset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Property/Import.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Property/Selector.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Renderable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Rule/Rule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/RuleSet/AtRuleSet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/RuleSet/DeclarationBlock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/RuleSet/RuleSet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/CSSFunction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/CSSString.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/CalcFunction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/CalcRuleValueList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/Color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/LineName.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/PrimitiveValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/RuleValueList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/Size.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/URL.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/Value.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Value/ValueList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/Sabberworm/CSS/CSSList/AtRuleBlockListTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/Sabberworm/CSS/CSSList/DocumentTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/Sabberworm/CSS/OutputFormatTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/Sabberworm/CSS/ParserTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/Sabberworm/CSS/RuleSet/DeclarationBlockTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/Sabberworm/CSS/RuleSet/LenientParsingTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-calc-no-space-around-minus.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-charset-after-rule.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-charset-in-block.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-empty-grid-linename.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-empty.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-end-token-2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-end-token.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-fault-tolerance.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/-tobedone.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/1readme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/2readme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/atrules.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/calc-nested.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/calc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/case-insensitivity.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/colortest.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/comments.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/create-shorthands.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/docuwiki.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/empty-grid-linename.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/expand-shorthands.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/functions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/grid-linename.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/hex-alpha.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/ie-hacks.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/ie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/important.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/inner-color.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/line-numbers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/missing-property-value.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/ms-filter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/namespaces.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/nested.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/slashed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/specificity.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/trailing-whitespace.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/unicode-range.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/unicode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/unmatched_braces.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/unopened-close-brackets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/url.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/values.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/webkit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/files/whitespace.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/tests/quickdump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_113425_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_113425_create_profiles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/files/1575106377_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/files/1575106377_sample.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +397,13 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Blade" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -137,10 +496,19 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1URsMTCJbecTGpk40xFFRo1yvww" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -148,6 +516,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project_Task_Scheduling_System\resources\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Project_Task_Scheduling_System\database\seeds" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views\task" />
@@ -194,7 +565,7 @@
       <workItem from="1575892802313" duration="21000" />
       <workItem from="1576038219498" duration="27503000" />
       <workItem from="1576298556490" duration="19000" />
-      <workItem from="1576298578730" duration="12654000" />
+      <workItem from="1576298578730" duration="20482000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -287,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576046560283</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="profile setting done for individuals">
+      <created>1576313597381</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1576313597381</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +687,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="make leader works fine" />
     <MESSAGE value="project create complete" />
     <MESSAGE value="From admin panel, project assign done" />
@@ -322,6 +701,7 @@
     <MESSAGE value="in user panel, task showing updated" />
     <MESSAGE value="requirement updte" />
     <MESSAGE value="Team unique, department ways done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Team unique, department ways done" />
+    <MESSAGE value="profile setting done for individuals" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile setting done for individuals" />
   </component>
 </project>

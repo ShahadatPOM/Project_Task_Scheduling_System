@@ -12,6 +12,10 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Project Detail</h1>
+                    <div style=" margin-left: 50%; margin-top: 10px;">
+                        <a href="" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
+                        <a href="" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
+                    </div>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">

@@ -13,6 +13,10 @@
             {{ session()->get('message') }}
         </div>
     @endif
+    <div style=" margin-left: 50%; margin-top: 10px;">
+        <a href="" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
+        <a href="" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
+    </div>
     <div class="card">
         <div class="card-header">
         </div>
@@ -63,7 +67,7 @@
                                     @foreach($users as $user)
                                         <li class="list-inline-item">
                                             <img alt="Avatar" class="table-avatar"
-                                                 src="{{url('files/'.$user->image )}}">
+                                                 src="{{url('files/'.$user->profile->image )}}">
                                         </li>
                                     @endforeach
                                 </ul>
@@ -156,22 +160,22 @@
                                     @php
                                         $all_requirements = [];
                                     @endphp
-                                @php
-                                    $all_req[] = $leaderproject->requirements;
-                                @endphp
+                                    @php
+                                        $all_req[] = $leaderproject->requirements;
+                                    @endphp
 
                                     @foreach($leaderproject->requirements as $requirement)
                                         @if(in_array($requirement->status == 1, $all_req))
                                             @foreach($requirement->tasks as $task)
-                                            <small>
-                                                <div class="progress progress-sm">
-                                                    <div class="progress-bar bg-red" role="progressbar"
-                                                         aria-volumenow="0" aria-volumemin="0" aria-volumemax="100"
-                                                         style="width:{{ $task->progress }}%">
+                                                <small>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-red" role="progressbar"
+                                                             aria-volumenow="0" aria-volumemin="0" aria-volumemax="100"
+                                                             style="width:{{ $task->progress }}%">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                {{ $task->progress }}% Completed
-                                            </small>
+                                                    {{ $task->progress }}% Completed
+                                                </small>
                                             @endforeach
                                         @endif
                                     @endforeach

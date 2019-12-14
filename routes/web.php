@@ -103,3 +103,9 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
     Route::get('progress/{id}', 'TaskController@taskProgress')->name('progress');
     Route::get('progressUpdate/{id}', 'TaskController@progressUpdate')->name('progressUpdate');
 });
+
+//pdf
+
+Route::get('pdf/view/users', 'PdfController@viewUsers')->name('viewUsers');
+Route::get('pdf/download/users', 'PdfController@downloadUsers')->name('downloadUsers');
+

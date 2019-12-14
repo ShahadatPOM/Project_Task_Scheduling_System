@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Activity;
 use App\Http\Controllers\Controller;
+use App\Project;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function Sodium\compare;
 
 class LoginController extends Controller
 {
@@ -35,9 +39,26 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        if(Auth::check() && Auth::user()->role->id == 1){
+        if (Auth::check()) {
             $this->redirectTo = route('admin.dashboard');
         }
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+
+        //attempt login with usename or email
+        Auth::attempt([$this->username() => $request->email, 'password' => $request->password]);
+        //was any of those correct ?
+        if (Auth::check()) {
+            $projects = Project::all();
+            //send them where they are going
+            return redirect()->intended(url('admin/dashboard'));
+        }
+        //Nope, something wrong during authentication
+        return redirect()->back()->withErrors([
+            'credentials' => 'Invalid Credential'
+        ]);
     }
 }
