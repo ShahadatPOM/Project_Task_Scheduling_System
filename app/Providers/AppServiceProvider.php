@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Requirement;
 use App\Team;
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
@@ -32,13 +33,12 @@ class AppServiceProvider extends ServiceProvider
             }
         );
 
-        /*view()->composer(
+        view()->composer(
           'layouts.backend.partial.header',
           function ($view) {
-              $view->with('teams', Team::where('status', 1)->get());
-
+              $view->with('submittedModule', Requirement::where('status', 3)->get());
           }
-      );*/
+      );
         /*view()->composer(
             'layouts.backend.partial.header',
             function ($view) {

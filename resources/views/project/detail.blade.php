@@ -53,38 +53,21 @@
                         </div>
                         <div class="row">
                             <div class="col-10 offset-1">
-                                <small style="text-align: center; font-size: 16px; font-weight: bold">Description</small>
+                                <small
+                                    style="text-align: center; font-size: 16px; font-weight: bold">Description</small>
                                 <p style="font-family: 'Times New Roman'; font-size: 14px ">{{ $project->description }}</p>
                             </div>
-                        </div>
+                            <div class="col-6 text-center">
+                                <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2"
+                                       data-width="120"
+                                       data-height="120" data-fgColor="#f56954">
 
-                        <div class="row">
-                            <div class="col-8 offset-1">
-                                <caption>Required Files</caption>
-                                <table class="table" style="text-align: center">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Requirement</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($project->files as $key => $file)
-                                        <tr>
-                                            <td>{{ $key++ }}</td>
-                                            <td>{{ $file->filename }}</td>
-                                            <td><i class="fa fa-download"></i></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                                <div class="knob-label">data-width="120"</div>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <caption>Requirements</caption>
+                        <p style="font-weight: bold;">Requirements</p>
                         <table class="table" style="text-align: center">
                             <thead>
                             <tr>
@@ -103,15 +86,31 @@
                             @endforeach
                             </tbody>
                         </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card card-outline card-orange col-6 offset-3" style="min-height: 100px; max-width: 300px;" >
-                        project progress pie chart
-                    </div>
-                </div>
-            </div>
 
+                        <p style="font-weight: bold;">Files</p>
+                        <table class="table" style="text-align: center">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Requirement</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($project->files as $key => $file)
+                                <tr>
+                                    <td>{{ $key++ }}</td>
+                                    <td>{{ $file->filename }}</td>
+                                    <td><a href="{{route('project.projectFile',$file->id)}}"><i class="fa fa-download"></i></a></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {{--                progress chart--}}
+
+            </div>
         </div>
         <!-- /.card -->
 

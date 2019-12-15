@@ -9,7 +9,7 @@ class Task extends Model
     protected $fillable=[
       'project_id', 'member_id', 'description', 'filename', 'status'
     ];
-    protected $casts = ['filename','array'];
+
     public function project(){
         return $this->belongsTo('App\Project');
     }

@@ -15,9 +15,15 @@ class TaskController extends Controller
     public function index()
     {
         if (Auth::user()->role_id == 4) {
-            $task = Task::where('member_id', Auth::id())->first();
+            $task= Task::where('member_id', Auth::id())->first();
             return view('task.index', compact('task'));
         }
+    }
+
+    public function detail($id){
+        $task = Task::find($id);
+        $difference = count($task->project->requirements) - count($task->requirements);
+        return view('task.detail', compact('task', 'difference'));
     }
 
     public function assignForm($id)
@@ -61,27 +67,40 @@ class TaskController extends Controller
         elseif ($requirement->status = 1)
             $requirement->status = 2;
 
-        elseif ($requirement->status = 2)
-            $requirement->status = 3;
-
-        elseif ($requirement->status = 3)
-            $requirement->status = 4;
-
         $requirement->save();
         return back();
 
     }
 
-    public function progressUpdate($id){
-
+    public function submit($id){
         $requirement = Requirement::find($id);
-        if($requirement->tasks){
+        return view('task.submit',compact('requirement'));
+        /*$requirement->status = 3;
+        $requirement->save();
+        return back();*/
+    }
 
-            foreach($requirement->tasks as $task){
-                $task->progress += $requirement->percentage;
-                $task->save();
-            }
-            return back();
+    public function submitTask(Request $request, $id){
+        dd($request->all());
+        $requirement = Requirement::find($id);
+        $requirement->description = $request->description;
+        $requirement->link = $request->link;
+        if ($request->file) {
+            $file = $request->File('file');
+            $ext = $requirement->name.'.'.$file->clientExtension();
+            $path = public_path('files/requirements/');
+            move($path,$ext);
+            $requirement->file = $ext;
         }
+        $requirement->save();
+        Toastr::success('File Has Been Submitted Succesfully, wait for the confirmation','Success!');
+        return back();
+    }
+
+    public function fileDownload($id)
+    {
+        $task = Task::find($id);
+        $path = public_path() . '/files/tasks/'.$task->filename;
+        return response()->download($path);
     }
 }

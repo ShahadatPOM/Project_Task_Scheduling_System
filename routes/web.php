@@ -61,6 +61,7 @@ Route::group(['as' => 'project.', 'prefix' => 'project', 'middleware' => ['auth'
     Route::get('delete/{id}', 'ProjectController@delete')->name('delete');
     Route::get('assign/form/{id}', 'ProjectController@assignForm')->name('assignForm');
     Route::post('assign/{id}', 'ProjectController@assign')->name('assign');
+    Route::get('project-file/{id}', 'ProjectController@fileDownload')->name('projectFile');
 });
 
 //Team
@@ -102,6 +103,9 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
     Route::post('assign/{id}', 'TaskController@assign')->name('assign');
     Route::get('progress/{id}', 'TaskController@taskProgress')->name('progress');
     Route::get('progressUpdate/{id}', 'TaskController@progressUpdate')->name('progressUpdate');
+    Route::get('submit/{id}', 'TaskController@submit')->name('submit');
+    Route::get('/download/{id}', 'TaskController@fileDownload');
+    Route::post('/task-submit/{id}', 'TaskController@submitTask')->name('task-submit');
 });
 
 //pdf

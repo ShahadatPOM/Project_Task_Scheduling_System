@@ -34,9 +34,19 @@ class ProjectController extends Controller
             foreach ($teams as $team) {
                 $leaderprojects = $team->projects()->get();
             }
-            return view('project.index', compact('leaderprojects'));
+            foreach($leaderprojects as $leaderproject){
+                if($leaderproject->tasks){
+                    $total = 0;
+                    foreach($leaderproject->tasks as $task){
+                        $total_progress = $total += $task->progress;
+                    }
+                }
+                else{
+                    $total_progress= 0;
+                }
+            }
+            return view('project.index', compact('leaderprojects', 'total_progress'));
         }
-
     }
 
     public function create()
@@ -120,7 +130,10 @@ class ProjectController extends Controller
 
     public function edit($id)
     {
-
+        $project = Project::find($id);
+        $departments = Department::all();
+        $teams = Team::all();
+        return view('project.edit',compact('project','departments','teams'));
     }
 
     public function update(Request $request, $id)
@@ -131,5 +144,12 @@ class ProjectController extends Controller
     public function delete($id)
     {
 
+    }
+
+    public function fileDownload($id)
+    {
+        $file = File::find($id);
+        $path = public_path('files/'.$file->filename);
+        return response()->download($path);
     }
 }
