@@ -109,11 +109,6 @@
                                 <p>All Teams</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                            </a>
-                        </li>
                     </ul>
                 </li>
 

@@ -53,6 +53,10 @@ class LoginController extends Controller
         //was any of those correct ?
         if (Auth::check()) {
             $projects = Project::all();
+            $activity = new Activity();
+            $activity->user_id = Auth::id();
+            $activity->login_time = now('asia/dhaka');
+            $activity->save();
             //send them where they are going
             return redirect()->intended(url('admin/dashboard'));
         }

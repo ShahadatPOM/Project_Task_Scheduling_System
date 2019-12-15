@@ -27,6 +27,21 @@
                             @csrf
                             <div class="card-body">
                                 <div>
+                                    <label for="tagName">Department</label>
+                                    <select class="form-control" name="department_id" id="">
+                                        <option selected>Select Department</option>
+                                        @foreach($departments as $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                        @endforeach
+                                    </select>
+
+                                    @error('department_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                     <div>
                                     <label for="tagName">Team Name</label>
                                     <input id="name" type="text"
                                            class="form-control @error('name') is-invalid @enderror" name="name"
@@ -38,21 +53,6 @@
                                         </span>
                                     @enderror
                                 </div>
-                                    <div>
-                                        <label for="tagName">Department Name</label>
-                                        <select class="form-control" name="department_id" id="">
-                                            <option selected>Select Department</option>
-                                            @foreach($departments as $department)
-                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
-                                                @endforeach
-                                        </select>
-
-                                        @error('department_id')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
 
                                 <div class="form-group">
                                     <label>Team Members</label>
