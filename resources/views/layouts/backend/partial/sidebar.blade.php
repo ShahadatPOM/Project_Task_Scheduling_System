@@ -111,6 +111,11 @@
                         </li>
                     </ul>
                 </li>
+                    <li class="nav-item">
+                        <a href="{{ url('permissions') }}" class="nav-link">
+                            <i class="fa fa-plus nav-icon"></i>
+                            <p>Permissions</p>
+                        </a>
 
                 <li class="nav-header">Projects & Tasks</li>
                 <li class="nav-item has-treeview">

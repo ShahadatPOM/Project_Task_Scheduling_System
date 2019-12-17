@@ -22,6 +22,8 @@ Route::get('notification', 'HomeController@notification');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('permissions', 'PermissionController')->except('create','store');
+Route::get('give-permissions/{id}', 'PermissionController@create');
 
 //Admin
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
