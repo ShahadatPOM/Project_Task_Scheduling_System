@@ -22,7 +22,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <form action="{{ route('project.edit',$project->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('project.update',$project->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-6">
@@ -36,14 +36,15 @@
                                 <label for="inputName">Title</label>
                                 <input type="text" name="title" id="inputName" class="form-control" value="{{$project->title}}">
                             </div>
-                            {{dd($project->departments)}}
-
                             <div class="form-group">
                                 <label>Departments</label>
                                 <div class="select2-blue">
                                     <select class="select2" multiple="multiple" name="departments[]" data-placeholder="Select departments" style="width: 100%;">
                                         @foreach($project->departments as  $department)
                                             <option value="{{ $department->id }}" selected>{{ $department->name }}</option>
+                                        @endforeach
+                                        @foreach($departments as  $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -79,16 +80,16 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputDescription">Client</label>
-                                <input type="text" name="client" id="inputName" class="form-control">
+                                <input type="text" name="client" id="inputName" value="{{$project->client}}" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="inputEstimatedBudget">Estimated budget</label>
-                                <input type="number" name="estimated_budget" id="inputEstimatedBudget"
+                                <input type="number" name="estimated_budget" value="{{$project->estimated_budget}}" id="inputEstimatedBudget"
                                        class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="inputEstimatedDuration">Estimated project duration</label>
-                                <input type="number" name="estimated_project_duration" id="inputEstimatedDuration"
+                                <input type="number" value="{{$project->estimated_project_duration}}" name="estimated_project_duration" id="inputEstimatedDuration"
                                        class="form-control">
                             </div>
                         </div>
@@ -133,9 +134,7 @@
     <script>
         $(function () {
             //Initialize Select2 Elements
-            $('.select2').select2({
-                'tags': true,
-            });
+            $('.select2').select2();
         })
 
 
