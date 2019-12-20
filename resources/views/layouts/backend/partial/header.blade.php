@@ -43,7 +43,7 @@
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i style="" class="far fa-bell"></i>
                         <span class="badge badge-warning navbar-badge">15</span>
-                   {{-- @if(Auth::user()->role->id == 3)--}}
+                    @if(Auth::user()->role->id == 3)
                         <span class="badge badge-warning navbar-badge">{{ count($submittedModule) }}</span>
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <span class="dropdown-item dropdown-header">{{ count($submittedModule) }} Notifications</span>
@@ -65,7 +65,7 @@
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                         </div>
-                    {{--@endif--}}
+                    @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header">15 Notifications</span>

@@ -14,13 +14,14 @@ class TeamController extends Controller
 {
     public function index()
     {
-       /* if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2) {*/
+        if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2) {
             $teams = Team::all();
-        /*}*/
-        /*if (Auth::user()->role->id == 3 || Auth::user()->role->id == 4) {*/
-
             return view('team.index', compact('teams'));
-       /* }*/
+        }
+        if (Auth::user()->role->id == 3 || Auth::user()->role->id == 4) {
+            $teams = Team::all();
+            return view('team.index', compact('teams'));
+        }
 
     }
 

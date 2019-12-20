@@ -87,7 +87,7 @@
                 @endif
 {{--                admin specific end--}}
 {{--                admin and project manager--}}
-                {{--@if(Auth::user()->role->id == 1 || Auth::user()->role->id == 2)--}}
+                @if(Auth::user()->role->id == 1 || Auth::user()->role->id == 2)
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-object-group"></i>
@@ -165,9 +165,9 @@
                         </li>
                     </ul>
                 </li>
-                   {{-- @endif--}}
+                    @endif
 {{--                team leader began--}}
-               {{-- @if(Auth::user()->role->id == 3)--}}
+                @if(Auth::user()->role->id == 3)
                     <li class="nav-item">
                         <a href="{{ route('user.index') }}" class="nav-link">
                             <i class="fa fa-list nav-icon"></i>
@@ -186,9 +186,9 @@
                             <p>Teams</p>
                         </a>
                     </li>
-               {{-- @endif--}}
+                @endif
 {{--                team members began--}}
-               {{-- @if(Auth::user()->role->id == 4)--}}
+                @if(Auth::user()->role->id == 4)
                         <li class="nav-item">
                             <a href="{{ route('user.index') }}" class="nav-link">
                                 <i class="fa fa-list nav-icon"></i>
@@ -208,7 +208,7 @@
                         </a>
                     </li>
 
-               {{-- @endif--}}
+                @endif
             </ul>
         </nav>
     </div>
