@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="Merge branch 'dev1' of https://github.com/ShahadatPOM/Project_Task_Scheduling_System into dev1&#10;&#10;# Conflicts:&#10;#&#9;database/migrations/2019_12_17_101223_create_permission_role_table.php&#10;#&#9;database/seeds/PermissionTableSeeder.php">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_19_093522_create_department_project_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_14_154006_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_154006_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_17_101223_create_permission_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_17_101223_create_permission_role_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/edit.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +202,7 @@
       <workItem from="1576386164670" duration="31599000" />
       <workItem from="1576495542025" duration="22000" />
       <workItem from="1576577182961" duration="2908000" />
-      <workItem from="1576860530106" duration="338000" />
+      <workItem from="1576860530106" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -327,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576331004493</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="check mrg">
+      <created>1576860993807</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576860993807</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +362,7 @@
     <MESSAGE value="profile setting done for individuals" />
     <MESSAGE value="pdf generation done" />
     <MESSAGE value="pdf progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="pdf progress" />
+    <MESSAGE value="check mrg" />
+    <option name="LAST_COMMIT_MESSAGE" value="check mrg" />
   </component>
 </project>
