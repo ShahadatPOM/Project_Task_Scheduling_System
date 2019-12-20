@@ -14,10 +14,10 @@ class TaskController extends Controller
 
     public function index()
     {
-        if (Auth::user()->role_id == 4) {
+        /*if (Auth::user()->role_id == 4) {*/
             $task= Task::where('member_id', Auth::id())->first();
             return view('task.index', compact('task'));
-        }
+        /*}*/
     }
 
     public function detail($id){

@@ -16,7 +16,7 @@
     <section class="content">
         <div class="container-fluid">
 {{--            admin began--}}
-            @if(Auth::user()->role->id==1)
+          {{--  @if(Auth::user()->role->id==1)--}}
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
@@ -103,10 +103,10 @@
                 @endforeach
                     </tbody>
                 </table>
-            @endif
+            {{--@endif--}}
 {{--            admin end--}}
 {{--            project manager began--}}
-            @if(Auth::user()->role->id==2)
+           {{-- @if(Auth::user()->role->id==2)--}}
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
@@ -162,10 +162,10 @@
                         </div>
                     </div>
                 </div>
-            @endif
+           {{-- @endif--}}
 {{--            project manger end--}}
 {{--            team leader began--}}
-            @if(Auth::user()->role->id==3)
+            {{--@if(Auth::user()->role->id==3)--}}
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
@@ -221,10 +221,10 @@
                         </div>
                     </div>
                 </div>
-            @endif
+           {{-- @endif--}}
 {{--            team leader end--}}
 {{--            team member began--}}
-            @if(Auth::user()->role->id==4)
+           {{-- @if(Auth::user()->role->id==4)--}}
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
@@ -280,7 +280,7 @@
                         </div>
                     </div>
                 </div>
-            @endif
+            {{--@endif--}}
 {{--            team member end--}}
         </div>
         {{--live date-time
