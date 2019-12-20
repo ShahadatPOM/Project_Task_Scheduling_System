@@ -31,6 +31,6 @@ class Project extends Model
         return $this->belongsToMany('App\Department');
     }
 
-    protected $casts=['departments' => 'array'];
+   
 
 }

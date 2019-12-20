@@ -16,7 +16,6 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('team_id')->nullable();
-            $table->json('departments');
             $table->string('title');
             $table->string('description')->nullable();
             $table->string('client');

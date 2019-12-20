@@ -58,6 +58,7 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'title' => 'required|unique:projects,title',
             'departments' => 'required',
@@ -67,15 +68,16 @@ class ProjectController extends Controller
             'estimated_budget' => 'required',
             'estimated_project_duration' => 'required',
         ]);
+
         $project = new Project();
         $project->title = $request->title;
         $project->description = $request->description;
         $project->client = $request->client;
         $project->estimated_budget = $request->estimated_budget;
         $project->estimated_project_duration = $request->estimated_project_duration;
-        $project->departments = $request->departments;
         $project->status = 0;
         $project->save();
+        $project->departments()->attach($request->departments);
         $requirements = $request->requirements;
         if ($requirements) {
             foreach ($requirements as $requirement) {
@@ -138,6 +140,47 @@ class ProjectController extends Controller
 
     public function update(Request $request, $id)
     {
+        
+                $this->validate($request, [
+            'title' => 'required|unique:projects,title,'.$id,
+            'departments' => 'required',
+            'description' => 'required_without:photos',
+            'photos' => 'required_without:description|unique:files,filename,'.$id,
+            'client' => 'required',
+            'estimated_budget' => 'required',
+            'estimated_project_duration' => 'required',
+        ]);
+        $project = Project::find($id);
+        $project->title = $request->title;
+        $project->description = $request->description;
+        $project->client = $request->client;
+        $project->estimated_budget = $request->estimated_budget;
+        $project->estimated_project_duration = $request->estimated_project_duration;
+        $project->status = 0;
+        $project->save();
+        $project->departments()->sync($request->departments);
+        $requirements = $request->requirements;
+        if ($requirements) {
+            foreach ($requirements as $requirement) {
+                $req = new Requirement();
+                $req->name = $requirement;
+                $req->percentage = 100/count($requirements);
+                $project->requirements()->save($req);
+            }
+        }
+
+        $photos = $request->photos;
+        if ($photos) {
+            foreach ($photos as $u_file) {
+                $name = $u_file->getClientOriginalName();
+                $u_file->move(public_path() . '/files/', $name);
+                $project_file = new File();
+                $project_file->filename = $name;
+
+                $project->files()->save($project_file);
+            }
+        }
+        return back();
 
     }
 

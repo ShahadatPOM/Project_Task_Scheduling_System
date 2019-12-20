@@ -50,6 +50,12 @@
                                 <small style="text-align: center; font-size: 14px">Estimated Budget</small>
                                 <strong style="text-align: center">{{ $project->estimated_budget }}/=</strong>
                             </div>
+                            <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
+                                <small style="text-align: center; font-size: 14px">Departments</small>
+                                @foreach($project->departments as $department)
+                                <strong style="text-align: center">{{ $department->name }}</strong>
+                                @endforeach
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-10 offset-1">
