@@ -23,7 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('permissions', 'PermissionController')->except('create','store');
-Route::get('give-permissions/{id}', 'PermissionController@create');
+Route::get('permissions/create/{id}', 'PermissionController@create');
+Route::post('permissions/store/{id}', 'PermissionController@store');
 
 //Admin
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {

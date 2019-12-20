@@ -7,28 +7,24 @@ use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Toastr;
 class PermissionController extends Controller
 {
 
     public function index()
     {
-        $controllers = [];
-        foreach (Route::getRoutes()->getRoutes() as $route) {
-            $action = $route->getAction();
-            if (array_key_exists('as', $action)) {
-                $controllers[] = $action['as'];
-            }
-        }
-            dd($controllers);
-        $roles = Role::all();
+        $roles = Role::all()->except(1);
         return view('permissions.index',compact('roles'));
     }
 
     public function create($id)
     {
-        $role = Role::find($id);
-        return view('permissions.create',compact('role'));
+        $role=Role::find($id);
+        $creates=Permission::where('name', 'like', '%' . 'create' . '%')->get();
+        $views=Permission::where('name', 'like', '%' . 'view' . '%')->get();
+        $edits=Permission::where('name', 'like', '%' . 'edit' . '%')->get();
+        $deletes=Permission::where('name', 'like', '%' . 'delete' . '%')->get();
+        return view('permissions.create',compact('role','creates','views','deletes','edits'));
     }
 
     /**
@@ -37,9 +33,12 @@ class PermissionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+         $role=Role::find($id);
+        $role->permissions()->attach($request->id);
+        Toastr::success('permissions given Successfully','Success!');
+        return redirect('permissions');
     }
 
     /**
@@ -53,15 +52,14 @@ class PermissionController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Permission $permission)
+    public function edit($id)
     {
-        //
+        $roles=Role::find($id);
+        foreach($roles->permissions as $role)
+        {
+            $list[]=$role->id;
+        }
+        return view('permissions.edit',compact('roles','list'));
     }
 
     /**
@@ -71,9 +69,11 @@ class PermissionController extends Controller
      * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request,$id)
     {
-        //
+        $role=Role::find($id);
+        $role->permissions()->sync($request->id);
+        return back();
     }
 
     /**
