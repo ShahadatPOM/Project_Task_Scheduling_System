@@ -4,26 +4,11 @@ namespace App\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use App\User;
-use App\Role;
 use Auth;
 class UsersPolicy
 {
     use HandlesAuthorization;
 
-    public function admin()
-    {
-        $user=Auth::user()->role->name;
-        $role=Role::where('name',$user)->first();
-        if($role->permissions()->exists())
-        {
-            foreach ($role->permissions as $key => $permission) {
-                $list[]=$permission->name;
-            }
-            return in_array('user_create', $list);
-        }
-        else
-            return false;
-    }
     public function viewAny(User $user)
     {
         //
@@ -34,15 +19,18 @@ class UsersPolicy
         //
     }
 
-    /**
-     * Determine whether the user can create models.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
-    public function create(User $user)
+    public function create()
     {
-        return $this->admin();
+        $user=Auth::user();
+        if($user->role->permissions()->exists())
+        {
+            foreach ($user->role->permissions as $key => $permission) {
+                $list[]=$permission->name;
+            }
+            return in_array('user_create', $list);
+        }
+        else
+            return false;
     }
 
     /**

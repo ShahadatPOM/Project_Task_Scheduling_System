@@ -30,11 +30,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('assets/backend/plugins/select2/css/select2.min.css')}}">
-{{--    panel--}}
-{{--    <link rel="stylesheet" href="{{ asset('assets/backend/dist/css/bootstrap.min.css') }}">--}}
-{{--    toastr--}}
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+    {{--datatable--}}
+    <link rel="stylesheet" href="{{asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @stack('base.css')
 
 </head>
@@ -105,7 +105,22 @@
     }
     @endif
 </script>
-
+{{--datatable--}}
+<script src="{{asset('assets/backend/plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        /*$('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+        });*/
+    });
+</script>
 @stack('base.js')
 
 </body>

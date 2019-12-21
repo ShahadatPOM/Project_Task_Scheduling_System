@@ -7,7 +7,7 @@ use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Toastr;
+
 class PermissionController extends Controller
 {
 
@@ -20,11 +20,17 @@ class PermissionController extends Controller
     public function create($id)
     {
         $role=Role::find($id);
-        $creates=Permission::where('name', 'like', '%' . 'create' . '%')->get();
-        $views=Permission::where('name', 'like', '%' . 'view' . '%')->get();
-        $edits=Permission::where('name', 'like', '%' . 'edit' . '%')->get();
-        $deletes=Permission::where('name', 'like', '%' . 'delete' . '%')->get();
-        return view('permissions.create',compact('role','creates','views','deletes','edits'));
+        $users=Permission::where('name', 'like', '%' . 'user' . '%')->get();
+        $roles=Permission::where('name', 'like', '%' . 'role' . '%')->get();
+        $departments=Permission::where('name', 'like', '%' . 'department' . '%')->get();
+        $teams=Permission::where('name', 'like', '%' . 'team' . '%')->get();
+        $leaders=Permission::where('name', 'like', '%' . 'leader' . '%')->get();
+        $members=Permission::where('name', 'like', '%' . 'member' . '%')->get();
+        $projects=Permission::where('name', 'like', '%' . 'project' . '%')->get();
+        $requirements=Permission::where('name', 'like', '%' . 'requirement' . '%')->get();
+        $tasks=Permission::where('name', 'like', '%' . 'task' . '%')->get();
+
+        return view('permissions.create',compact('role', 'tasks', 'members', 'users', 'requirements', 'roles', 'departments', 'teams', 'leaders', 'projects'));
     }
 
     /**
@@ -37,7 +43,7 @@ class PermissionController extends Controller
     {
          $role=Role::find($id);
         $role->permissions()->attach($request->id);
-        Toastr::success('permissions given Successfully','Success!');
+
         return redirect('permissions');
     }
 

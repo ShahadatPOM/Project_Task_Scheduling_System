@@ -1,11 +1,6 @@
 @extends('layouts.backend.master')
 
 @section('base.title', 'Admin')
-@push('base.css')
-    <link rel="stylesheet" href="{{asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-@endpush
 
 @section('master.content')
     @if(session()->has('message'))
@@ -13,7 +8,7 @@
             {{ session()->get('message') }}
         </div>
     @endif
-    
+
     <div style=" margin-left: 50%; margin-top: 10px;">
         <a target="_blank" href="{{ route('viewDepartment') }}" class="btn btn-info" style=" border: 2px; width: 70px">PDF
             <i class="fa fa-eye"></i></a>
@@ -73,21 +68,3 @@
     </div>
     <!-- /.card -->
 @endsection
-
-@push('base.js')
-    <script src="{{asset('assets/backend/plugins/datatables/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
-    <script>
-        $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-            });
-        });
-    </script>
-@endpush

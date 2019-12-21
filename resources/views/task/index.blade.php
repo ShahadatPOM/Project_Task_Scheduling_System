@@ -2,11 +2,6 @@
 
 @section('base.title', 'Admin')
 
-@push('base.css')
-    <link rel="stylesheet" href="{{asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-@endpush
-
 @section('master.content')
     @if(session()->has('message'))
         <div class="col-sm-4 offset-sm-2 alert">
@@ -107,21 +102,3 @@
         </div>
     </div>
 @endsection
-
-@push('base.js')
-    <script src="{{asset('assets/backend/plugins/datatables/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
-    <script>
-        $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-            });
-        });
-    </script>
-@endpush

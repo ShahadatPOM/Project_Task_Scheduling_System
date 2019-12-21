@@ -2,15 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project_manager/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project_manager/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/requirement/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/requirement/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/task/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,13 +170,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Project_Task_Scheduling_System\resources\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Project_Task_Scheduling_System\resources\views\pdf" />
       <recent name="D:\Project_Task_Scheduling_System\database\seeds" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views\task" />
+      <recent name="D:\Project_Task_Scheduling_System\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Project_Task_Scheduling_System\resources\views" />
     </key>
   </component>
@@ -214,7 +227,7 @@
       <workItem from="1576577182961" duration="2908000" />
       <workItem from="1576860530106" duration="605000" />
       <workItem from="1576904881627" duration="16000" />
-      <workItem from="1576904899210" duration="569000" />
+      <workItem from="1576904899210" duration="9826000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -335,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576860993807</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="conditions are removed">
+      <created>1576905513001</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576905513001</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,6 +395,7 @@
     <MESSAGE value="pdf generation done" />
     <MESSAGE value="pdf progress" />
     <MESSAGE value="check mrg" />
-    <option name="LAST_COMMIT_MESSAGE" value="check mrg" />
+    <MESSAGE value="conditions are removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="conditions are removed" />
   </component>
 </project>

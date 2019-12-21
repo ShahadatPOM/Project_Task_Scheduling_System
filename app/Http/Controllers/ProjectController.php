@@ -18,19 +18,13 @@ class ProjectController extends Controller
 {
     public function index()
     {
-       /* if (Auth::user()->role->id == 1) {*/
-
             $projects = Project::all();
             $teams = Team::all();
-            $users = collect();
+            $users = [];
             foreach ($teams as $team) {
                 $users = User::whereIn('id', $team->members)->get();
             }
-          /*  return view('project.index', compact('projects', 'users'));*/
-        /*}*/
-
-        if (Auth::user()->role->id == 3) {
-            $teams = Team::where('leader_id', Auth::id())->get();
+           /* $teams = Team::where('leader_id', Auth::id())->get();
             foreach ($teams as $team) {
                 $leaderprojects = $team->projects()->get();
             }
@@ -44,9 +38,9 @@ class ProjectController extends Controller
                 else{
                     $total_progress= 0;
                 }
-            }
-            return view('project.index', compact('leaderprojects', 'total_progress', 'projects', 'users'));
-        }
+            }*/
+            return view('project.index', compact( 'projects', 'users', 'teams'));
+
     }
 
     public function create()

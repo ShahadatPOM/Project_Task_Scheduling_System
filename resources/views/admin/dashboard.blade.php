@@ -18,6 +18,7 @@
 {{--            admin began--}}
            {{-- @if(Auth::user()->role->id==1)--}}
             <div class="row">
+                @can('create', 'App\User')
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
@@ -31,7 +32,7 @@
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-
+                @endcan
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-success">
                         <div class="inner">

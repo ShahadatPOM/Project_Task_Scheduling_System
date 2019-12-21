@@ -58,9 +58,6 @@
                         </li>
                     </ul>
                 </li>
-
-
-
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-institution"></i>
@@ -84,10 +81,7 @@
                         </li>
                     </ul>
                 </li>
-               {{-- @endif--}}
-{{--                admin specific end--}}
-{{--                admin and project manager--}}
-          {{--      @if(Auth::user()->role->id == 1 || Auth::user()->role->id == 2)--}}
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-object-group"></i>
@@ -165,50 +159,6 @@
                         </li>
                     </ul>
                 </li>
-                  {{--  @endif--}}
-{{--                team leader began--}}
-               {{-- @if(Auth::user()->role->id == 3)--}}
-                    <li class="nav-item">
-                        <a href="{{ route('user.index') }}" class="nav-link">
-                            <i class="fa fa-list nav-icon"></i>
-                            <p>All Users</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('project.index') }}" class="nav-link">
-                            <i class="fa fa-list nav-icon"></i>
-                            <p>Projects</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('team.index') }}" class="nav-link">
-                            <i class="fa fa-list nav-icon"></i>
-                            <p>Teams</p>
-                        </a>
-                    </li>
-           {{--     @endif--}}
-{{--                team members began--}}
-              {{--  @if(Auth::user()->role->id == 4)--}}
-                        <li class="nav-item">
-                            <a href="{{ route('user.index') }}" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>All Users</p>
-                            </a>
-                        </li>
-                    <li class="nav-item">
-                        <a href="{{ route('project.index') }}" class="nav-link">
-                            <i class="fa fa-list nav-icon"></i>
-                            <p>Projects</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('task.index') }}" class="nav-link">
-                            <i class="fa fa-list nav-icon"></i>
-                            <p>Tasks</p>
-                        </a>
-                    </li>
-
-              {{--  @endif--}}
             </ul>
         </nav>
     </div>

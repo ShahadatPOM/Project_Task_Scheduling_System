@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use App\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
+        $this->authorize('create', User::class);
         $departments = Department::all();
         $roles = Role::all();
         return view('auth.register', compact('roles', 'departments'));
