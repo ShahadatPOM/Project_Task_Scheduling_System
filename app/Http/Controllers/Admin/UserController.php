@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function index(){
+        $this->authorize('view', User::class);
         $users = User::all()->except(Auth::id());
         return view('user.index', compact('users'));
 
     }
 
     public function edit($id){
+        $this->authorize('edit', User::class);
         $user = User::findOrfail($id);
         $departments = Department::all();
         $roles = Role::all();
@@ -47,6 +49,7 @@ class UserController extends Controller
         return back()->with($notification);
     }
     public function delete($id){
+        $this->authorize('delete', User::class);
         $user = User::findOrfail($id);
         $user->delete();
         $notification = array(

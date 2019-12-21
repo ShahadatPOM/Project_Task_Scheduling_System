@@ -33,7 +33,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 
 
 //users
-Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('create', 'UserController@create')->name('create');
     Route::post('store', 'UserController@store')->name('store');
     Route::get('edit/{id}', 'UserController@edit')->name('edit');
@@ -43,7 +43,7 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'Admin', 'midd
 Route::get('user/index', 'Admin\UserController@index')->name('user.index');
 
 //Departments
-Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth']], function () {
     Route::get('index', 'DepartmentController@index')->name('index');
     Route::get('create', 'DepartmentController@create')->name('create');
     Route::post('store', 'DepartmentController@store')->name('store');
