@@ -18,7 +18,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        if (Auth::user()->role->id == 1) {
+       /* if (Auth::user()->role->id == 1) {*/
 
             $projects = Project::all();
             $teams = Team::all();
@@ -26,8 +26,8 @@ class ProjectController extends Controller
             foreach ($teams as $team) {
                 $users = User::whereIn('id', $team->members)->get();
             }
-            return view('project.index', compact('projects', 'users'));
-        }
+          /*  return view('project.index', compact('projects', 'users'));*/
+        /*}*/
 
         if (Auth::user()->role->id == 3) {
             $teams = Team::where('leader_id', Auth::id())->get();
@@ -45,7 +45,7 @@ class ProjectController extends Controller
                     $total_progress= 0;
                 }
             }
-            return view('project.index', compact('leaderprojects', 'total_progress'));
+            return view('project.index', compact('leaderprojects', 'total_progress', 'projects', 'users'));
         }
     }
 
@@ -140,7 +140,7 @@ class ProjectController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+
                 $this->validate($request, [
             'title' => 'required|unique:projects,title,'.$id,
             'departments' => 'required',

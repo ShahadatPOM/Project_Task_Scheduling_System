@@ -49,7 +49,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(Auth::user()->role->id == 1)
+                {{--@if(Auth::user()->role->id == 1)--}}
                     @foreach($projects as $project)
                         <tr>
                             <td>
@@ -126,7 +126,7 @@
                             </td>
                         </tr>
                     @endforeach
-                @elseif(Auth::user()->role->id == 3)
+                {{--@elseif(Auth::user()->role->id == 3)--}}
 
                     @foreach($leaderprojects as $leaderproject)
                         <tr>
@@ -192,7 +192,7 @@
                             </td>
                         </tr>
                     @endforeach
-                @endif
+             {{--   @endif--}}
                 </tbody>
             </table>
         </div>

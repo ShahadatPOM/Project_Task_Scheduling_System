@@ -46,7 +46,7 @@
                 </thead>
 
                 <tbody>
-                @if(Auth::user()->role->id == 4)
+                {{--@if(Auth::user()->role->id == 4)--}}
                    {{----}}
                         <tr>
                             <td>#</td>
@@ -97,11 +97,11 @@
                                 @endif
                             </td>
                         </tr>
-                       @else
+                       {{--@else--}}
                             <tr>
                                 <td>no</td>
                             </tr>
-                       @endif
+                      {{-- @endif--}}
                 </tbody>
             </table>
         </div>
