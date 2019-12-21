@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <label>Requirements</label>
                                 <div class="select2-blue">
-                                    <select class="select2" multiple="multiple" name="requirements[]" data-placeholder="Select user requirements" style="width: 100%;">
+                                    <select class="req" multiple="multiple" name="requirements[]" data-placeholder="Select user requirements" style="width: 100%;">
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -129,14 +129,12 @@
 @push('base.js')
     <!-- Select2 -->
     <script>
-        $(function () {
-            //Initialize Select2 Elements
-            $('.select2').select2();
-        })
-
 
     $(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
+        $(".req").select2({
+            tags :true
+        });
+        var max_fields      = 10; //maximum input boxes allowed
     var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
 

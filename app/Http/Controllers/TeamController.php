@@ -41,7 +41,6 @@ class TeamController extends Controller
         $team = new Team();
         $team->name = $request->name;
         $team->department_id = $request->department_id;
-        $team->members = $request->members;
         $team->status = $request->status;
         $team->save();
         $team->users()->attach($request->members);
@@ -92,17 +91,39 @@ class TeamController extends Controller
 
     public function edit($id)
     {
-
+        $users = User::where('role_id', 4)->get();
+        $team = Team::find($id);
+        $departments = Department::all()->except($team->department->id);
+        return view('team.edit',compact('team','departments','users'));
     }
 
     public function update(Request $request, $id)
     {
+        $dept = Team::where('name',$request->name)->where('department_id',$request->department_id)->pluck('department_id');
 
+        $this->validate($request, [
+            'name' => ['required',
+                Rule::unique('teams','name')->where(function($q) use($dept){
+                    return $q->whereIn('department_id', $dept);
+                })->ignore($id)
+            ],
+            'department_id' => 'required',
+
+        ]);
+        $team = Team::find($id);
+        $team->name = $request->name;
+        $team->department_id = $request->department_id;
+        $team->status = $request->status;
+        $team->save();
+        $team->users()->sync($request->members);
+        return back();
     }
 
     public function delete($id)
     {
-
+        $team = Team::find($id);
+        $team->delete();
+        return back();
     }
 
     //Project Manager assign project to team

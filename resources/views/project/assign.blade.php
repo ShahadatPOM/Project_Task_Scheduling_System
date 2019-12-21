@@ -33,17 +33,24 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputDescription">Project Title</label>
-                                <input readonly type="text" name="title" value="{{ $project->title }}" class="form-control">
+                                <input readonly type="text" name="title" value="{{ $project->title }}"
+                                       class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="inputDescription">Team</label>
-                                <select class="form-control" name="team" id="">
-                                    <option selected>Select team</option>
-                                    @foreach($teams as $team)
-                                        <option class="form-control" value="{{ $team->id }}">{{ $team->name }}</option>
-                                    @endforeach
-                                </select>
+                                <div class="select2-blue">
+                                    <select class="form-control select2" name="team[]" id="" multiple="multiple">
+                                        @foreach($project->departments as $department)
+                                            <optgroup label="{{$department->name}}">
+                                                @foreach($department->teams as $team)
+                                                    <option class="form-control"
+                                                            value="{{ $team->id }}">{{ $team->name }}</option>
+                                                @endforeach
+                                            </optgroup>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer">

@@ -41,7 +41,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                                     <div>
+                                <div>
                                     <label for="tagName">Team Name</label>
                                     <input id="name" type="text"
                                            class="form-control @error('name') is-invalid @enderror" name="name"
@@ -57,44 +57,28 @@
                                 <div class="form-group">
                                     <label>Team Members</label>
                                     <div class="select2-blue">
-                                        <select class="select2" multiple="multiple" name="members[]" data-placeholder="Select a Member" style="width: 100%;">
-                                       @foreach($users as  $user)
-                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                        @endforeach
-                                    </select>
+                                        <select class="select2" multiple="multiple" name="members[]"
+                                                data-placeholder="Select a Member" style="width: 100%;">
+                                            @foreach($users as  $user)
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
-
-                                {{--<div>
-                                    <label for="tagName">Team Members</label>
-                                    <select style="width: 100%;"  class="select2" multiple="multiple"  name="members">
-                                        <option disabled selected>Select Member</option>
-                                        @foreach($users as $user)
-                                            <option class="form-control"  value="{{ $user->id }}">{{ $user->name }}</option>
-                                        @endforeach
+                                <div>
+                                    <label for="tagName">Status</label>
+                                    <select class="form-control" name="status">
+                                        <option disabled selected>Select Status</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
                                     </select>
-
-                                    @error('members')
+                                    @error('status')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>--}}
-
-                                    <div>
-                                        <label for="tagName">Status</label>
-                                        <select class="form-control" name="status">
-                                            <option disabled selected>Select Status</option>
-                                                <option value="1">Active</option>
-                                                <option value="0">Inactive</option>
-                                        </select>
-                                        @error('status')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
                                     </span>
-                                        @enderror
-                                    </div>
+                                    @enderror
                                 </div>
+                            </div>
 
                             <div class="card-footer">
                                 <a href="{{ route('team.index') }}" class="btn btn-sm btn-danger">BACK</a>
@@ -115,5 +99,5 @@
             //Initialize Select2 Elements
             $('.select2').select2();
         })
-   </script>
-    @endpush
+    </script>
+@endpush

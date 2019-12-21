@@ -41,6 +41,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Permission' => $baseDir . '/app/Permission.php',
+    'App\\Policies\\UsersPolicy' => $baseDir . '/app/Policies/UsersPolicy.php',
     'App\\Profile' => $baseDir . '/app/Profile.php',
     'App\\Project' => $baseDir . '/app/Project.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

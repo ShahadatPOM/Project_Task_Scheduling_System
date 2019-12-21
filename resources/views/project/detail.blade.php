@@ -36,6 +36,13 @@
             <div class="card-header">
                 <h3 class="card-title">Detail of <strong>{{ $project->title }}</strong> Project</h3>
             </div>
+@php
+    use Carbon\Carbon;
+$date = Carbon::parse($project->created_at);
+                $now = Carbon::now();
+
+                $diff = $date->diffInDays($now);
+@endphp
 
             <div class="card-body">
                 <div class="row">
@@ -43,8 +50,10 @@
                         <div class="row">
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
                                 <small style="text-align: center; font-size: 14px">Estimated Project Duration</small>
-                                <strong style="text-align: center">{{ $project->estimated_project_duration }}
-                                    Days</strong>
+                                <strong style="text-align: center">{{ $project->estimated_project_duration }} days
+                                    <br> <b>Gone:</b> ({{ $diff}}) days
+                                    <br> <b>Left:</b> ({{$project->estimated_project_duration - $diff  }}) days
+                                </strong>
                             </div>
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
                                 <small style="text-align: center; font-size: 14px">Estimated Budget</small>
@@ -53,7 +62,13 @@
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
                                 <small style="text-align: center; font-size: 14px">Departments</small>
                                 @foreach($project->departments as $department)
-                                <strong style="text-align: center">{{ $department->name }}</strong>
+                                <strong style="text-align: center"><a href="#">{{ $department->name }}</a></strong>
+                                @endforeach
+                            </div>
+                            <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
+                                <small style="text-align: center; font-size: 14px">Teams</small>
+                                @foreach($project->teams as $team)
+                                    <strong style="text-align: center"><a href="{{route('team.member.list',$team->id)}}">{{ $team->name }}</a></strong>
                                 @endforeach
                             </div>
                         </div>
@@ -115,13 +130,10 @@
                     </div>
                 </div>
                 {{--                progress chart--}}
-
             </div>
         </div>
         <!-- /.card -->
-
     </section>
-
 @endsection
 @push('base.js')
 

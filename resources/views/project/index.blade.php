@@ -26,9 +26,6 @@
                     <th style="width: 20%">
                         Project Title
                     </th>
-                    <th style="width: 20%">
-                        Team Members
-                    </th>
                     <th style="width: 15%">
                         Arrived
                     </th>
@@ -55,17 +52,6 @@
                                     {{ $project->title }}
                                 </a>
                                 <br/>
-                            </td>
-
-                            <td>
-                                <ul class="list-inline">
-                                    @foreach($users as $user)
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar"
-                                                 src="{{url('files/'.$user->profile->image )}}">
-                                        </li>
-                                    @endforeach
-                                </ul>
                             </td>
                             <td>
                                 {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $project->created_at)->diffForHumans() }}
