@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Requirement;
+use App\RequirementSubmission;
 use App\Task;
 use App\Team;
 use App\User;
@@ -201,4 +202,36 @@ class ProjectController extends Controller
         $path = public_path('files/'.$file->filename);
         return response()->download($path);
     }
+
+    public function requirements()
+    {
+        $team = Team::where('leader_id',Auth::id())->first();
+        foreach ($team->projects as $key => $project) {
+                    $ids[] = $project->id;
+                }        
+        return view('project.requirements',compact('team','project'));
+    }
+
+    public function acceptRequirement($id)
+    {
+        $submit = RequirementSubmission::find($id);
+        $requirement = Requirement::where('id',$submit->requirement_id)->first();
+        $requirement->status = 2;
+        $requirement->progress = $requirement->percentage;
+        $requirement->save();
+        return back();
+    }
+
+    public function rejectRequirement(Request $request,$id)
+    {
+    
+        $submission = RequirementSubmission::find($id);
+        $submission->comment = $request->comment;
+        $submission->save();
+        $requirement = Requirement::where('id',$submission->requirement_id)->first();
+        $requirement->status = 0;
+        $requirement->save();     
+        return back();
+    }
+
 }

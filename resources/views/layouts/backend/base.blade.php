@@ -112,7 +112,9 @@
     $(function () {
         $(".select2").select2();
         $("#example1").DataTable();
-
+        $("#formButton").click(function () {
+            $("#form1").toggle();
+        });
     });
 </script>
 @stack('base.js')

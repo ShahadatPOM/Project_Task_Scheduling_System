@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', "Auth\LoginController@showLoginForm")->name('root');
+//LeaderController
+Route::resource('projects', 'LeaderController');
 
 //toastr
 Route::get('notification', 'HomeController@notification');
@@ -25,7 +27,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('permissions', 'PermissionController')->except('create','store');
 Route::get('permissions/create/{id}', 'PermissionController@create');
 Route::post('permissions/store/{id}', 'PermissionController@store');
-Route::resource('submission', 'RequirementSubmissionController');
 
 //Admin
 Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']], function () {
@@ -67,6 +68,10 @@ Route::group(['as' => 'project.', 'prefix' => 'project', 'middleware' => ['auth'
     Route::get('assign/form/{id}', 'ProjectController@assignForm')->name('assignForm');
     Route::post('assign/{id}', 'ProjectController@assign')->name('assign');
     Route::get('project-file/{id}', 'ProjectController@fileDownload')->name('projectFile');
+    Route::get('/requirements', 'ProjectController@requirements')->name('requirements');
+    Route::get('/accept-requirement/{id}', 'ProjectController@acceptRequirement')->name('accept');
+    Route::post('/reject-requirement/{id}', 'ProjectController@rejectRequirement')->name('reject');
+
 });
 
 //Team
@@ -112,6 +117,7 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
     Route::get('submit/{id}', 'TaskController@submit')->name('submit');
     Route::get('/download/{id}', 'TaskController@fileDownload');
     Route::post('/task-submit/{id}', 'TaskController@submitTask')->name('task-submit');
+    Route::post('/task-view/{id}', 'TaskController@viewTask')->name('task-view');
 });
 
 //pdf

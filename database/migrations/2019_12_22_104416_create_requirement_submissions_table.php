@@ -20,7 +20,10 @@ class CreateRequirementSubmissionsTable extends Migration
             $table->string('description')->nullable();
             $table->string('file')->nullable();
             $table->string('link')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
+            $table->foreign('task_id')->references('id')->on('tasks')
+                            ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

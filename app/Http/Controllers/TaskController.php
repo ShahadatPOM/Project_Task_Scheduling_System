@@ -74,7 +74,7 @@ class TaskController extends Controller
         foreach ($team->projects as $project){
             $title[] = $project->title;
         }
-        return view('task.assign', compact('user','project'));
+        return view('task.assign', compact('user','project','team'));
     }
 
     public function assign(Request $request, $id)

@@ -99,7 +99,8 @@ $files = [];
                                     <td style="vertical-align: middle" rowspan="{{count($task->requirements)}}">{{ $task->filename }} <a href="{{url('task/download',$task->id)}}"><i class="fa fa-download"></i></a> </td>
                                     @endif
                                     @if($requirement->status == 1)
-                                        <td><a style="" class="btn btn-sm btn-warning" href="">Pending</a></td>
+                                        <td><a style="" class="btn btn-sm btn-warning" href="">Pending</a>
+                                            <a href="{{route('task.view', $requirement->id)}}" class="btn btn-sm btn-primary" href=""><i class="fa fa-eye"></i></a></td>
                                     @else
                                     <td><a style="" class="btn btn-sm btn-success" href="{{ route('task.submit', $requirement->id) }}">submit</a></td>
                                     @endif

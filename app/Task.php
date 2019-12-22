@@ -19,4 +19,8 @@ class Task extends Model
     public function requirements(){
         return $this->belongsToMany('App\Requirement');
     }
+
+    public function requirementSubmissions(){
+        return $this->hasMany(RequirementSubmission::class);
+    }
 }
