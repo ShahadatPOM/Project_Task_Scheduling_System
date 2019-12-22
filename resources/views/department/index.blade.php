@@ -50,7 +50,7 @@
                                class="btn btn-sm btn-danger" href="{{ route('department.delete', $department->id) }}"><i
                                     class="fa fa-trash"></i></a>
                             <a title="create team" class="btn btn-sm btn-primary"
-                               href="{{ route('team.create', $department->id) }}"><i class="fa fa-plus"></i></a>
+                               href="{{ route('department.show', $department->id) }}"><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>
                 @endforeach

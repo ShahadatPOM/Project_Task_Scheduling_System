@@ -39,7 +39,7 @@ class DepartmentController extends Controller
     }
 
     public function edit($id){
-        $this->authorize('edit', Department::class);
+        $this->authorize('update', Department::class);
         $department = Department::findOrfail($id);
         return view('department.edit', compact('department'));
     }

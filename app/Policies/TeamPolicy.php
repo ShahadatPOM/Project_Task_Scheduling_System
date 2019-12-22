@@ -5,11 +5,22 @@ namespace App\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use App\Team;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class TeamPolicy
 {
     use HandlesAuthorization;
-
+    public $list = [];
+    public function __construct($list = [])
+    {
+        $user=Auth::user();
+        if($user->role->permissions()->exists()) {
+            foreach ($user->role->permissions as $key => $permission) {
+                $list[] = $permission->name;
+            }
+            $this->list = $list;
+        }
+    }
     /**
      * Determine whether the user can view any teams.
      *
@@ -28,9 +39,13 @@ class TeamPolicy
      * @param  \App\Team  $team
      * @return mixed
      */
-    public function view(User $user, Team $team)
+    public function view()
     {
-        //
+        if( in_array('team_view', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -39,9 +54,13 @@ class TeamPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function create()
     {
-        //
+        if( in_array('team_create', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -51,9 +70,13 @@ class TeamPolicy
      * @param  \App\Team  $team
      * @return mixed
      */
-    public function update(User $user, Team $team)
+    public function update()
     {
-        //
+        if( in_array('team_edit', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -63,9 +86,13 @@ class TeamPolicy
      * @param  \App\Team  $team
      * @return mixed
      */
-    public function delete(User $user, Team $team)
+    public function delete()
     {
-        //
+        if( in_array('team_delete', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**

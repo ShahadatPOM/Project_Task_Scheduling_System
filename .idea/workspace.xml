@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Policies/DepartmentPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/PermissionPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/ProjectPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/RequirementPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/TaskPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/PermissionPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PermissionPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/ProjectPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ProjectPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/RequirementPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/RequirementPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/TaskPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TaskPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,18 +165,20 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\naiemptss\Project_Task_Scheduling_System\resources\views\user" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views\pdf" />
       <recent name="D:\Project_Task_Scheduling_System\database\seeds" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views\task" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\naiemptss\Project_Task_Scheduling_System\app\Http\Controllers" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views" />
     </key>
   </component>
@@ -225,6 +234,8 @@
       <workItem from="1576904881627" duration="16000" />
       <workItem from="1576904899210" duration="9826000" />
       <workItem from="1576917385219" duration="16203000" />
+      <workItem from="1576942345776" duration="19435000" />
+      <workItem from="1576975838403" duration="4356000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>

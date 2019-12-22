@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Department;
 use App\Http\Controllers\Controller;
@@ -19,7 +19,7 @@ class UserController extends Controller
     }
 
     public function edit($id){
-        $this->authorize('edit', User::class);
+        $this->authorize('update', User::class);
         $user = User::findOrfail($id);
         $departments = Department::all();
         $roles = Role::all();
@@ -48,6 +48,12 @@ class UserController extends Controller
         );
         return back()->with($notification);
     }
+
+    public function detail($id){
+        $user = User::find($id);
+        return view('user.detail', compact('user'));
+    }
+
     public function delete($id){
         $this->authorize('delete', User::class);
         $user = User::findOrfail($id);
