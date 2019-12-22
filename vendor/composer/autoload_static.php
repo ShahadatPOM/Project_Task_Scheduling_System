@@ -501,6 +501,7 @@ class ComposerStaticInit3a0e2121153b250eb9cac08cf7bf61f8
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Requirement' => __DIR__ . '/../..' . '/app/Requirement.php',
+        'App\\RequirementSubmission' => __DIR__ . '/../..' . '/app/RequirementSubmission.php',
         'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\Task' => __DIR__ . '/../..' . '/app/Task.php',
         'App\\Team' => __DIR__ . '/../..' . '/app/Team.php',

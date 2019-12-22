@@ -48,8 +48,12 @@
                                 </strong>
                             </div>
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
-                                <small style="text-align: center; font-size: 14px">Time Left</small>
-                                <strong style="text-align: center"></strong>
+                                @if(\Carbon\Carbon::now() > Carbon\Carbon::parse($task->submission_date))
+                                    <strong style="text-align: center">Already Times Up</strong>
+                                @else
+                                <small style="text-align: center; font-size: 14px">Days Left</small>
+                                <strong style="text-align: center">{{\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($task->submission_date))}}</strong>
+                                    @endif
                             </div>
                         </div>
                         <div class="row">
@@ -64,8 +68,7 @@
                                 <input type="text" class="knob" readonly value="@foreach($task->requirements as $requirement){{ ($requirement->percentage) }} @endforeach" data-skin="tron" data-thickness="0.1"
                                        data-width="120"
                                        data-height="120" data-fgColor="#f56954">
-
-                                <div class="knob-label" style="color: orange">Out of {{ $difference == 0 ? 100 : ceil((count($task->requirements)*100)/count($task->project->requirements)) }}%</div>
+                                <div class="knob-label" style="color: orange">Out of {{$difference == 0 ? 100 : ceil((count($task->requirements)*100)/count($task->project->requirements))}}%</div>
                             </div>
                         </div>
                     </div>
@@ -87,7 +90,7 @@ $files = [];
 @endphp
                             @foreach($task->requirements as $key => $requirement)
                                 <tr>
-                                    <th scope="row">{{ $key++ }}</th>
+                                    <th scope="row">{{ $key+1 }}</th>
                                     <td>{{ $requirement->name }}</td>
                                     @if(!in_array($task->filename,$files))
                                         @php
@@ -95,7 +98,7 @@ $files = [];
                                         @endphp
                                     <td style="vertical-align: middle" rowspan="{{count($task->requirements)}}">{{ $task->filename }} <a href="{{url('task/download',$task->id)}}"><i class="fa fa-download"></i></a> </td>
                                     @endif
-                                    @if($requirement->status == 3)
+                                    @if($requirement->status == 1)
                                         <td><a style="" class="btn btn-sm btn-warning" href="">Pending</a></td>
                                     @else
                                     <td><a style="" class="btn btn-sm btn-success" href="{{ route('task.submit', $requirement->id) }}">submit</a></td>

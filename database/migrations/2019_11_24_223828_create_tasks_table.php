@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->unsignedBigInteger('member_id')->nullable();
             $table->string('description')->nullable();
             $table->string('filename')->nullable();
+            $table->date('submission_date')->nullable();
             $table->integer('status')->default(0);
             $table->integer('progress')->default(0);
             $table->timestamps();

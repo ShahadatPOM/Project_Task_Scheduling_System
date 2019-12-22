@@ -159,6 +159,12 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('task.index')}}" class="nav-link">
+                        <i class="fa fa-plus nav-icon"></i>
+                        <p>Tasks</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
