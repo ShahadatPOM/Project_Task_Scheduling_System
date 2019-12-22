@@ -36,14 +36,12 @@
             <div class="card-header">
                 <h3 class="card-title">Detail of <strong>{{ $project->title }}</strong> Project</h3>
             </div>
-@php
-    use Carbon\Carbon;
-$date = Carbon::parse($project->created_at);
+            @php
+                use Carbon\Carbon;
+                $date = Carbon::parse($project->created_at);
                 $now = Carbon::now();
-
                 $diff = $date->diffInDays($now);
-@endphp
-
+            @endphp
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
@@ -62,13 +60,14 @@ $date = Carbon::parse($project->created_at);
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
                                 <small style="text-align: center; font-size: 14px">Departments</small>
                                 @foreach($project->departments as $department)
-                                <strong style="text-align: center"><a href="#">{{ $department->name }}</a></strong>
+                                    <strong style="text-align: center"><a href="#">{{ $department->name }}</a></strong>
                                 @endforeach
                             </div>
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
                                 <small style="text-align: center; font-size: 14px">Teams</small>
                                 @foreach($project->teams as $team)
-                                    <strong style="text-align: center"><a href="{{route('team.member.list',$team->id)}}">{{ $team->name }}</a></strong>
+                                    <strong style="text-align: center"><a
+                                            href="{{route('team.member.list',$team->id)}}">{{ $team->name }}</a></strong>
                                 @endforeach
                             </div>
                         </div>
@@ -122,7 +121,8 @@ $date = Carbon::parse($project->created_at);
                                 <tr>
                                     <td>{{ $key++ }}</td>
                                     <td>{{ $file->filename }}</td>
-                                    <td><a href="{{route('project.projectFile',$file->id)}}"><i class="fa fa-download"></i></a></td>
+                                    <td><a href="{{route('project.projectFile',$file->id)}}"><i
+                                                class="fa fa-download"></i></a></td>
                                 </tr>
                             @endforeach
                             </tbody>
