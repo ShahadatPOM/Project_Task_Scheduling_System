@@ -15,7 +15,7 @@
     <div class="card">
         <div class="card-header">
             <a
-                class="btn" href="">Add New Team</a>
+                class="btn btn-sm btn-outline-info" href="{{ route('team.create') }}">Add New Team</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body">

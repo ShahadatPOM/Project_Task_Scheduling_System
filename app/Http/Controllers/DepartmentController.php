@@ -34,8 +34,9 @@ class DepartmentController extends Controller
         return back()->with($notification);
     }
 
-    public function show(){
-
+    public function detail($id){
+        $department = Department::find($id);
+        return view('department.detail', compact('department'));
     }
 
     public function edit($id){

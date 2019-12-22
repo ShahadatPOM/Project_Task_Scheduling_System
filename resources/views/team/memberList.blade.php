@@ -21,7 +21,7 @@
     <div class="card">
         <div class="card-header">
             <h4 style="text-align: center">Team Members of <a href="">{{ $team->name }}</a></h4>
-            <h4 style="text-align: center">Department <a href="">{{$team->department ?  $team->department->name : ''}}</a></h4>
+            <h4 style="text-align: center">Department <a href="{{ route('department.detail', $team->department->id) }}">{{$team->department ?  $team->department->name : ''}}</a></h4>
         </div>
         <div class="card-body">
             <table id="example2" class="table table-bordered table-striped">

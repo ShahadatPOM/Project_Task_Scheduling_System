@@ -35,7 +35,8 @@
                         <tr>
 
                             @php
-                                $permit =array_diff($lists, $ids);
+                                $permit = array_diff_assoc($lists, $ids);
+                            /*dd($ids, $lists, $permit);*/
                             @endphp
                             <td>User</td>
                             @foreach($users as $key => $user)

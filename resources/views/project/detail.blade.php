@@ -13,8 +13,8 @@
                 <div class="col-sm-6">
                     <h1>Project Detail</h1>
                     <div style=" margin-left: 50%; margin-top: 10px;">
-                        <a href="" class="btn btn-info" style=" border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
-                        <a href="" class="btn btn-primary" style="border: 2px; width: 70px">PDF <i
+                        <a target=_blank href="{{ route('viewProjectDetails', $project->id) }}" class="btn btn-info" style=" border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
+                        <a target="_blank" href={{ route('downloadProjectDetails', $project->id) }}"" class="btn btn-primary" style="border: 2px; width: 70px">PDF <i
                                 class="fa fa-download"></i></a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
                                 <small style="text-align: center; font-size: 14px">Departments</small>
                                 @foreach($project->departments as $department)
-                                    <strong style="text-align: center"><a href="#">{{ $department->name }}</a></strong>
+                                    <strong style="text-align: center"><a href="{{ route('department.detail', $department->id) }}">{{ $department->name }}</a></strong>
                                 @endforeach
                             </div>
                             <div class="card card-outline card-orange col-4 offset-1" style="min-height: 70px">
@@ -112,7 +112,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Requirement</th>
+                                <th scope="col">Filename</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -129,10 +129,8 @@
                         </table>
                     </div>
                 </div>
-                {{--                progress chart--}}
             </div>
         </div>
-        <!-- /.card -->
     </section>
 @endsection
 @push('base.js')

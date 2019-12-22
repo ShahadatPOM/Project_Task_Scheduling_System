@@ -1,7 +1,5 @@
 <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-        <b>Version</b> 3.0.0
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
+    <section>
+        <p style="text-align: center; color: darkgray">Coyright <i class="fa fa-copyright"></i> 2019 DataTrix Soft. All rights reserved. Design and Developed by Md. Shahadat Hossain</p>
+    </section>
 </footer>

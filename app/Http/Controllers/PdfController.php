@@ -44,6 +44,20 @@ class PdfController extends Controller
         $pdf = PDF::loadView('pdf.departments',compact('departments'))/*->setPaper($customPaper, 'landscape')*/;
         return $pdf->download("departments-{$date}.pdf");
     }
+
+    public function viewDepartmentDetail($id){
+        $department = Department::find($id);
+        $date = date('Y-M-d');
+        $pdf = PDF::loadView('pdf.department',compact('department'))/*->setPaper($customPaper, 'landscape')*/;
+        return $pdf->stream("departments-{$date}.pdf");
+    }
+
+    public function downloadDepartmentDetail($id){
+        $department = Department::find($id);
+        $date = date('Y-M-d');
+        $pdf = PDF::loadView('pdf.department',compact('department'))/*->setPaper($customPaper, 'landscape')*/;
+        return $pdf->download("departments-{$date}.pdf");
+    }
     public function viewTeams()
     {
         $teams = Team::all();
@@ -87,18 +101,18 @@ class PdfController extends Controller
         return $pdf->download("tasks-{$date}.pdf");
     }
 
-    public function viewProjectDetails()
+    public function viewProjectDetails($id)
     {
-        $projectDetails = Project::all();
+        $project = Project::find($id);
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.projectDetails',compact('projectDetails'));
+        $pdf = PDF::loadView('pdf.projectDetails',compact('project'));
         return $pdf->stream("projectDetails-{$date}.pdf");
     }
-    public function downloadProjectDetails()
+    public function downloadProjectDetails($id)
     {
-        $projectDetails = Project::all();
+        $project = Project::find($id);
         $date = date('Y-M-d');
-        $pdf = PDF::loadView('pdf.projectDetails',compact('projectDetails'));
+        $pdf = PDF::loadView('pdf.projectDetails',compact('project'));
         return $pdf->download("projectDetails-{$date}.pdf");
     }
 }

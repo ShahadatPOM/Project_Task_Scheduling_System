@@ -56,6 +56,7 @@
                                         </span>
                                     @enderror
                                 </div>
+
                                 <div class="form-group">
                                     <label>Team Members</label>
                                     <div class="select2-blue">
@@ -64,9 +65,6 @@
                                             @foreach($team->users as  $user)
                                                 <option value="{{ $user->id }}" selected>{{ $user->name }}</option>
                                             @endforeach
-                                                @foreach($users as  $user)
-                                                    <option value="{{ $user->id }}" selected>{{ $user->name }}</option>
-                                                @endforeach
                                         </select>
                                     </div>
                                 </div>

@@ -48,7 +48,7 @@ Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => [
     Route::get('index', 'DepartmentController@index')->name('index');
     Route::get('create', 'DepartmentController@create')->name('create');
     Route::post('store', 'DepartmentController@store')->name('store');
-    Route::get('show/{id}', 'DepartmentController@show')->name('show');
+    Route::get('detail/{id}', 'DepartmentController@detail')->name('detail');
     Route::get('edit/{id}', 'DepartmentController@edit')->name('edit');
     Route::post('update/{id}', 'DepartmentController@update')->name('update');
     Route::get('delete/{id}', 'DepartmentController@delete')->name('delete');
@@ -118,6 +118,9 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
 Route::get('pdf/view/users', 'PdfController@viewUsers')->name('viewUsers');
 Route::get('pdf/download/users', 'PdfController@downloadUsers')->name('downloadUsers');
 
+Route::get('pdf/view/departmentDetail/{id}', 'PdfController@viewDepartmentDetail')->name('viewDepartmentDetail');
+Route::get('pdf/download/departmentDetail/{id}', 'PdfController@downloadDepartmentDetail')->name('downloadDepartmentDetail');
+
 Route::get('pdf/view/departments', 'PdfController@viewDepartments')->name('viewDepartment');
 Route::get('pdf/download/departments', 'PdfController@downloadDepartments')->name('downloadDepartment');
 
@@ -130,5 +133,5 @@ Route::get('pdf/download/projects', 'PdfController@downloadProjects')->name('dow
 Route::get('pdf/view/tasks', 'PdfController@viewTasks')->name('viewTasks');
 Route::get('pdf/download/tasks', 'PdfController@downloadTasks')->name('downloadTasks');
 
-Route::get('pdf/view/project/details', 'PdfController@viewProjectDetails')->name('viewProjectDetails');
-Route::get('pdf/download/project/details', 'PdfController@downloadProjectDetails')->name('downloadProjectDetails');
+Route::get('pdf/view/project/details/{id}', 'PdfController@viewProjectDetails')->name('viewProjectDetails');
+Route::get('pdf/download/project/details/{id}', 'PdfController@downloadProjectDetails')->name('downloadProjectDetails');

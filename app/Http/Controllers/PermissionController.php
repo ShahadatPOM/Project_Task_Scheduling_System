@@ -74,7 +74,7 @@ class PermissionController extends Controller
         {
             $lists[]=$permission->id;
         }
-        dd($lists);
+
         foreach ($departments as $department){
             $department_ids[]= $department->id;
         }
