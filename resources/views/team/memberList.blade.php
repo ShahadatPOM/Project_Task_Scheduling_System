@@ -20,11 +20,11 @@
     {{--member for each team--}}
     <div class="card">
         <div class="card-header">
-            <h2 style="text-align: center">Team Members of <a href="">{{ $team->name }}</a></h2>
+            <h4 style="text-align: center">Team Members of <a href="">{{ $team->name }}</a></h4>
+            <h4 style="text-align: center">Department <a href="">{{$team->department ?  $team->department->name : ''}}</a></h4>
         </div>
         <div class="card-body">
             <table id="example2" class="table table-bordered table-striped">
-
                 <thead>
                 <tr>
                     <th width="30%">Member Name</th>

@@ -42,11 +42,11 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i style="" class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        <span class="badge badge-warning navbar-badge">{{!empty($deadline) ? 1 : ''}}</span>
                     @if(Auth::user()->role->id == 3)
-                        <span class="badge badge-warning navbar-badge">{{ count($submittedModule) }}</span>
+                        <span class="badge badge-warning navbar-badge"></span>
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <span class="dropdown-item dropdown-header">{{ count($submittedModule) }} Notifications</span>
+                            <span class="dropdown-item dropdown-header"> Notifications</span>
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item">
                                 <i class="fas fa-envelope mr-2"></i> {{ count($submittedModule) }} new module pending

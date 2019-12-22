@@ -21,9 +21,7 @@ class ProjectController extends Controller
             $projects = Project::all();
             $teams = Team::all();
             $users = [];
-            foreach ($teams as $team) {
-                $users = User::whereIn('id', $team->members)->get();
-            }
+
            /* $teams = Team::where('leader_id', Auth::id())->get();
             foreach ($teams as $team) {
                 $leaderprojects = $team->projects()->get();
@@ -39,7 +37,7 @@ class ProjectController extends Controller
                     $total_progress= 0;
                 }
             }*/
-            return view('project.index', compact( 'projects', 'users', 'teams'));
+            return view('project.index', compact( 'projects'));
 
     }
 
@@ -113,21 +111,22 @@ class ProjectController extends Controller
 
     public function assign(Request $request, $id)
     {
-
-        $this->validate($request, [
-
-        ]);
         $project = Project::find($id);
-        $project->team_id = $request->team;
         $project->status = 1;
         $project->save();
-        return back();
+        $project->teams()->sync($request->team);
+        return redirect('project.index');
     }
 
     public function edit($id)
     {
+        $ids = [];
         $project = Project::find($id);
-        $departments = Department::all();
+        foreach ($project->departments as $department)
+        {
+            $ids[] = $department->id;
+        }
+        $departments = Department::all()->except($ids);
         $teams = Team::all();
         return view('project.edit',compact('project','departments','teams'));
     }

@@ -10,9 +10,9 @@ class Project extends Model
         'team_id', 'title', 'description', 'client', 'estimated_budget', 'estimated_project_duration', 'status'
     ];
 
-    public function team()
+    public function teams()
     {
-        return $this->belongsTo('App\Team');
+        return $this->belongsToMany('App\Team');
     }
 
     public function files()
@@ -31,6 +31,6 @@ class Project extends Model
         return $this->belongsToMany('App\Department');
     }
 
-   
+
 
 }
