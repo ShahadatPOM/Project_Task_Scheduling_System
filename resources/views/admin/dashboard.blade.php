@@ -122,31 +122,44 @@
             </table>
                 @endif
             @if(Auth::user()->role_id == 3)
-                @php
-                    foreach ($team->projects as $project){
-                    $title = $project->title;
-                    }
-                @endphp
                 <table class="table table-striped projects">
-                    <caption>Your Current Project is {{$title}} & here is the requirements</caption>
+                    <caption>Your Team Members</caption>
                     <thead>
                     <tr>
                         <th style="width: 20%">
-                        Requirement Name
+                            Serial
+                        </th>
+                        <th style="width: 20%">
+                        Name
                         </th>
                         <th style="width: 20%">
                             Action
                         </th>
                     </tr>
                     <tbody>
-                    @foreach($project->requirements as $requirement)
+                    @foreach($team->users->where('role_id','!=',3) as $key => $user)
                         <tr>
                             <td>
-                                {{ $requirement->name }}
+                                {{ $key }}
                             </td>
-
                             <td>
-                                <a href="#">Assign</a>
+                                {{ $user->name }}
+                            </td>
+                            <td>
+                                @php
+                                $id='';
+                                foreach ($team->projects as $project)
+                                {
+                                    $id = $project->id;
+                                }
+                                $task = \App\Task::where('project_id',$id)->where('member_id',$user->id)->first();
+                                @endphp
+
+                            @if($task)
+                                    <a href="{{route('task.edit',$task->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                                    @else
+                                <a href="{{route('task.assignForm',$user->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-check-square-o"></i></a>
+                                    @endif
                             </td>
                         </tr>
                     @endforeach

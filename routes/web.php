@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('permissions', 'PermissionController')->except('create','store');
 Route::get('permissions/create/{id}', 'PermissionController@create');
 Route::post('permissions/store/{id}', 'PermissionController@store');
+Route::resource('submission', 'RequirementSubmissionController');
 
 //Admin
 Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']], function () {

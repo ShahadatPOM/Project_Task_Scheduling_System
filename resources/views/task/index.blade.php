@@ -66,7 +66,7 @@
                                              style="width: {{ $task->status == 0 ? 100 : $task->progress }}%">
                                         </div>
                                     </div>
-                                    {{ $task->status == 1 ? $task->progress : '' }}% Completed
+                                    {{ $task->status == 1 ? $task->progress : 0 }}% Completed
                                 </small>
                             </td>
 
@@ -81,22 +81,17 @@
                             <td class="project-actions text-center">
                                 <a title="view" class="btn btn-sm btn-primary"
                                    href="{{ route('task.detail', $task->id) }}"><i class="fa fa-eye"></i></a>
-                                @if($req->status == 0)
-                                    <a title="startProgress" class="btn btn-sm btn-info"
-                                       href="{{ route('task.progress', $req->id) }}"><i class="fa fa-toggle-on">
+                                @if($task->status == 0)
+                                    <a title="startProgress" class="btn btn-sm btn-primary"
+                                       href="{{ route('task.progress',$task->id) }}" onclick="return confirm('Are you sure you wnat to start your work?')"><i class="fa fa-toggle-on">
                                             start</i></a>
                                 @else
                                     <a title="updateProgress" class="btn btn-sm btn-info"
-                                       href="{{ route('task.progressUpdate', $req->id) }}"><i class="fa fa-toggle-on">
+                                       href="{{ route('task.progressUpdate', $task->id) }}"><i class="fa fa-toggle-on">
                                             update</i></a>
                                 @endif
                             </td>
                         </tr>
-                       {{--@else--}}
-                            <tr>
-                                <td>no</td>
-                            </tr>
-                      {{-- @endif--}}
                 </tbody>
             </table>
         </div>

@@ -114,7 +114,7 @@ class ProjectController extends Controller
         $project->status = 1;
         $project->save();
         $project->teams()->sync($request->team);
-        return redirect('project.index');
+        return redirect('project/index');
     }
 
     public function edit($id)

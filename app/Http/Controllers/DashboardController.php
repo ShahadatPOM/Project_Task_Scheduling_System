@@ -21,7 +21,6 @@ class DashboardController extends Controller
         $activities = Activity::where('user_id', Auth::id())->get();
         $activities = Activity::where('user_id', Auth::id())->get();
         $team = Team::where('leader_id', Auth::id())->first();
-        dd($team->leader);
         return view('admin.dashboard', compact('projects', 'activities', 'teams', 'departments', 'pendingProjects', 'completedProjects','team'));
 
     }

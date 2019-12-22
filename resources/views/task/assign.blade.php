@@ -22,7 +22,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <form action="{{ route('task.assign', $project->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('task.assign', $user->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-6">
@@ -31,20 +31,6 @@
                             <h3 class="card-title">Assign Task</h3>
                         </div>
                         <div class="card-body">
-
-                            <div class="form-group">
-                                <label for="inputDescription">Members</label>
-                                <select class="form-control" name="member_id" id="">
-                                    <option selected>Select member</option>
-                                    @foreach($project->team->users->where('role_id','!=',3) as $member){
-                                    <option class="form-control" value="{{ $member->id }}">{{ $member->name }}</option>
-                                    }
-                                    @endforeach
-                                </select>
-                                @if ($errors->has('member_id'))
-                                    <span style="color: red">{{ $errors->first('member_id') }}</span><br>
-                                @endif
-                            </div>
                             <div class="form-group">
                                 <label>Tasks</label>
                                 <div class="select2-blue">
@@ -64,9 +50,16 @@
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <input type="text" class="form-control" name="description" placeholder="description">
+                                <input type="text" class="form-control" name="description" placeholder="description" value={{old('description')}}>
                                 @if ($errors->has('description'))
                                     <span style="color: red">{{ $errors->first('description') }}</span><br>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <label>Submission Date</label>
+                                <input type="date" class="form-control" name="submission_date"  value={{old('submission_date')}}>
+                                @if ($errors->has('submission_date'))
+                                    <span style="color: red">{{ $errors->first('submission_date') }}</span><br>
                                 @endif
                             </div>
                             <div class="form-group">
