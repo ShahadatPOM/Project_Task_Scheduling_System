@@ -3,9 +3,9 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\User;
+use App\Department;
 use Auth;
-class UsersPolicy
+class DepartmentPolicy
 {
     use HandlesAuthorization;
     public $list = [];
@@ -19,81 +19,100 @@ class UsersPolicy
             $this->list = $list;
         }
     }
-    public function viewAny(User $user)
-    {
-
-    }
-
-    public function view()
-    {
-        if( in_array('user_view', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public function create()
-    {
-        if( in_array('user_create', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     /**
-     * Determine whether the user can update the model.
+     * Determine whether the user can view any departments.
      *
      * @param  \App\User  $user
-     * @param  \App\User  $model
      * @return mixed
      */
-    public function update()
-    {
-        if( in_array('user_edit', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * Determine whether the user can delete the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function delete()
-    {
-        if( in_array('user_delete', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function restore(User $user, User $model)
+    public function viewAny()
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the model.
+     * Determine whether the user can view the department.
      *
      * @param  \App\User  $user
-     * @param  \App\User  $model
+     * @param  \App\Department  $department
      * @return mixed
      */
-    public function forceDelete(User $user, User $model)
+    public function view()
+    {
+        if( in_array('department_view', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can create departments.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function create()
+    {
+        if( in_array('department_create', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can update the department.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Department  $department
+     * @return mixed
+     */
+    public function update()
+    {
+        if( in_array('department_edit', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can delete the department.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Department  $department
+     * @return mixed
+     */
+    public function delete()
+    {
+        if( in_array('department_delete', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can restore the department.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Department  $department
+     * @return mixed
+     */
+    public function restore()
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can permanently delete the department.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Department  $department
+     * @return mixed
+     */
+    public function forceDelete()
     {
         //
     }

@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-gray">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
         <img src="{{asset('assets/backend/dist/img/avatar04.png')}}"

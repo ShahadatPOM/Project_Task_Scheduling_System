@@ -3,9 +3,11 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
+use App\Team;
 use App\User;
-use Auth;
-class UsersPolicy
+use Illuminate\Support\Facades\Auth;
+
+class TeamPolicy
 {
     use HandlesAuthorization;
     public $list = [];
@@ -19,81 +21,100 @@ class UsersPolicy
             $this->list = $list;
         }
     }
+    /**
+     * Determine whether the user can view any teams.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
     public function viewAny(User $user)
-    {
-
-    }
-
-    public function view()
-    {
-        if( in_array('user_view', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public function create()
-    {
-        if( in_array('user_create', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * Determine whether the user can update the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function update()
-    {
-        if( in_array('user_edit', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * Determine whether the user can delete the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function delete()
-    {
-        if( in_array('user_delete', $this->list)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function restore(User $user, User $model)
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the model.
+     * Determine whether the user can view the team.
      *
      * @param  \App\User  $user
-     * @param  \App\User  $model
+     * @param  \App\Team  $team
      * @return mixed
      */
-    public function forceDelete(User $user, User $model)
+    public function view()
+    {
+        if( in_array('team_view', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can create teams.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function create()
+    {
+        if( in_array('team_create', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can update the team.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Team  $team
+     * @return mixed
+     */
+    public function update()
+    {
+        if( in_array('team_edit', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can delete the team.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Team  $team
+     * @return mixed
+     */
+    public function delete()
+    {
+        if( in_array('team_delete', $this->list)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Determine whether the user can restore the team.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Team  $team
+     * @return mixed
+     */
+    public function restore(User $user, Team $team)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can permanently delete the team.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Team  $team
+     * @return mixed
+     */
+    public function forceDelete(User $user, Team $team)
     {
         //
     }
