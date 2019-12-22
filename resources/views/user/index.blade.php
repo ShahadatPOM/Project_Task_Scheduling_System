@@ -57,7 +57,7 @@
                         <td>
                             <a title="edit user" class="btn btn-sm btn-warning" href="{{ route('user.edit', $user->id) }}"><i class="fa fa-pencil"></i></a>
                             <a title="delete user" onclick="return confirm('Are you sure to delete this post')" class="btn btn-sm btn-danger" href="{{ route('user.delete', $user->id) }}"><i class="fa fa-trash"></i></a>
-                            <a title="view user" class="btn btn-sm btn-primary" href=""><i class="fa fa-eye"></i></a>
+                            <a title="view user" class="btn btn-sm btn-primary" href="{{ route('user.detail', $user->id) }}"><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>
                 @endforeach

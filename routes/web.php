@@ -27,23 +27,24 @@ Route::get('permissions/create/{id}', 'PermissionController@create');
 Route::post('permissions/store/{id}', 'PermissionController@store');
 
 //Admin
-Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 
 
 //users
-Route::group(['as' => 'user.', 'prefix' => 'user', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('create', 'UserController@create')->name('create');
     Route::post('store', 'UserController@store')->name('store');
     Route::get('edit/{id}', 'UserController@edit')->name('edit');
     Route::post('update/{id}', 'UserController@update')->name('update');
     Route::get('delete/{id}', 'UserController@delete')->name('delete');
+    Route::get('detail/{id}', 'UserController@detail')->name('detail');
 });
-Route::get('user/index', 'Admin\UserController@index')->name('user.index');
+Route::get('user/index', 'UserController@index')->name('user.index');
 
 //Departments
-Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth']], function () {
     Route::get('index', 'DepartmentController@index')->name('index');
     Route::get('create', 'DepartmentController@create')->name('create');
     Route::post('store', 'DepartmentController@store')->name('store');
