@@ -14,14 +14,12 @@ class TeamController extends Controller
 {
     public function index()
     {
-        $this->authorize('view', Team::class);
-            $teams = Team::all();
-            return view('team.index', compact('teams'));
+        $teams = Team::all();
+        return view('team.index', compact('teams'));
     }
 
     public function create()
     {
-        $this->authorize('create', Team::class);
         $users = User::where('role_id', 4)->get();
         $departments = Department::all();
         return view('team.create', compact('departments', 'users'));
@@ -33,9 +31,9 @@ class TeamController extends Controller
 
         $this->validate($request, [
             'name' => ['required',
-            Rule::unique('teams','name')->where(function($q) use($dept){
-              return $q->whereIn('department_id', $dept);
-            })
+                Rule::unique('teams','name')->where(function($q) use($dept){
+                    return $q->whereIn('department_id', $dept);
+                })
             ],
             'department_id' => 'required',
 
@@ -65,9 +63,9 @@ class TeamController extends Controller
         $leader->save();
 
         $teams = $leader->teams()->get();
-            foreach ($teams as $team) {
-                $team->leader_id = $id;
-            }
+        foreach ($teams as $team) {
+            $team->leader_id = $id;
+        }
         $team->save();
         return back();
     }
@@ -93,15 +91,10 @@ class TeamController extends Controller
 
     public function edit($id)
     {
-
-        $this->authorize('update', Team::class);
-
-
         $users = User::where('role_id', 4)->get();
         $team = Team::find($id);
         $departments = Department::all()->except($team->department->id);
         return view('team.edit',compact('team','departments','users'));
-
     }
 
     public function update(Request $request, $id)
@@ -151,6 +144,13 @@ class TeamController extends Controller
         $assign->manager_id = $request->project_manager;
         $assign->status = 0;
         $assign->save();
+        return back();
+    }
+
+    public function removeMember($id)
+    {
+        $user = User::find($id);
+        $user->teams()->detach();
         return back();
     }
 

@@ -18,26 +18,26 @@ class ProjectController extends Controller
 {
     public function index()
     {
-            $projects = Project::all();
-            $teams = Team::all();
-            $users = [];
+        $projects = Project::all();
+        $teams = Team::all();
+        $users = [];
 
-           /* $teams = Team::where('leader_id', Auth::id())->get();
-            foreach ($teams as $team) {
-                $leaderprojects = $team->projects()->get();
-            }
-            foreach($leaderprojects as $leaderproject){
-                if($leaderproject->tasks){
-                    $total = 0;
-                    foreach($leaderproject->tasks as $task){
-                        $total_progress = $total += $task->progress;
-                    }
-                }
-                else{
-                    $total_progress= 0;
-                }
-            }*/
-            return view('project.index', compact( 'projects'));
+        /* $teams = Team::where('leader_id', Auth::id())->get();
+         foreach ($teams as $team) {
+             $leaderprojects = $team->projects()->get();
+         }
+         foreach($leaderprojects as $leaderproject){
+             if($leaderproject->tasks){
+                 $total = 0;
+                 foreach($leaderproject->tasks as $task){
+                     $total_progress = $total += $task->progress;
+                 }
+             }
+             else{
+                 $total_progress= 0;
+             }
+         }*/
+        return view('project.index', compact( 'projects'));
 
     }
 
@@ -50,7 +50,6 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'title' => 'required|unique:projects,title',
             'departments' => 'required',
@@ -133,8 +132,7 @@ class ProjectController extends Controller
 
     public function update(Request $request, $id)
     {
-
-                $this->validate($request, [
+        $this->validate($request, [
             'title' => 'required|unique:projects,title,'.$id,
             'departments' => 'required',
             'description' => 'required_without:photos',
@@ -142,6 +140,7 @@ class ProjectController extends Controller
             'client' => 'required',
             'estimated_budget' => 'required',
             'estimated_project_duration' => 'required',
+            'requirements' => 'nullable',
         ]);
         $project = Project::find($id);
         $project->title = $request->title;
@@ -153,12 +152,26 @@ class ProjectController extends Controller
         $project->save();
         $project->departments()->sync($request->departments);
         $requirements = $request->requirements;
+        $div = $count = 0;
         if ($requirements) {
+            $project->requirements->each->delete();
             foreach ($requirements as $requirement) {
                 $req = new Requirement();
                 $req->name = $requirement;
-                $req->percentage = 100/count($requirements);
+                $req->percentage = floor((100/count($requirements)));
+                $extra = $req->percentage * count($requirements);
+                if($extra > 100)
+                {
+                    $div = $extra - 100;
+                }
+                else{
+                    $div = 100 - $extra;
+                }
+                $req->percentage = floor((100/count($requirements))+($count == 0 ? $div : 0));
+
                 $project->requirements()->save($req);
+                $div=0;
+                $count=1;
             }
         }
 

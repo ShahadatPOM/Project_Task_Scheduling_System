@@ -34,10 +34,9 @@
                 </thead>
                 <tbody>
 
-               @foreach($team->users as $member)
+                @foreach($team->users as $member)
                     <tr>
                         <td>{{ $member->name }} @if($member->role_id == 3) (Leader) @endif</td>
-
                         <td>
                             @if($member->status == 1)
                                 <span class="badge badge-success">Active</span>
@@ -47,13 +46,13 @@
                         </td>
 
                         <td>
-                            <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
+                            <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.remove.member', $member->id) }}"><i class="fa fa-trash"></i></a>
                             <a title="view" class="btn btn-sm btn-info" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
-{{--                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>--}}
+                            {{--                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>--}}
 
                             @if ( $member->role_id == 3)
                                 <a class="btn btn-sm btn-warning pull-right" href="{{ route('team.leader.change', $member->id) }}"><i class="fa fa-edit"></i>Change Leader</a>
-                                @endif
+                            @endif
 
                             @if ( !(in_array(3,$roles)))
                                 <a class="btn btn-sm btn-success pull-right" href="{{ route('team.leader', $member->id) }}"><i class="fa fa-edit"></i>Make Leader</a>
@@ -61,7 +60,7 @@
                             @endif
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
 
 
                 </tbody>
@@ -84,14 +83,7 @@
     <script>
         $(function () {
             $("#example1").DataTable();
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-            });
+
         });
     </script>
 @endpush

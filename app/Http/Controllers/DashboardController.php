@@ -19,7 +19,10 @@ class DashboardController extends Controller
         $pendingProjects = Project::where('status', 0)->get();
         $completedProjects = Project::where('status', 2)->get();
         $activities = Activity::where('user_id', Auth::id())->get();
-        return view('admin.dashboard', compact('projects', 'activities', 'teams', 'departments', 'pendingProjects', 'completedProjects'));
+        $activities = Activity::where('user_id', Auth::id())->get();
+        $team = Team::where('leader_id', Auth::id())->first();
+        dd($team->leader);
+        return view('admin.dashboard', compact('projects', 'activities', 'teams', 'departments', 'pendingProjects', 'completedProjects','team'));
 
     }
 }

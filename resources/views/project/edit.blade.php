@@ -35,6 +35,9 @@
                             <div class="form-group">
                                 <label for="inputName">Title</label>
                                 <input type="text" name="title" id="inputName" class="form-control" value="{{$project->title}}">
+                                @error('requirements')
+                                <strong>{{$message}}</strong>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Departments</label>
@@ -53,8 +56,13 @@
                                 <label>Requirements</label>
                                 <div class="select2-blue">
                                     <select class="select2" multiple="multiple" name="requirements[]" data-placeholder="Select user requirements" style="width: 100%;">
-                                        <option value=""></option>
+                                        @foreach($project->requirements as $requirement)
+                                            <option value="{{$requirement->name}}" selected>{{$requirement->name}}</option>
+                                        @endforeach
                                     </select>
+                                    @error('requirements')
+                                    <strong>{{$message}}</strong>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
@@ -134,7 +142,9 @@
     <script>
         $(function () {
             //Initialize Select2 Elements
-            $('.select2').select2();
+            $('.select2').select2({
+                tags:true
+            });
         })
 
 

@@ -27,13 +27,13 @@ Route::get('permissions/create/{id}', 'PermissionController@create');
 Route::post('permissions/store/{id}', 'PermissionController@store');
 
 //Admin
-Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 
 
 //users
-Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth']], function () {
+Route::group(['as' => 'user.', 'prefix' => 'user',  'middleware' => ['auth', 'admin']], function () {
     Route::get('create', 'UserController@create')->name('create');
     Route::post('store', 'UserController@store')->name('store');
     Route::get('edit/{id}', 'UserController@edit')->name('edit');
@@ -44,7 +44,7 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth']], fu
 Route::get('user/index', 'UserController@index')->name('user.index');
 
 //Departments
-Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth']], function () {
+Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth', 'admin']], function () {
     Route::get('index', 'DepartmentController@index')->name('index');
     Route::get('create', 'DepartmentController@create')->name('create');
     Route::post('store', 'DepartmentController@store')->name('store');
@@ -80,7 +80,8 @@ Route::group(['as' => 'team.', 'prefix' => 'team', 'middleware' => ['auth']], fu
     Route::post('assign/{id}', 'TeamController@assign')->name('assign');
     Route::get  ('member/list/{id}', 'TeamController@memberList')->name('member.list');
     Route::get  ('leader/{id}', 'TeamController@leader')->name('leader');
-    Route::get  ('leader/change/{id}', 'TeamController@leaderChange')->name('leader.change');
+    Route::get('leader/change/{id}', 'TeamController@leaderChange')->name('leader.change');
+    Route::get('remove-member/{id}', 'TeamController@removeMember')->name('remove.member');
 });
 
 //Profile

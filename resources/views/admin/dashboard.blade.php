@@ -90,6 +90,7 @@
             </div>
 
             {{--                activity--}}
+            @if(Auth::user()->role_id == 1)
             <table class="table table-striped projects">
                 <thead>
                 <tr>
@@ -119,6 +120,39 @@
                 @endforeach
                 </tbody>
             </table>
+                @endif
+            @if(Auth::user()->role_id == 3)
+                @php
+                    foreach ($team->projects as $project){
+                    $title = $project->title;
+                    }
+                @endphp
+                <table class="table table-striped projects">
+                    <caption>Your Current Project is {{$title}} & here is the requirements</caption>
+                    <thead>
+                    <tr>
+                        <th style="width: 20%">
+                        Requirement Name
+                        </th>
+                        <th style="width: 20%">
+                            Action
+                        </th>
+                    </tr>
+                    <tbody>
+                    @foreach($project->requirements as $requirement)
+                        <tr>
+                            <td>
+                                {{ $requirement->name }}
+                            </td>
+
+                            <td>
+                                <a href="#">Assign</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @endif
         </div>
     </section>
 @endsection
