@@ -78,7 +78,7 @@
                                 <p style="font-family: 'Times New Roman'; font-size: 14px ">{{ $project->description }}</p>
                             </div>
                             <div class="col-6 text-center">
-                                <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2"
+                                <input type="text" readonly class="knob" value="{{$project->requirements->sum('progress')}}" data-skin="tron" data-thickness="0.2"
                                        data-width="120"
                                        data-height="120" data-fgColor="#f56954">
 

@@ -74,9 +74,13 @@
             </table>
         </div>
     </div>
-    @push('base.js')
-    <script type="text/javascript">
-
-        </script>
-    @endpush
 @endsection
+@push('base.js')
+    <script>
+        $(function () {
+            $("#formButton").click(function () {
+                $("#form1").toggle();
+            });
+        });
+    </script>
+@endpush

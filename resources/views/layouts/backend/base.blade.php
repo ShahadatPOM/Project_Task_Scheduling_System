@@ -31,10 +31,10 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('assets/backend/plugins/select2/css/select2.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     {{--datatable--}}
     <link rel="stylesheet" href="{{asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     @stack('base.css')
 
 </head>
@@ -81,7 +81,8 @@
 <script src="{{asset('assets/backend/plugins/select2/js/select2.full.min.js')}}"></script>
 
 {{--toastr--}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
 
 <script>
         @if(Session::has('message'))

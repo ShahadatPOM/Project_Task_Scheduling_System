@@ -14,7 +14,7 @@ use App\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Collection;
-
+use Toastr;
 class ProjectController extends Controller
 {
     public function index()
@@ -219,6 +219,7 @@ class ProjectController extends Controller
         $requirement->status = 2;
         $requirement->progress = $requirement->percentage;
         $requirement->save();
+        Toastr::success('Task successfully has been Approved','Success!');
         return back();
     }
 

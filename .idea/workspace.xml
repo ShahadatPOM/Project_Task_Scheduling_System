@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/files/requirements/c.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/files/tasks/4.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notification.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/task/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/task/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +157,7 @@
       <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/brian2694/laravel-toastr" />
     </include_path>
   </component>
   <component name="ProjectId" id="1URsMTCJbecTGpk40xFFRo1yvww" />
@@ -234,7 +246,7 @@
       <workItem from="1576918649721" duration="12971000" />
       <workItem from="1576988344257" duration="66000" />
       <workItem from="1576993437790" duration="25341000" />
-      <workItem from="1577076061267" duration="5680000" />
+      <workItem from="1577076061267" duration="8265000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>
@@ -369,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576989404571</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Requirement porgrees is done">
+      <created>1577082854082</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1577082854083</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,13 +431,14 @@
     <MESSAGE value="conditions are removed" />
     <MESSAGE value="something is changed" />
     <MESSAGE value="Problem in workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Problem in workspace.xml" />
+    <MESSAGE value="Requirement porgrees is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Requirement porgrees is done" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1576989710771">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1577082852364">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1576989710771" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1577082852364" />
     <state x="129" y="62" key="MergeDialog" timestamp="1576989852743">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -439,9 +459,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="342" y="161" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1576989862228" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1576932465962">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1577084830176">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1576932465962" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1577084830176" />
   </component>
 </project>
