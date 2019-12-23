@@ -71,6 +71,7 @@ Route::group(['as' => 'project.', 'prefix' => 'project', 'middleware' => ['auth'
     Route::get('/requirements', 'ProjectController@requirements')->name('requirements');
     Route::get('/accept-requirement/{id}', 'ProjectController@acceptRequirement')->name('accept');
     Route::post('/reject-requirement/{id}', 'ProjectController@rejectRequirement')->name('reject');
+    Route::get('/download-requirement/{id}', 'ProjectController@downloadRequirement')->name('download');
 
 });
 
@@ -117,7 +118,7 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
     Route::get('submit/{id}', 'TaskController@submit')->name('submit');
     Route::get('/download/{id}', 'TaskController@fileDownload');
     Route::post('/task-submit/{id}', 'TaskController@submitTask')->name('task-submit');
-    Route::post('/task-view/{id}', 'TaskController@viewTask')->name('task-view');
+    Route::post('/task-view/{id}', 'TaskController@viewTask')->name('view');
 });
 
 //pdf

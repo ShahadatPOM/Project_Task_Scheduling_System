@@ -65,10 +65,10 @@
                             </div>
 
                             <div class="col-6 text-center">
-                                <input type="text" class="knob" readonly value="@foreach($task->requirements as $requirement){{ ($requirement->percentage) }} @endforeach" data-skin="tron" data-thickness="0.1"
+                                <input type="text" class="knob" readonly value="{{(count($task->requirements->where('status',2))/count($task->requirements))*100}}" data-skin="tron" data-thickness="0.1"
                                        data-width="120"
                                        data-height="120" data-fgColor="#f56954">
-                                <div class="knob-label" style="color: orange">Out of {{$difference == 0 ? 100 : ceil((count($task->requirements)*100)/count($task->project->requirements))}}%</div>
+                                <div class="knob-label" style="color: orange">Out of {{--{{$difference == 0 ? 100 : ceil((count($task->requirements)*100)/count($task->project->requirements))}}--}}100%</div>
                             </div>
                         </div>
                     </div>
@@ -87,6 +87,7 @@
 
 @php
 $files = [];
+$ids = [];
 @endphp
                             @foreach($task->requirements as $key => $requirement)
                                 <tr>
@@ -98,12 +99,23 @@ $files = [];
                                         @endphp
                                     <td style="vertical-align: middle" rowspan="{{count($task->requirements)}}">{{ $task->filename }} <a href="{{url('task/download',$task->id)}}"><i class="fa fa-download"></i></a> </td>
                                     @endif
+                                    @if($task->status == 1)
                                     @if($requirement->status == 1)
                                         <td><a style="" class="btn btn-sm btn-warning" href="">Pending</a>
                                             <a href="{{route('task.view', $requirement->id)}}" class="btn btn-sm btn-primary" href=""><i class="fa fa-eye"></i></a></td>
-                                    @else
-                                    <td><a style="" class="btn btn-sm btn-success" href="{{ route('task.submit', $requirement->id) }}">submit</a></td>
+                                    @elseif($requirement->status == 2)
+                                            <td><p>You have Successfully Submitted Your Work</p></td>
+                                        @else
+                                            <td><a style="" class="btn btn-sm btn-success" href="{{ route('task.submit', $requirement->id) }}">submit</a></td>
                                     @endif
+                                        @else
+                                        @if(!in_array($task->id,$ids))
+                                            @php
+                                                $ids[] = $task->id;
+                                            @endphp
+                                        <td rowspan="{{count($task->requirements)}}"><p>You didnt started your work yet</p></td>
+                                            @endif
+                                        @endif
                                 </tr>
                             @endforeach
                             </tbody>

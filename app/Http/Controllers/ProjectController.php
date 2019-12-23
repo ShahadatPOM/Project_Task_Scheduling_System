@@ -208,7 +208,7 @@ class ProjectController extends Controller
         $team = Team::where('leader_id',Auth::id())->first();
         foreach ($team->projects as $key => $project) {
                     $ids[] = $project->id;
-                }        
+                }
         return view('project.requirements',compact('team','project'));
     }
 
@@ -224,14 +224,21 @@ class ProjectController extends Controller
 
     public function rejectRequirement(Request $request,$id)
     {
-    
+
         $submission = RequirementSubmission::find($id);
         $submission->comment = $request->comment;
         $submission->save();
         $requirement = Requirement::where('id',$submission->requirement_id)->first();
         $requirement->status = 0;
-        $requirement->save();     
+        $requirement->save();
         return back();
+    }
+
+    public function downloadRequirement($id)
+    {
+        $submission = RequirementSubmission::find($id);
+        $path = public_path() . '/files/requirements/' . $submission->file;
+        return response()->download($path);
     }
 
 }

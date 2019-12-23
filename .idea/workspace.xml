@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/department/detail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/department.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/requirements/c.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/tasks/4.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PdfController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PdfController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/departments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/departments.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/projectDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/projectDetails.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/task/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/task/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -190,18 +179,6 @@
       <recent name="D:\Project_Task_Scheduling_System\database\seeds" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -209,6 +186,16 @@
     </configuration>
   </component>
   <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
     <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -247,6 +234,7 @@
       <workItem from="1576918649721" duration="12971000" />
       <workItem from="1576988344257" duration="66000" />
       <workItem from="1576993437790" duration="25341000" />
+      <workItem from="1577076061267" duration="5680000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>

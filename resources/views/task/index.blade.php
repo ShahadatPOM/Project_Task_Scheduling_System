@@ -66,7 +66,7 @@
                                              style="width: {{ $task->status == 0 ? 100 : $task->progress }}%">
                                         </div>
                                     </div>
-                                    {{ $task->status == 1 ? $task->progress : 0 }}% Completed
+                                    {{ $task->status == 1 ? (count($task->requirements->where('status',2))/count($task->requirements))*100 : 0 }}% Completed
                                 </small>
                             </td>
 

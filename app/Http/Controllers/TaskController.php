@@ -140,7 +140,7 @@ class TaskController extends Controller
             $file = $request->File('file');
             $ext = $requirement->name . '.' . $file->clientExtension();
             $path = public_path('files/requirements/');
-            move($path, $ext);
+            $file->move($path, $ext);
             $submission->file = $ext;
         }
         $submission->save();
