@@ -23,10 +23,14 @@ Route::get('notification', 'HomeController@notification');
 
 Auth::routes();
 
+//permission
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('permissions', 'PermissionController')->except('create','store');
+
 Route::get('permissions/create/{id}', 'PermissionController@create');
 Route::post('permissions/store/{id}', 'PermissionController@store');
+Route::get('permissions/index', 'PermissionController@index');
+Route::get('permissions/edit/{id}', 'PermissionController@edit');
+Route::post('permissions/update/{id}', 'PermissionController@update');
 
 //Admin
 Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']], function () {
@@ -35,18 +39,19 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']],
 
 
 //users
-Route::group(['as' => 'user.', 'prefix' => 'user',  'middleware' => ['auth', 'admin']], function () {
+Route::group(['as' => 'user.', 'prefix' => 'user',  'middleware' => ['auth']], function () {
     Route::get('create', 'UserController@create')->name('create');
     Route::post('store', 'UserController@store')->name('store');
+    Route::get('index', 'UserController@index')->name('index');
     Route::get('edit/{id}', 'UserController@edit')->name('edit');
     Route::post('update/{id}', 'UserController@update')->name('update');
     Route::get('delete/{id}', 'UserController@delete')->name('delete');
     Route::get('detail/{id}', 'UserController@detail')->name('detail');
 });
-Route::get('user/index', 'UserController@index')->name('user.index');
+
 
 //Departments
-Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth']], function () {
     Route::get('index', 'DepartmentController@index')->name('index');
     Route::get('create', 'DepartmentController@create')->name('create');
     Route::post('store', 'DepartmentController@store')->name('store');
@@ -122,7 +127,6 @@ Route::group(['as' => 'task.', 'prefix' => 'task', 'middleware' => ['auth']], fu
 });
 
 //pdf
-
 Route::get('pdf/view/users', 'PdfController@viewUsers')->name('viewUsers');
 Route::get('pdf/download/users', 'PdfController@downloadUsers')->name('downloadUsers');
 

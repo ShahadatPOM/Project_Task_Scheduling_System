@@ -28,10 +28,8 @@
                         <th>Delete</th>
                     </tr>
 
-                    <form action="{{url('permissions',$userrole->id)}}" method='post'>
-
+                    <form action="{{url('permissions/update',$userrole->id)}}" method='post'>
                         @csrf
-                        @method('PUT')
                         <tr>
 
                             @php
@@ -45,13 +43,11 @@
                             @endforeach
                         </tr>
                         <tr>
-
                             <td>Role</td>
                             @foreach($roles as $role)
                                 <td><input type="checkbox" name="id[]" value="{{$role->id}}"
                                            @if(( in_array($role->id, $permit)) ) checked @endif>{{$role->name}}</td>
                             @endforeach
-
                         </tr>
                         <tr>
                             <td>Department</td>
@@ -60,8 +56,6 @@
                                            @if(( in_array($department->id, $permit)) ) checked @endif>{{$department->name}}
                                 </td>
                             @endforeach
-
-
                         </tr>
                         <tr>
                             <td>Team</td>
@@ -78,7 +72,6 @@
                                            @if(( in_array($leader->id, $permit)) ) checked @endif>{{$leader->name}}</td>
                                 @php $count=0; @endphp
                             @endforeach
-
                         </tr>
                         <tr>
                             @php $count=1; @endphp
@@ -118,7 +111,6 @@
                                 @php $count=0; @endphp
                             @endforeach
                         </tr>
-
                         <tr>
                             <td colspan="5" style="text-align: center">
                                 <button type="submit" class="btn btn-success">Save</button>

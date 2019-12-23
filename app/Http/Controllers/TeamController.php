@@ -20,6 +20,7 @@ class TeamController extends Controller
 
     public function create()
     {
+
         $users = User::where('role_id', 4)->get();
         $departments = Department::all();
         return view('team.create', compact('departments', 'users'));

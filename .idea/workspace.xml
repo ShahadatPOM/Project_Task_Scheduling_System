@@ -2,17 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/complete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/d1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/pro3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/pro5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/t6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/t7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/team3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/team4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/team5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/users2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/icon/web2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/dev.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/notification.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
@@ -23,7 +41,102 @@
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/CHANGES.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/CHANGES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValuesToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValuesToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ApproximateValueToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ApproximateValueToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayCountToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayCountToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEntryToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEntryToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEveryEntryToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEveryEntryToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/CallbackToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/CallbackToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ExactValueToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ExactValueToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/IdenticalValueToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/IdenticalValueToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalAndToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalAndToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalNotToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalNotToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ObjectStateToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ObjectStateToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/StringContainsToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/StringContainsToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TokenInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TokenInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TypeToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TypeToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Call/Call.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Call/Call.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Call/CallCenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Call/CallCenter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Comparator/ClosureComparator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Comparator/ClosureComparator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Comparator/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Comparator/Factory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Comparator/ProphecyComparator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Comparator/ProphecyComparator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/CachedDoubler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/CachedDoubler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ClassPatchInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ClassPatchInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/DisableConstructorPatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/DisableConstructorPatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/HhvmExceptionPatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/HhvmExceptionPatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/KeywordPatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/KeywordPatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/MagicCallPatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/MagicCallPatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ProphecySubjectPatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ProphecySubjectPatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ReflectionClassNewInstancePatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ReflectionClassNewInstancePatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/SplFileInfoPatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/SplFileInfoPatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ThrowablePatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ThrowablePatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/TraversablePatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/TraversablePatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/DoubleInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/DoubleInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Doubler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Doubler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCodeGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCodeGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCreator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassMirror.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassMirror.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ArgumentNode.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ArgumentNode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ClassNode.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ClassNode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/MethodNode.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/MethodNode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/TypeHintReference.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/TypeHintReference.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassCreatorException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassCreatorException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassMirrorException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassMirrorException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassNotFoundException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoubleException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoubleException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoublerException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoublerException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/InterfaceNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/InterfaceNotFoundException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotExtendableException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotExtendableException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotFoundException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ReturnByReferenceException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ReturnByReferenceException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/InvalidArgumentException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/InvalidArgumentException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/AggregateException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/AggregateException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/FailedPredictionException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/FailedPredictionException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/NoCallsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/NoCallsException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/PredictionException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/PredictionException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsCountException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsCountException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/MethodProphecyException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/MethodProphecyException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ObjectProphecyException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ObjectProphecyException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ProphecyException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ProphecyException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassAndInterfaceTagRetriever.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassAndInterfaceTagRetriever.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassTagRetriever.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassTagRetriever.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/LegacyClassTagRetriever.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/LegacyClassTagRetriever.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/MethodTagRetrieverInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/MethodTagRetrieverInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallPrediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallPrediction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallTimesPrediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallTimesPrediction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallbackPrediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallbackPrediction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/NoCallsPrediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/NoCallsPrediction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/PredictionInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prediction/PredictionInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/CallbackPromise.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/CallbackPromise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/PromiseInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/PromiseInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnArgumentPromise.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnArgumentPromise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnPromise.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnPromise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/ThrowPromise.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Promise/ThrowPromise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/MethodProphecy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/MethodProphecy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ObjectProphecy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ObjectProphecy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecyInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecyInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecySubjectInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecySubjectInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/Revealer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/Revealer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/RevealerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophecy/RevealerInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophet.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Prophet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Util/StringUtil.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/Util/StringUtil.php" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +287,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
@@ -191,6 +304,18 @@
       <recent name="D:\Project_Task_Scheduling_System\database\seeds" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -198,16 +323,6 @@
     </configuration>
   </component>
   <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
     <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -247,6 +362,7 @@
       <workItem from="1576988344257" duration="66000" />
       <workItem from="1576993437790" duration="25341000" />
       <workItem from="1577076061267" duration="8265000" />
+      <workItem from="1577086131017" duration="15359000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>

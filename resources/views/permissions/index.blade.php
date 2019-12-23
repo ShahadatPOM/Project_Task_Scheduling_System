@@ -42,7 +42,7 @@
                                     <a href="{{url('permissions/create',$role->id)}}" class="btn btn-primary btn-sm"><i
                                             class="fa fa-eye"></i></a>
                                 @else
-                                    <a href="{{url('permissions',$role->id.'/edit')}}" class="btn btn-warning btn-sm"><i
+                                    <a href="{{url('permissions/edit',$role->id)}}" class="btn btn-warning btn-sm"><i
                                             class="fa fa-edit"></i></a>
                                 @endif
                             </td>

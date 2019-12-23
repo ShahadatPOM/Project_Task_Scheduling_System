@@ -7,12 +7,14 @@ use App\Department;
 use App\Http\Controllers\Controller;
 use App\Project;
 use App\Team;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index(){
+        $users = User::all();
         $projects = Project::all();
         $teams = Team::all();
         $departments = Department::all();
@@ -22,7 +24,7 @@ class DashboardController extends Controller
         $activities = Activity::where('user_id', Auth::id())->get();
         $team = Team::where('leader_id', Auth::id())->first();
 
-        return view('admin.dashboard', compact('projects', 'activities', 'teams', 'departments', 'pendingProjects', 'completedProjects','team'));
+        return view('admin.dashboard', compact('users','projects', 'activities', 'teams', 'departments', 'pendingProjects', 'completedProjects','team'));
 
     }
 }

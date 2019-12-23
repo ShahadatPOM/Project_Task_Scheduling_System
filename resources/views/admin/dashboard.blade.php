@@ -8,7 +8,6 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
                 </div>
             </div>
         </div>
@@ -18,78 +17,62 @@
             {{--            admin began--}}
             {{-- @if(Auth::user()->role->id==1)--}}
             <div class="row">
+                <div class="col-lg-3 col-6">
+                    <div class="small-box" style="background: #f7e1b9 ; color: #000">
+                        <div class="inner">
+                            <h5>Users</h5>
+                            <h4 style="margin-left: 30px">{{count($users)}}</h4>
+                        </div>
+                        <div class="icon">
+                            <i><img src="{{ asset('assets/icon/t6.png') }}" height="70px" style="margin-bottom: 100%"></i>
+                        </div>
+                        <a href="{{ route('user.index') }}" class="small-box-footer" style="color: #000">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
                     <div class="col-lg-3 col-6">
-                        <div class="small-box bg-maroon">
+                        <div class="small-box" style="background: #87adbd ; color: #000">
                             <div class="inner">
-                                <h5>Project</h5>
+                                <h5>Projects</h5>
                                 <h4 style="margin-left: 30px">{{count($projects)}}</h4>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-document"></i>
+                                <i><img src="{{ asset('assets/icon/pro3.png') }}" height="70px" style="margin-bottom: 100%"></i>
                             </div>
-                            <a href="{{ route('project.index') }}" class="small-box-footer">More info <i
+                            <a href="{{ route('project.index') }}" class="small-box-footer" style="color: #000">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-success">
+                    <div class="small-box" style="background: lightcoral; color: #000">
                         <div class="inner">
-                            <h5>Team</h5>
+                            <h5>Teams</h5>
                             <h4 style="margin-left: 30px">{{count($teams)}}</h4>
                         </div>
                         <div class="icon">
-                            <i class="fa fa-users"></i>
+                            <i><img src="{{ asset('assets/icon/team5.png') }}" height="70px" style="margin-bottom: 100%"></i>
+
                         </div>
-                        <a href="{{ route('team.index') }}" class="small-box-footer">More info <i
+                        <a href="{{ route('team.index') }}" class="small-box-footer" style="color: #000">More info <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 col-6" >
                     <!-- small box -->
-                    <div class="small-box bg-warning">
+                    <div class="small-box" style="background:  #22c3a1 ; color: #000">
                         <div class="inner">
                             <h5>Departments</h5>
                             <h4 style="margin-left: 30px">{{count($departments)}}</h4>
-
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i><img src="{{ asset('assets/icon/d1.png') }}" height="70px" style="margin-bottom: 100%"></i>
                         </div>
-                        <a href="{{ route("department.index") }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h5>Completed Project</h5>
-                            <h4 style="margin-left: 30px">{{count($completedProjects)}}</h4>
-
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box" style="background: #c7b5e7">
-                        <div class="inner">
-                            <h5>Pending Project</h5>
-                            <h4 style="margin-left: 30px">{{count($pendingProjects)}}</h4>
-
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route("department.index") }}" class="small-box-footer" style="color: #000">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
 
-            {{--                activity--}}
+            {{--activity--}}
             @if(Auth::user()->role_id == 1)
             <table class="table table-striped projects">
                 <thead>

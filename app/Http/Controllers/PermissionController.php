@@ -44,7 +44,7 @@ class PermissionController extends Controller
          $role=Role::find($id);
         $role->permissions()->attach($request->id);
 
-        return redirect('permissions');
+        return redirect('permissions/index');
     }
 
     /**

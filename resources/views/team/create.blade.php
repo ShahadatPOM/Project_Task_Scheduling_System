@@ -59,9 +59,12 @@
                                     <div class="select2-blue">
                                         <select class="select2" multiple="multiple" name="members[]"
                                                 data-placeholder="Select a Member" style="width: 100%;">
-                                            @foreach($users as  $user)
+                                            @foreach($departments as $department)
+                                                <optgroup label="{{$department->name}}">
+                                                @foreach($department->users as  $user)
                                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
                                             @endforeach
+                                                @endforeach
                                         </select>
                                     </div>
                                 </div>

@@ -106,7 +106,7 @@
                     </ul>
                 </li>
                     <li class="nav-item">
-                        <a href="{{ url('permissions') }}" class="nav-link">
+                        <a href="{{ url('permissions/index') }}" class="nav-link">
                             <i class="fa fa-plus nav-icon"></i>
                             <p>Permissions</p>
                         </a>

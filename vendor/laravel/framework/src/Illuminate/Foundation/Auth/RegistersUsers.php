@@ -2,6 +2,8 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use App\Department;
+use App\Role;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +19,9 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $departments = Department::all();
+        $roles = Role::all();
+        return view('auth.register',compact('departments', 'roles'));
     }
 
     /**
@@ -32,10 +36,11 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
+        //$this->guard()->login($user);
 
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+       /* return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());*/
+       return back();
     }
 
     /**
