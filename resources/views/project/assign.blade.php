@@ -44,6 +44,7 @@
                                         @foreach($project->departments as $department)
                                             <optgroup label="{{$department->name}}">
                                                 @foreach($department->teams as $team)
+
                                                     <option class="form-control"
                                                             value="{{ $team->id }}">{{ $team->name }}</option>
                                                 @endforeach
