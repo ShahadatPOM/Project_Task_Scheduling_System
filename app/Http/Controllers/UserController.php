@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index(){
         $this->authorize('view', User::class);
-        $users = User::all()->except(Auth::id());
+        $users = User::all()->except([Auth::id(),1]);
         return view('user.index', compact('users'));
 
     }
@@ -22,7 +22,7 @@ class UserController extends Controller
         $this->authorize('update', User::class);
         $user = User::findOrfail($id);
         $departments = Department::all();
-        $roles = Role::all();
+        $roles = Role::all()->except(3);
         return view('user.edit', compact('user', 'departments', 'roles'));
     }
     public function update(Request $request, $id){
@@ -42,11 +42,7 @@ class UserController extends Controller
         $user->department_id = $request->department_id;
         $user->status = $request->status;
         $user->save();
-        $notification = array(
-            'message' => 'User updated successfully!',
-            'alert-type' => 'success'
-        );
-        return back()->with($notification);
+        return back();
     }
 
     public function detail($id){

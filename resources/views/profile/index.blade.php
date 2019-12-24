@@ -30,7 +30,7 @@
                         <div class="card-body box-profile">
                             <div class="text-center">
                                 <img class="profile-user-img img-fluid img-circle"
-                                     src="{{asset('files/download.jpg')}}"
+                                      src="{{url('files/'.$user->profile->image )}}" alt="User Avatar"
                                      alt="User profile picture">
                             </div>
 
@@ -100,7 +100,7 @@
                         </div><!-- /.card-header -->
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="tab-pane" id="settings">
+                                <div class="tab-pane active" id="settings">
                                     <form class="form-horizontal" action="{{ route('profile.store', $user->id) }}"
                                           method="post" enctype="multipart/form-data">
                                         @csrf

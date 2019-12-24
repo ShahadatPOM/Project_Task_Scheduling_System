@@ -22,7 +22,9 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">User Create</h3>
+                            <a
+                                class="btn btn-outline-info" href="{{ route('user.index') }}"><i class="fa fa-eye"></i>
+                               All User</a>
                         </div>
                         <form action="{{ route('register') }}" method="post">
                             @csrf
@@ -128,7 +130,7 @@
                             </div>
                             <div class="card-footer">
                                 <a href="{{ route('user.index') }}" class="btn btn-sm btn-danger">BACK</a>
-                                <button type="submit" class="btn btn-primary btn-sm">Done</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Add</button>
                             </div>
                         </form>
                     </div>

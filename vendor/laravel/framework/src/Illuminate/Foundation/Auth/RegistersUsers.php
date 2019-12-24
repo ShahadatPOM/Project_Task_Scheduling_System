@@ -20,7 +20,7 @@ trait RegistersUsers
     public function showRegistrationForm()
     {
         $departments = Department::all();
-        $roles = Role::all();
+        $roles = Role::all()->except(3);
         return view('auth.register',compact('departments', 'roles'));
     }
 

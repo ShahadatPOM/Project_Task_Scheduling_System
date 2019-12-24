@@ -43,8 +43,12 @@
                             @endif
                         </td>
                         <td>
+                            @can('update')
                             <a title="edit" class="btn btn-sm btn-warning" href="{{ route('team.edit', $team->id) }}"><i class="fa fa-pencil"></i></a>
+                            @endcan
+                            @can('delete')
                             <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.delete', $team->id) }}"><i class="fa fa-trash"></i></a>
+                            @endcan
                             <a title="view" class="btn btn-sm btn-primary" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>

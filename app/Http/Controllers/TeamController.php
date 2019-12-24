@@ -51,10 +51,26 @@ class TeamController extends Controller
 
     public function memberList($id)
     {
+
         $team = Team::find($id);
         foreach ($team->users as $user)
             $roles[] = $user->role_id;
         return view('team.memberList', compact('team', 'roles'));
+    }
+
+    public function memberAddForm($id){
+        $team = Team::find($id);
+        return view('team.memberAdd', compact('team'));
+    }
+
+    public function memberAdd(Request $request, $id){
+        $this->validate($request, [
+            'members' => 'unique:team_user,user_id'
+
+        ]);
+        $team = Team::find($id);
+        $team->users()->attach($request->members);
+        return redirect("team/member/list/$id" );
     }
 
     public function leader($id)
@@ -92,6 +108,7 @@ class TeamController extends Controller
 
     public function edit($id)
     {
+        $this->authorize('update', Team::class);
         $users = User::where('role_id', 4)->get();
         $team = Team::find($id);
         $departments = Department::all()->except($team->department->id);
@@ -122,6 +139,7 @@ class TeamController extends Controller
 
     public function delete($id)
     {
+        $this->authorize('delete', Team::class);
         $team = Team::find($id);
         $team->delete();
         return back();

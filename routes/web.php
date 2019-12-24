@@ -91,6 +91,8 @@ Route::group(['as' => 'team.', 'prefix' => 'team', 'middleware' => ['auth']], fu
     Route::get('delete/{id}', 'TeamController@delete')->name('delete');
     Route::post('assign/{id}', 'TeamController@assign')->name('assign');
     Route::get  ('member/list/{id}', 'TeamController@memberList')->name('member.list');
+    Route::get  ('member/add/form/{id}', 'TeamController@memberAddForm')->name('member.addForm');
+    Route::post  ('member/add/{id}', 'TeamController@memberAdd')->name('member.add');
     Route::get  ('leader/{id}', 'TeamController@leader')->name('leader');
     Route::get('leader/change/{id}', 'TeamController@leaderChange')->name('leader.change');
     Route::get('remove-member/{id}', 'TeamController@removeMember')->name('remove.member');
@@ -131,7 +133,7 @@ Route::get('pdf/view/users', 'PdfController@viewUsers')->name('viewUsers');
 Route::get('pdf/download/users', 'PdfController@downloadUsers')->name('downloadUsers');
 
 Route::get('pdf/view/departmentDetail/{id}', 'PdfController@viewDepartmentDetail')->name('viewDepartmentDetail');
-Route::get('pdf/download/departmentDetail/{id}', 'PdfController@downloadDepartmentDetail')->name('downloadDepartmentDetail');
+Route::get('pdf/download/departmentDetail/{id}', 'PdfController@downloadDepartmentDetail')->name('viewDepartmentDetail');
 
 Route::get('pdf/view/departments', 'PdfController@viewDepartments')->name('viewDepartment');
 Route::get('pdf/download/departments', 'PdfController@downloadDepartments')->name('downloadDepartment');

@@ -28,6 +28,7 @@
                 <thead>
                 <tr>
                     <th width="10%">Name</th>
+                    <th width="10%">Image</th>
                     <th width="10%">Email</th>
                     <th width="15%">Department</th>
                     <th width="15%">Role</th>
@@ -41,12 +42,11 @@
                 @foreach($users as $user)
                     <tr>
                         <td>{{ $user->name }}</td>
+                        <td style="text-align: center"><img width="50px" class="img-circle elevation-2" src="{{url('files/'.$user->profile->image )}}" alt="User Avatar">
+                        </td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->department_id }}</td>
+                        <td>{{ $user->department->name }}</td>
                         <td>{{ $user->role->name }}</td>
-                        {{--  <td>{{ Carbon\Carbon::createFromFormat("Y-m-d H:i:s",$user->created_at)->diffForHumans() }}</td>--}}
-                        {{--<td>{{ Carbon\Carbon::createFromFormat("Y-m-d H:i:s",$user->created_at)->diff(Carbon\Carbon::now())->format('%y years') }}</td>--}}
-
                         <td>
                             @if($user->status == 1)
                                <span class="badge badge-success">Active</span>
@@ -65,6 +65,7 @@
                 <tfoot>
                 <tr>
                     <th width="10%">Name</th>
+                    <th width="10%">Image</th>
                     <th width="10%">Email</th>
                      <th width="15%">Department</th>
                     <th width="10%">Role</th>

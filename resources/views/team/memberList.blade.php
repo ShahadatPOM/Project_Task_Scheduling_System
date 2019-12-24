@@ -13,15 +13,17 @@
             {{ session()->get('message') }}
         </div>
     @endif
-    <div style=" margin-left: 50%; margin-top: 10px;">
+    <div style=" margin-left: 40%; margin-top: 10px;">
+        <a href="{{ route('team.member.addForm', $team->id) }}" class="btn btn-warning"> <i class="fa fa-plus"></i> Add Member</a>
         <a href="" class="btn btn-info" style= " border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
         <a href="" class="btn btn-primary" style= "border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
     </div>
+
     {{--member for each team--}}
     <div class="card">
         <div class="card-header">
-            <h4 style="text-align: center">Team Members of <a href="">{{ $team->name }}</a></h4>
-            <h4 style="text-align: center">Department <a href="{{ route('department.detail', $team->department->id) }}">{{$team->department ?  $team->department->name : ''}}</a></h4>
+            <h3 style=" text-align: center">Team Members of <a href="">{{ $team->name }}</a> Team</h3>
+            <h3  style="text-align: center">Department <a href="{{ route('department.detail', $team->department->id) }}">{{$team->department ?  $team->department->name : ''}}</a></h3>
         </div>
         <div class="card-body">
             <table id="example2" class="table table-bordered table-striped">
@@ -83,7 +85,6 @@
     <script>
         $(function () {
             $("#example1").DataTable();
-
         });
     </script>
 @endpush
