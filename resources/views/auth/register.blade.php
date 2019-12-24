@@ -24,7 +24,7 @@
                         <div class="card-header">
                             <a
                                 class="btn btn-outline-info" href="{{ route('user.index') }}"><i class="fa fa-eye"></i>
-                               All User</a>
+                                All User</a>
                         </div>
                         <form action="{{ route('register') }}" method="post">
                             @csrf
@@ -95,23 +95,7 @@
                                     </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="tagName">Password</label>
-                                        <input id="password" type="password"
-                                               class="form-control @error('password') is-invalid @enderror"
-                                               name="password">
 
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="tagName">Confirm Password</label>
-                                        <input id="password-confirm" type="password" class="form-control"
-                                               name="password_confirmation">
-                                    </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="tagName">Status</label>
