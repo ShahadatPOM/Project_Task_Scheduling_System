@@ -149,7 +149,6 @@ class ProjectController extends Controller
         $project->client = $request->client;
         $project->estimated_budget = $request->estimated_budget;
         $project->estimated_project_duration = $request->estimated_project_duration;
-        $project->status = 0;
         $project->save();
         $project->departments()->sync($request->departments);
         $requirements = $request->requirements;

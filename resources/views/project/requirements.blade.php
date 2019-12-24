@@ -50,7 +50,7 @@
                                 @endif
                                         <td>{{$submit->description}}</td>
                                         <td><a href="{{route('project.download',$submit->id)}}">{{$submit->file}}</a></td>
-                                        <td>{{$submit->link}}</td>
+                                        <td><a href="{{$submit->link}}">{{$submit->link}}</a></td>
                                         @php
                                             $requirement = App\Requirement::where('id',$submit->requirement_id)->first();
                                         @endphp
@@ -76,11 +76,5 @@
     </div>
 @endsection
 @push('base.js')
-    <script>
-        $(function () {
-            $("#formButton").click(function () {
-                $("#form1").toggle();
-            });
-        });
-    </script>
+
 @endpush

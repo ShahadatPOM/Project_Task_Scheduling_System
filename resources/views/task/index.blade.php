@@ -60,10 +60,10 @@
                             <td class="project_progress">
                                 <small>
                                     <div class="progress progress-sm">
-                                        <div @if($task->status == 0) class="progress-bar bg-red"
-                                             @endif role="progressbar" aria-volumenow="0" aria-volumemin="0"
+                                        <div class="progress-bar bg-green"
+                                              role="progressbar" aria-volumenow="0" aria-volumemin="0"
                                              aria-volumemax="100"
-                                             style="width: {{ $task->status == 0 ? 100 : $task->progress }}%">
+                                             style="width: {{ $task->status == 1 ? (count($task->requirements->where('status',2))/count($task->requirements))*100 : 0 }}%">
                                         </div>
                                     </div>
                                     {{ $task->status == 1 ? (count($task->requirements->where('status',2))/count($task->requirements))*100 : 0 }}% Completed
