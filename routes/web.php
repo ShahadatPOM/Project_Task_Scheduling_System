@@ -41,7 +41,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']],
 
 
 //users
-Route::group(['as' => 'user.', 'prefix' => 'user',  'middleware' => ['auth']], function () {
+Route::group(['as' => 'user.', 'prefix' => 'user'], function () {
     Route::get('create', 'UserController@create')->name('create');
     Route::post('store', 'UserController@store')->name('store');
     Route::get('index', 'UserController@index')->name('index');
@@ -49,6 +49,10 @@ Route::group(['as' => 'user.', 'prefix' => 'user',  'middleware' => ['auth']], f
     Route::post('update/{id}', 'UserController@update')->name('update');
     Route::get('delete/{id}', 'UserController@delete')->name('delete');
     Route::get('detail/{id}', 'UserController@detail')->name('detail');
+    Route::get('forgot', 'UserController@forgot')->name('forgot');
+    Route::post('reset', 'UserController@reset')->name('reset');
+    Route::get('reset-password/{id}', 'UserController@resetPassword')->name('resetPassword');
+    Route::post('change-password/{id}', 'UserController@changePassword')->name('changePassword');
 });
 
 //roles
