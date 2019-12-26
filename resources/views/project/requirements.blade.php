@@ -15,16 +15,18 @@
         background: #fff;
         display: none;
     }
+
 </style>
+
     <div class="card">
         <div class="card-header">
             Submitted Task for <b>{{ $project->title }}</b>
         </div>
-        <div class="card-body">
-            <table id="" class="table table-bordered">
+        <div class="card-body ">
+            <table id="ss" class="table table-bordered ">
                 <thead>
                 <tr>
-                        <th>#</th>
+                    <th>#</th>
                     <th>Submitted By</th>
                     <th>Description</th>
                     <th>File</th>
@@ -47,7 +49,7 @@
                                 @endif--}}
                                         <td>{{$submit->description}}</td>
                                         <td><a href="{{route('project.download',$submit->id)}}">{{$submit->file}}</a></td>
-                                        <td><a href="{{$submit->link}}">{{$submit->link}}</a></td>
+                                        <td ><a href="{{$submit->link}}">{{$submit->link}}</a></td>
                                         @php
                                             $requirement = App\Requirement::where('id',$submit->requirement_id)->first();
                                         @endphp
@@ -81,6 +83,8 @@
             </table>
         </div>
     </div>
+
+
 @endsection
 @push('base.js')
 

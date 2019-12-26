@@ -252,4 +252,13 @@ class ProjectController extends Controller
         return response()->download($path);
     }
 
+    public function finalUpdate($id){
+        $project = Project::find($id);
+        $project->status = 2;
+        $project->save();
+        Toastr::success('Project status updated successfully','Success!');
+
+        return back();
+    }
+
 }

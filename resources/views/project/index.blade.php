@@ -87,7 +87,7 @@
                                 <span class="badge badge-danger">Pending</span>
                             @elseif($project->status == 1)
                                 <span class="badge badge-warning">On Progress</span>
-                                @elseif($project->status == 3)
+                                @elseif($project->status == 2)
                                 <span class="badge badge-success">Completed</span>
                             @endif
                         </td>

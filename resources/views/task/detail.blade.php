@@ -65,7 +65,7 @@
                             </div>
 
                             <div class="col-6 text-center">
-                                <input type="text" class="knob" readonly value="{{(count($task->requirements->where('status',2))/count($task->requirements))*100}}" data-skin="tron" data-thickness="0.1"
+                                <input type="text" class="knob" readonly value="{{floor((count($task->requirements->where('status',2))/count($task->requirements))*100) }}" data-skin="tron" data-thickness="0.1"
                                        data-width="120"
                                        data-height="120" data-fgColor="#f56954">
                                 <div class="knob-label" style="color: orange">Out of {{--{{$difference == 0 ? 100 : ceil((count($task->requirements)*100)/count($task->project->requirements))}}--}}100%</div>

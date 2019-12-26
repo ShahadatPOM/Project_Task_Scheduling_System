@@ -31,9 +31,9 @@
                     <th style="width: 15%">
                         Task Progress
                     </th>
-                    <th style="width: 8%">
+                    {{--<th style="width: 8%">
                         Status
-                    </th>
+                    </th>--}}
                     <th style="width: 20%">
                         Action
                     </th>
@@ -66,17 +66,17 @@
                                              style="width: {{ $task->status == 1 ? (count($task->requirements->where('status',2))/count($task->requirements))*100 : 0 }}%">
                                         </div>
                                     </div>
-                                    {{ $task->status == 1 ? (count($task->requirements->where('status',2))/count($task->requirements))*100 : 0 }}% Completed
+                                    {{ $task->status == 1 ? floor((count($task->requirements->where('status',2))/count($task->requirements))*100) : 0 }}% Completed
                                 </small>
                             </td>
 
-                            <td class="project-state">
+                          {{--  <td class="project-state">
                                 @if($task->status == 0 )
                                     <span class="badge badge-danger">Pending</span>
                                 @elseif($task->status == 1)
                                     <span class="badge badge-warning">On progress</span>
                                 @endif
-                            </td>
+                            </td>--}}
 
                             <td class="project-actions text-center">
                                 <a title="view" class="btn btn-sm btn-primary"
@@ -85,10 +85,10 @@
                                     <a title="startProgress" class="btn btn-sm btn-primary"
                                        href="{{ route('task.progress',$task->id) }}" onclick="return confirm('Are you sure you wnat to start your work?')"><i class="fa fa-toggle-on">
                                             start</i></a>
-                                @else
+                               {{-- @else
                                     <a title="updateProgress" class="btn btn-sm btn-info"
-                                       href="{{ route('task.progressUpdate', $task->id) }}"><i class="fa fa-toggle-on">
-                                            update</i></a>
+                                       href="--}}{{--{{ route('task.progressUpdate', $task->id) }}--}}{{--"><i class="fa fa-toggle-on">
+                                            started</i></a>--}}
                                 @endif
                             </td>
                         </tr>

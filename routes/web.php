@@ -81,6 +81,7 @@ Route::group(['as' => 'project.', 'prefix' => 'project', 'middleware' => ['auth'
     Route::get('show/{id}', 'ProjectController@show')->name('show');
     Route::get('edit/{id}', 'ProjectController@edit')->name('edit');
     Route::post('update/{id}', 'ProjectController@update')->name('update');
+    Route::get('update/{id}', 'ProjectController@finalUpdate')->name('finalUpdate');
     Route::get('delete/{id}', 'ProjectController@delete')->name('delete');
     Route::get('assign/form/{id}', 'ProjectController@assignForm')->name('assignForm');
     Route::post('assign/{id}', 'ProjectController@assign')->name('assign');
