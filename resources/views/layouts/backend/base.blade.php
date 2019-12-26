@@ -81,8 +81,8 @@
 <script src="{{asset('assets/backend/plugins/select2/js/select2.full.min.js')}}"></script>
 
 {{--toastr--}}
-<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-{!! Toastr::message() !!}
+{{--<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}--}}
 
 {{--datatable--}}
 <script src="{{asset('assets/backend/plugins/datatables/jquery.dataTables.js')}}"></script>

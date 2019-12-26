@@ -12,8 +12,12 @@
         <a href="" class="btn btn-info" style=" border: 2px; width: 70px">PDF <i class="fa fa-eye"></i></a>
         <a href="" class="btn btn-primary" style="border: 2px; width: 70px">PDF <i class="fa fa-download"></i></a>
     </div>
+
+
     <div class="card">
         <div class="card-header">
+            <a
+                class="btn btn-outline-info" href="{{ route('role.create') }}"><i class="fa fa-plus"></i> Role</a>
         </div>
 
         <div class="card-body">
@@ -27,7 +31,9 @@
                 </thead>
                 <tbody>
                 @if(Auth::user()->role->id == 1)
+
                     @foreach($roles as $key => $role)
+
                         <tr>
                             <td>
                                 {{ $key+1 }}
@@ -39,10 +45,10 @@
                             </td>
                             <td>
                                 @if(! $role->permissions()->exists())
-                                    <a href="{{url('permissions/create',$role->id)}}" class="btn btn-primary btn-sm"><i
+                                    <a href="{{route('permission.create',$role->id)}}" class="btn btn-primary btn-sm"><i
                                             class="fa fa-eye"></i></a>
                                 @else
-                                    <a href="{{url('permissions/edit',$role->id)}}" class="btn btn-warning btn-sm"><i
+                                    <a href="{{route('permission.edit',$role->id)}}" class="btn btn-warning btn-sm"><i
                                             class="fa fa-edit"></i></a>
                                 @endif
                             </td>

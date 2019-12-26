@@ -2,10 +2,6 @@
 
 @section('base.title', 'Project|Detail')
 
-
-@push('base.css')
-
-@endpush
 @section('master.content')
     <section class="content-header">
         <div class="container-fluid">
@@ -75,18 +71,18 @@
                             <div class="col-10 offset-1">
                                 <small
                                     style="text-align: center; font-size: 16px; font-weight: bold">Description</small>
-                                <p style="font-family: 'Times New Roman'; font-size: 14px ">{{ $project->description }}</p>
+                                <p style="font-size: 14px ">{{ $project->description }}</p>
                             </div>
                             <div class="col-6 text-center">
                                 <input type="text" readonly class="knob" value="{{$project->requirements->sum('progress')}}" data-skin="tron" data-thickness="0.2"
                                        data-width="120"
                                        data-height="120" data-fgColor="#f56954">
 
-                                <div class="knob-label">data-width="120"</div>
+                                <div class="knob-label"><span style="color: #da4453; font-size: 18px"><b>Out of {{ $project->requirements->sum('percentage') }}%</b></span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <p style="font-weight: bold;">Requirements</p>
                         <table class="table" style="text-align: center">
                             <thead>

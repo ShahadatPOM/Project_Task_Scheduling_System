@@ -23,15 +23,17 @@ Route::get('notification', 'HomeController@notification');
 
 Auth::routes();
 
-//permission
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('permissions/create/{id}', 'PermissionController@create');
-Route::post('permissions/store/{id}', 'PermissionController@store');
-Route::get('permissions/index', 'PermissionController@index');
-Route::get('permissions/edit/{id}', 'PermissionController@edit');
-Route::post('permissions/update/{id}', 'PermissionController@update');
 
+//permission
+Route::group(['as' => 'permission.', 'prefix' => 'permission',  'middleware' => ['auth']], function () {
+    Route::get('create/{id}', 'PermissionController@create')->name('create');
+    Route::post('store/{id}', 'PermissionController@store')->name('store');
+    Route::get('index', 'PermissionController@index')->name('index');
+    Route::get('edit/{id}', 'PermissionController@edit')->name('edit');
+    Route::post('update/{id}', 'PermissionController@update')->name('update');
+});
 //Admin
 Route::group(['as' => 'admin.', 'prefix' => 'admin',  'middleware' => ['auth']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -49,6 +51,16 @@ Route::group(['as' => 'user.', 'prefix' => 'user',  'middleware' => ['auth']], f
     Route::get('detail/{id}', 'UserController@detail')->name('detail');
 });
 
+//roles
+Route::group(['as' => 'role.', 'prefix' => 'role',  'middleware' => ['auth']], function () {
+    Route::get('create', 'RoleController@create')->name('create');
+    Route::post('store', 'RoleController@store')->name('store');
+    Route::get('index', 'RoleController@index')->name('index');
+    Route::get('edit/{id}', 'RoleController@edit')->name('edit');
+    Route::post('update/{id}', 'RoleController@update')->name('update');
+    Route::get('delete/{id}', 'RoleController@delete')->name('delete');
+    Route::get('changeRole/{id}', 'RoleController@changeRole')->name('changeRole');
+});
 
 //Departments
 Route::group(['as' => 'department.', 'prefix' => 'department', 'middleware' => ['auth']], function () {

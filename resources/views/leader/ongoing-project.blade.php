@@ -1,17 +1,22 @@
 @extends('layouts.backend.master')
 @section('base.title', 'Admin')
 @section('master.content')
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                @php 
+    <div class="card">
+        <div class="card-header">
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+
+                @php
                 foreach($team->projects as $project){
                 $ids=$project->id;
             }
                 @endphp
                 <p>Your Team Members, Assign Task for <font color="red">{{$project->title}}</font></p>
-           <table class="table table-striped projects">
-                    <thead>
+            <table id="" class="table table-bordered table-striped">
+
+            <thead>
                     <tr>
                         <th style="width: 20%">
                             Serial
@@ -54,5 +59,4 @@
                 </table>
         </div>
    </div>
-    </section>
 @endsection

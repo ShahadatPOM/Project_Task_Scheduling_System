@@ -192,6 +192,9 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
+        $project = Project::find($id);
+        $project->delete();
+        return back();
 
     }
 

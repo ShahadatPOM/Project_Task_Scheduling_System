@@ -22,6 +22,7 @@
     {{--member for each team--}}
     <div class="card">
         <div class="card-header">
+                <a class="btn btn-sm btn-outline-info" href="{{ route('team.index') }}">All Teams</a>
             <h3 style=" text-align: center">Team Members of <a href="">{{ $team->name }}</a> Team</h3>
             <h3  style="text-align: center">Department <a href="{{ route('department.detail', $team->department->id) }}">{{$team->department ?  $team->department->name : ''}}</a></h3>
         </div>
@@ -35,7 +36,6 @@
                 </tr>
                 </thead>
                 <tbody>
-
                 @foreach($team->users as $member)
                     <tr>
                         <td>{{ $member->name }} @if($member->role_id == 3) (Leader) @endif</td>
@@ -49,8 +49,6 @@
 
                         <td>
                             <a title="delete" onclick="return confirm('Are you sure to delete this')" class="btn btn-sm btn-danger" href="{{ route('team.remove.member', $member->id) }}"><i class="fa fa-trash"></i></a>
-                            <a title="view" class="btn btn-sm btn-info" href="{{ route('team.show', $team->id) }}"><i class="fa fa-eye"></i></a>
-                            {{--                            <a title="member list" class="btn btn-sm btn-info" href="{{ route('team.member.list', $team->id) }}"><i class="fa fa-plus"></i></a>--}}
 
                             @if ( $member->role_id == 3)
                                 <a class="btn btn-sm btn-warning pull-right" href="{{ route('team.leader.change', $member->id) }}"><i class="fa fa-edit"></i>Change Leader</a>
@@ -63,8 +61,6 @@
                         </td>
                     </tr>
                 @endforeach
-
-
                 </tbody>
                 <tfoot>
                 <tr>

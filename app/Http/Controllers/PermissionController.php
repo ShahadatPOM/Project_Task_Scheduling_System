@@ -7,12 +7,14 @@ use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use mysql_xdevapi\Collection;
 
 class PermissionController extends Controller
 {
 
     public function index()
     {
+
         $roles = Role::all()->except(1);
         return view('permissions.index',compact('roles'));
     }
@@ -44,7 +46,7 @@ class PermissionController extends Controller
          $role=Role::find($id);
         $role->permissions()->attach($request->id);
 
-        return redirect('permissions/index');
+        return redirect('permission/index');
     }
 
     /**
@@ -98,9 +100,6 @@ class PermissionController extends Controller
         }
         $ids = array_merge($department_ids, $team_ids, $leader_ids, $member_ids, $project_ids, $requirement_ids, $task_ids);
         return view('permissions.edit',compact('lists','userrole', 'tasks', 'members', 'users', 'requirements', 'roles', 'departments', 'teams', 'leaders', 'projects', 'ids'));
-
-
-
     }
 
     /**
@@ -112,9 +111,17 @@ class PermissionController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $role=Role::find($id);
-        $role->permissions()->sync($request->id);
-        return back();
+            $role = Role::find($id);
+            $role->permissions()->detach();
+
+            foreach($request->id as $prb){
+                $permit = new Permission();
+                $permit->roles()->attach($prb);
+            }
+        /*$role->permissions()->attach($request->id);*/
+
+        return redirect('permission/index');
+
     }
 
     /**

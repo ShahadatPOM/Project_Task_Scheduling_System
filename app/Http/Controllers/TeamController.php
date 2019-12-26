@@ -6,6 +6,7 @@ use App\Department;
 use App\Project;
 use App\Team;
 use App\User;
+use Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -20,7 +21,6 @@ class TeamController extends Controller
 
     public function create()
     {
-
         $users = User::where('role_id', 4)->get();
         $departments = Department::all();
         return view('team.create', compact('departments', 'users'));
@@ -37,6 +37,7 @@ class TeamController extends Controller
                 })
             ],
             'department_id' => 'required',
+            'members' => 'required',
 
         ]);
         $team = new Team();
@@ -45,13 +46,13 @@ class TeamController extends Controller
         $team->status = $request->status;
         $team->save();
         $team->users()->attach($request->members);
+        Toastr::success('Team is created Successfully');
         return back();
 
     }
 
     public function memberList($id)
     {
-
         $team = Team::find($id);
         foreach ($team->users as $user)
             $roles[] = $user->role_id;
@@ -70,6 +71,7 @@ class TeamController extends Controller
         ]);
         $team = Team::find($id);
         $team->users()->attach($request->members);
+        Toastr::success('Team member added Successfully');
         return redirect("team/member/list/$id" );
     }
 
@@ -84,6 +86,7 @@ class TeamController extends Controller
             $team->leader_id = $id;
         }
         $team->save();
+        Toastr::success('Leader has been selected Successfully');
         return back();
     }
 
@@ -97,6 +100,7 @@ class TeamController extends Controller
             $team->leader_id = null;
         }
         $team->save();
+        Toastr::success('Leader has been changed successfully ');
         return back();
     }
 
@@ -108,7 +112,7 @@ class TeamController extends Controller
 
     public function edit($id)
     {
-        $this->authorize('update', Team::class);
+
         $users = User::where('role_id', 4)->get();
         $team = Team::find($id);
         $departments = Department::all()->except($team->department->id);
@@ -134,14 +138,15 @@ class TeamController extends Controller
         $team->status = $request->status;
         $team->save();
         $team->users()->sync($request->members);
+        Toastr::success('Team Info updated Successfully');
         return back();
     }
 
     public function delete($id)
     {
-        $this->authorize('delete', Team::class);
         $team = Team::find($id);
         $team->delete();
+        Toastr::success('Team deleted Successfully');
         return back();
     }
 
@@ -170,6 +175,7 @@ class TeamController extends Controller
     {
         $user = User::find($id);
         $user->teams()->detach();
+        Toastr::success('Team member deleted Successfully');
         return back();
     }
 

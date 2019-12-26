@@ -120,6 +120,13 @@ class TaskController extends Controller
 
     }
 
+    public function progressUpdate($id)
+    {
+
+        return back();
+
+    }
+
     public function submit($id)
     {
         $requirement = Requirement::find($id);

@@ -1,7 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="" />
+    <list default="true" id="91e1a2c3-a7a4-4546-9267-0f129a45725a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/13393177_1756282707949998_1482190977_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/16395773_1867427353502199_1727881160_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/23022239_690018767865342_1656568392_n (1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/IMG_20150921_161429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/IMG_20151001_103549.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/IMG_20151001_104049.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/requirements/Ea.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/tasks/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/tasks/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/tasks/2.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/tasks/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/role.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/src/Facades/Toastr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/src/Toastr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/src/ToastrServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/src/config/toastr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/brian2694/laravel-toastr/src/helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/BufferingLogger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Debug.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/DebugClassLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/ClassNotFoundError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/FatalError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/OutOfMemoryError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/UndefinedFunctionError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/UndefinedMethodError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorEnhancer/ClassNotFoundErrorEnhancer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorEnhancer/ErrorEnhancerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorEnhancer/UndefinedFunctionErrorEnhancer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorEnhancer/UndefinedMethodErrorEnhancer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorRenderer/CliErrorRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorRenderer/ErrorRendererInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorRenderer/HtmlErrorRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ErrorRenderer/SerializerErrorRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Exception/FlattenException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Exception/SilencedErrorContext.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/css/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/css/exception.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/css/exception_full.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/chevron-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/favicon.png.base64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/icon-book.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/icon-minus-square-o.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/icon-minus-square.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/icon-plus-square-o.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/icon-plus-square.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/icon-support.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/symfony-ghost.svg.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/images/symfony-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/assets/js/exception.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/error.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/exception.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/exception_full.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/logs.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/trace.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/traces.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Resources/views/traces_text.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/ThrowableUtils.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_Task_Scheduling_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/leader/ongoing-project.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/leader/ongoing-project.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/leader/projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/leader/projects.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permissions/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/requirements.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/role/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/task/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/task/submit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/task/submit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/memberList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,6 +246,7 @@
       <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
       <path value="$PROJECT_DIR$/vendor/brian2694/laravel-toastr" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="ProjectId" id="1URsMTCJbecTGpk40xFFRo1yvww" />
@@ -151,22 +263,34 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\heraptss2\Project_Task_Scheduling_System\resources\views\pdf" />
-      <recent name="D:\heraptss2\Project_Task_Scheduling_System\resources\views\department" />
-      <recent name="F:\naiemptss\Project_Task_Scheduling_System\resources\views\user" />
-      <recent name="D:\Project_Task_Scheduling_System\resources\views\pdf" />
-      <recent name="D:\Project_Task_Scheduling_System\database\seeds" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\naiemptss\Project_Task_Scheduling_System\app\Http\Controllers" />
       <recent name="D:\Project_Task_Scheduling_System\resources\views" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ptss24\Project_Task_Scheduling_System\resources\views\user" />
+      <recent name="D:\heraptss2\Project_Task_Scheduling_System\resources\views\pdf" />
+      <recent name="D:\heraptss2\Project_Task_Scheduling_System\resources\views\department" />
+      <recent name="F:\naiemptss\Project_Task_Scheduling_System\resources\views\user" />
+      <recent name="D:\Project_Task_Scheduling_System\resources\views\pdf" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -175,16 +299,6 @@
     </configuration>
   </component>
   <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
     <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -227,6 +341,7 @@
       <workItem from="1577086131017" duration="15428000" />
       <workItem from="1577176723163" duration="9844000" />
       <workItem from="1577187523971" duration="4570000" />
+      <workItem from="1577233691890" duration="48761000" />
     </task>
     <task id="LOCAL-00001" summary="make leader works fine">
       <created>1575450114059</created>

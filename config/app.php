@@ -176,6 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Brian2694\Toastr\ToastrServiceProvider::class,
 
     ],
 

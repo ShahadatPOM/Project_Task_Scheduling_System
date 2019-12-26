@@ -28,7 +28,7 @@
                     <th>Delete</th>
 
                 </tr>
-                <form action="{{url('permissions/store',$role->id)}}" method='post'>
+                <form action="{{route('permission.store',$role->id)}}" method='post'>
                     @csrf
                     <tr>
                         <td>User</td>

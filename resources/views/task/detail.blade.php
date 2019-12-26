@@ -34,7 +34,7 @@
         <!-- Default box -->
         <div class="card card-outline card-red">
             <div class="card-header">
-                <h3 class="card-title">Detail of <strong>---</strong></h3>
+                <p class="card-title">Task of <strong>{{ $task->project->title }} </strong>detail</p>
             </div>
 
             <div class="card-body">
@@ -85,11 +85,12 @@
                             </thead>
                             <tbody>
 
-@php
-$files = [];
-$ids = [];
-@endphp
+                            @php
+                            $files = [];
+                            $ids = [];
+                            @endphp
                             @foreach($task->requirements as $key => $requirement)
+
                                 <tr>
                                     <th scope="row">{{ $key+1 }}</th>
                                     <td>{{ $requirement->name }}</td>

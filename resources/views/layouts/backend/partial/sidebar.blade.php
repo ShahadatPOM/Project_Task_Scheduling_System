@@ -5,15 +5,16 @@
              alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light"><b >Datatrix</b> Soft </span>
+        <span class="brand-text font-weight-light"><b style="color: red">Datatrix</b>Soft </span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{asset('assets/backend/dist/img/avatar5.png')}}" class="img-circle elevation-2"
-                     alt="User Image">
+                <img style="height: 40px" class=" img-fluid img-circle"
+                     src="{{url('files/'.Auth::user()->profile->image )}}" alt="User Avatar"
+                     alt="User profile picture">
             </div>
             <div class="info">
                 <a href="{{ route('profile.index', Auth::id()) }}" class="d-block" >{{ Auth::user()->name }}</a>
@@ -21,7 +22,7 @@
         </div>
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-2" style="margin-bottom: 30px ">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
@@ -33,32 +34,56 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Developers</li>
+                <li class="nav-header">Users & Roles</li>
                     @if(Auth::user()->role->id == 1)
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-users"></i>
-                        <p>
-                            Manage User
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link">
-                                <i class="fa fa-user-plus nav-icon"></i>
-                                <p>Create New</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('user.index') }}" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>All Users</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
+                         <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-users"></i>
+                            <p>
+                                Manage User
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('register') }}" class="nav-link">
+                                    <i class="fa fa-user-plus nav-icon"></i>
+                                    <p>Create New</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('user.index') }}" class="nav-link">
+                                    <i class="fa fa-list nav-icon"></i>
+                                    <p>All Users</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-save"></i>
+                            <p>
+                                Manage Role
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('role.create') }}" class="nav-link">
+                                    <i class="fa fa-user-plus nav-icon"></i>
+                                    <p>Create New</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('permission.index') }}" class="nav-link">
+                            <i class="fa fa-plus nav-icon"></i>
+                            <p>Permissions</p>
+                        </a>
+                    </li>
+                    <li class="nav-header">Departments & Teams</li>
+                    <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-institution"></i>
                         <p>
@@ -81,36 +106,33 @@
                         </li>
                     </ul>
                 </li>
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-object-group"></i>
-                        <p>
-                            Manage Team
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('team.create') }}" class="nav-link">
-                                <i class="fa fa-plus nav-icon"></i>
-                                <p>Create New</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('team.index') }}" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>All Teams</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                    <li class="nav-item">
-                        <a href="{{ url('permissions/index') }}" class="nav-link">
-                            <i class="fa fa-plus nav-icon"></i>
-                            <p>Permissions</p>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-object-group"></i>
+                            <p>
+                                Manage Team
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('team.create') }}" class="nav-link">
+                                    <i class="fa fa-plus nav-icon"></i>
+                                    <p>Create New</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('team.index') }}" class="nav-link">
+                                    <i class="fa fa-list nav-icon"></i>
+                                    <p>All Teams</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
 
+
+            @if(Auth::user()->role->id == 2)
                 <li class="nav-header">Projects & Tasks</li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -135,31 +157,7 @@
                         </li>
                     </ul>
                 </li>
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-tasks"></i>
-                        <p>
-                            Manage Task
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-plus nav-icon"></i>
-                                <p>Create New</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>Assign Task</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                @endif
+@endif
                 @if(Auth::user()->role_id == 4)
                 <li class="nav-item">
                     <a href="{{route('task.index')}}" class="nav-link">
@@ -169,29 +167,20 @@
                 </li>
                 @endif
                 @if(Auth::user()->role_id == 3)
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-tasks"></i>
-                        <p>
-                            Projects
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{url('projects')}}" class="nav-link">
-                                <i class="fa fa-plus nav-icon"></i>
-                                <p>All Project</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('projects/create')}}" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>Ongoing Project</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
+                    <li class="nav-item">
+                        <a href="{{url('projects')}}" class="nav-link">
+                            <i class="fa fa-plus nav-icon"></i>
+                            <p>All Project</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('projects/create')}}" class="nav-link">
+                            <i class="fa fa-list nav-icon"></i>
+                            <p>Ongoing Project</p>
+                        </a>
+                    </li>
+
                 <li class="nav-item">
                     <a href="{{route('project.requirements')}}" class="nav-link">
                         <i class="fa fa-plus nav-icon"></i>

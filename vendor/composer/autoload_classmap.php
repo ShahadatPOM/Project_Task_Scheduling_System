@@ -42,6 +42,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Mail\\AccountCredentials' => $baseDir . '/app/Mail/AccountCredentials.php',
     'App\\Permission' => $baseDir . '/app/Permission.php',
     'App\\Policies\\DepartmentPolicy' => $baseDir . '/app/Policies/DepartmentPolicy.php',
     'App\\Policies\\PermissionPolicy' => $baseDir . '/app/Policies/PermissionPolicy.php',

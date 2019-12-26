@@ -123,7 +123,7 @@
                         <div class="card-footer">
                             <div>
                                 <a href="#" class="btn btn-secondary">Cancel</a>
-                                <input type="submit" value="Create" class="btn btn-success float-right">
+                                <input type="submit" value="Update" class="btn btn-success float-right">
                             </div>
                         </div>
                     </div>

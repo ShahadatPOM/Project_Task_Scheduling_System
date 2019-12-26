@@ -21,7 +21,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">User Create</h3>
+                            <h3 class="card-title">User Edit</h3>
                         </div>
                         <form action="{{ route('user.update', $user->id) }}" method="post">
                             @csrf
@@ -114,7 +114,7 @@
                             </div>
                             <div class="card-footer">
                                 <a href="{{ route('user.index') }}" class="btn btn-sm btn-danger">BACK</a>
-                                <button type="submit" class="btn btn-primary btn-sm">Done</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Update</button>
                             </div>
                         </form>
                     </div>

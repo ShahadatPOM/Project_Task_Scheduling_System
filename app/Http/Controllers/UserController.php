@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Role;
 use Illuminate\Http\Request;
 use App\User;
+use Toastr;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -42,6 +43,7 @@ class UserController extends Controller
         $user->department_id = $request->department_id;
         $user->status = $request->status;
         $user->save();
+        Toastr::success('User Info updated Successfully');
         return back();
     }
 
@@ -58,6 +60,7 @@ class UserController extends Controller
             'message' => 'User deleted successfully!',
             'alert-type' => 'success'
         );
+        Toastr::success('User Info Deleted Successfully');
         return back()->with($notification);
     }
 

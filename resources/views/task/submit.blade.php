@@ -52,7 +52,7 @@
                                 </div>
                             <div class="card-footer">
                                 <a href="{{ route('project.index') }}" class="btn btn-sm btn-danger">BACK</a>
-                                <button type="submit" class="btn btn-primary btn-sm">Assign</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                             </div>
                         </div>
                     </div>

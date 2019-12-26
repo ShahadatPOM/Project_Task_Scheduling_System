@@ -493,6 +493,7 @@ class ComposerStaticInit3a0e2121153b250eb9cac08cf7bf61f8
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\AccountCredentials' => __DIR__ . '/../..' . '/app/Mail/AccountCredentials.php',
         'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
         'App\\Policies\\DepartmentPolicy' => __DIR__ . '/../..' . '/app/Policies/DepartmentPolicy.php',
         'App\\Policies\\PermissionPolicy' => __DIR__ . '/../..' . '/app/Policies/PermissionPolicy.php',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Activity;
 use App\Http\Controllers\Controller;
 use App\Project;
+use Toastr;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,6 +59,8 @@ class LoginController extends Controller
             $activity->login_time = now('asia/dhaka');
             $activity->save();
             //send them where they are going
+            Toastr::success('Successfully Logged In');
+
             return redirect()->intended(url('admin/dashboard'));
         }
         //Nope, something wrong during authentication

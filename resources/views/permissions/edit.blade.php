@@ -28,16 +28,17 @@
                         <th>Delete</th>
                     </tr>
 
-                    <form action="{{url('permissions/update',$userrole->id)}}" method='post'>
+                    <form action="{{route('permission.update',$userrole->id)}}" method='post'>
                         @csrf
                         <tr>
 
                             @php
                                 $permit = array_diff_assoc($lists, $ids);
-                            /*dd($ids, $lists, $permit);*/
+
+                         /*   dd($ids, $lists, $permit);*/
                             @endphp
                             <td>User</td>
-                            @foreach($users as $key => $user)
+                            @foreach($users as $user)
                                 <td><input type="checkbox" name="id[]" value="{{$user->id}}"
                                            @if(( in_array($user->id, $permit)) ) checked @endif> {{$user->name}}</td>
                             @endforeach
@@ -65,55 +66,55 @@
                             @endforeach
                         </tr>
                         <tr>
-                            @php $count=1; @endphp
+
                             <td>Leader</td>
                             @foreach($leaders as $leader)
                                 <td><input type="checkbox" name="id[]" value="{{$leader->id}}"
                                            @if(( in_array($leader->id, $permit)) ) checked @endif>{{$leader->name}}</td>
-                                @php $count=0; @endphp
+
                             @endforeach
                         </tr>
                         <tr>
-                            @php $count=1; @endphp
+
                             <td>Member</td>
                             @foreach($members as $member)
                                 <td><input type="checkbox" name="id[]" value="{{$member->id}}"
                                            @if(( in_array($member->id, $permit)) ) checked @endif>{{$member->name}}</td>
-                                @php $count=0; @endphp
+
                             @endforeach
                         </tr>
                         <tr>
-                            @php $count=1; @endphp
+
                             <td>Project</td>
                             @foreach($projects as $project)
                                 <td><input type="checkbox" name="id[]" value="{{$project->id}}"
                                            @if(( in_array($project->id, $permit)) ) checked @endif>{{$project->name}}
                                 </td>
-                                @php $count=0; @endphp
+
                             @endforeach
                         </tr>
                         <tr>
-                            @php $count=1; @endphp
+
                             <td>Requirement</td>
                             @foreach($requirements as $requirement)
                                 <td><input type="checkbox" name="id[]" value="{{$requirement->id}}"
                                            @if(( in_array($requirement->id, $permit)) ) checked @endif>{{$requirement->name}}
                                 </td>
-                                @php $count=0; @endphp
+
                             @endforeach
                         </tr>
                         <tr>
-                            @php $count=1; @endphp
+
                             <td>Task</td>
                             @foreach($tasks as $task)
                                 <td><input type="checkbox" name="id[]" value="{{$task->id}}"
                                            @if(( in_array($task->id, $permit)) ) checked @endif>{{$task->name}}</td>
-                                @php $count=0; @endphp
+
                             @endforeach
                         </tr>
                         <tr>
                             <td colspan="5" style="text-align: center">
-                                <button type="submit" class="btn btn-success">Save</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </td>
                         </tr>
                     </form>
