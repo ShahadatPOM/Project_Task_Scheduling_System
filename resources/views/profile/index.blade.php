@@ -94,7 +94,9 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a>
+                                <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a>
+                                </li>
+                                <li class="nav-item "><a class="nav-link " href="#password" data-toggle="tab">Change Password</a>
                                 </li>
                             </ul>
                         </div><!-- /.card-header -->
@@ -118,6 +120,7 @@
                                                        name="email" value="{{ $user->email }}">
                                             </div>
                                         </div>
+
                                         <div class="form-group row">
                                             <label for="inputEmail" class="col-sm-2 col-form-label">Mobile</label>
                                             <div class="col-sm-10">
@@ -165,6 +168,35 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group row">
+                                            <div class="offset-sm-2 col-sm-10">
+                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane active" id="password">
+                                    <form class="form-horizontal" action="{{ route('profile.update', $user->id) }}"
+                                          method="post">
+                                        @csrf
+                                        <div class="form-group row">
+                                            <label for="inputName" class="col-sm-2 col-form-label">Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="inputName"
+                                                       name="password">
+                                            </div>
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                                @enderror
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputEmail" class="col-sm-2 col-form-label">Confirm Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="inputEmail"
+                                                       name="password_confirmation">
+                                            </div>
+                                        </div>
                                         <div class="form-group row">
                                             <div class="offset-sm-2 col-sm-10">
                                                 <button type="submit" class="btn btn-danger">Submit</button>

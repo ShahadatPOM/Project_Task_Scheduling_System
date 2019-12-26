@@ -54,9 +54,16 @@ class ProfileController extends Controller
 
     }
 
-    public function update()
+    public function update(Request $request,$id)
     {
-
+        $request->validate([
+            'password' => 'required|confirmed'
+        ]);
+        $user = User::find($id);
+        $user->password = bcrypt($request->password);
+        $user->save();
+        Toastr::success('Password Changed Successfully','Success!');
+        return back();
     }
 
     public function show()

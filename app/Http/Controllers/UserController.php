@@ -4,14 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Http\Controllers\Controller;
+use App\Mail\ForgotPassword;
 use App\Role;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 use Toastr;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('forgot','reset','resetPassword','changePassword');
+    }
+
     public function index(){
         $this->authorize('view', User::class);
         $users = User::all()->except([Auth::id(),1]);
@@ -62,6 +69,30 @@ class UserController extends Controller
         );
         Toastr::success('User Info Deleted Successfully');
         return back()->with($notification);
+    }
+
+    public function forgot(){
+        return view('user.forgot');
+    }
+
+    public function reset(Request $request){
+        $user = User::where('email',$request->email)->first();
+        Mail::to($user->email)->send(new ForgotPassword($user));
+        Toastr::success('User Info was emailed Successfully');
+        return redirect('/');
+    }
+
+    public function resetPassword($id){
+        $user = User::find($id);
+        return view('user.givepassword',compact('user'));
+    }
+
+    public function changePassword(Request $request,$id){
+        $user = User::find($id);
+        $user->password = bcrypt($request->password);
+        $user->save();
+        Toastr::success('User Info was emailed Successfully');
+        return redirect('/');
     }
 
 }
