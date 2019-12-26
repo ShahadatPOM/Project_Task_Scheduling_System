@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\User;
+use Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,12 +27,8 @@ class DepartmentController extends Controller
         $department->name = $request->name;
         $department->status = $request->status;
         $department->save();
-        $notification = array(
-            'message' => 'Department created successfully!',
-            'alert-type' => 'success'
-        );
-
-        return back()->with($notification);
+        Toastr::success('Department created successfully');
+        return back();
     }
 
     public function detail($id){
@@ -52,20 +49,16 @@ class DepartmentController extends Controller
         $department->name = $request->name;
         $department->status = $request->status;
         $department->save();
-        $notification = array(
-            'message' => 'Department updated successfully!',
-            'alert-type' => 'success'
-        );
-        return back()->with($notification);
+        Toastr::success('Department updated successfully','Success!');
+
+        return back();
     }
     public function delete($id){
         $this->authorize('delete', Department::class);
         $department = Department::findOrfail($id);
         $department->delete();
-        $notification = array(
-            'message' => 'Department deleted successfully!',
-            'alert-type' => 'warning'
-        );
-        return back()->with($notification);
+        Toastr::success('Department deleted successfully','Success!');
+
+        return back();
     }
 }

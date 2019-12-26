@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Role;
+use Toastr;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -20,6 +21,8 @@ class RoleController extends Controller
         $role = new Role();
         $role->name = $request->name;
         $role->save();
+        Toastr::success('Role created Successfully');
+
         return back();
     }
 }

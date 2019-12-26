@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\File;
 use App\Profile;
 use App\User;
+use Toastr;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -43,6 +44,8 @@ class ProfileController extends Controller
             $profile->image = $name;
             $profile->save();
         }
+        Toastr::success('profile info added successfully','Success!');
+
         return back();
     }
 

@@ -91,6 +91,8 @@ class ProjectController extends Controller
                 $project->files()->save($project_file);
             }
         }
+        Toastr::success('Project Created Successfully');
+
         return back();
     }
 
@@ -115,6 +117,8 @@ class ProjectController extends Controller
         $project->status = 1;
         $project->save();
         $project->teams()->sync($request->team);
+        Toastr::success('Project assigned Successfully');
+
         return redirect('project/index');
     }
 
@@ -186,6 +190,8 @@ class ProjectController extends Controller
                 $project->files()->save($project_file);
             }
         }
+        Toastr::success('Project Info updated Successfully');
+
         return back();
 
     }
@@ -234,6 +240,8 @@ class ProjectController extends Controller
         $requirement = Requirement::where('id',$submission->requirement_id)->first();
         $requirement->status = 0;
         $requirement->save();
+        Toastr::success('Task successfully has been rejected','Success!');
+
         return back();
     }
 

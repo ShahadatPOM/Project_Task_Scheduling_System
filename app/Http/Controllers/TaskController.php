@@ -10,6 +10,7 @@ use App\Task;
 use App\Team;
 use App\User;
 use Carbon\Carbon;
+use Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,6 +54,8 @@ class TaskController extends Controller
         }
         $task->save();
         $task->requirements()->sync($request->tasks);
+        Toastr::success('Task Info updated Successfully');
+
         return back();
 
     }
@@ -107,6 +110,8 @@ class TaskController extends Controller
         }
         $task->save();
         $task->requirements()->attach($request->tasks);
+        Toastr::success('Task assign Successfully');
+
         return back();
 
     }
@@ -116,6 +121,8 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->status = 1;
         $task->save();
+        Toastr::success('task status updated Successfully');
+
         return back();
 
     }
@@ -158,6 +165,8 @@ class TaskController extends Controller
     {
         $task = Task::find($id);
         $path = public_path() . '/files/tasks/' . $task->filename;
+        Toastr::success('Task submitted Successfully');
+
         return response()->download($path);
     }
 }
